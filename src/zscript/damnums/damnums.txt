@@ -1,0 +1,77 @@
+/*
+ * DamNums: by Xaser Acheron
+ */
+
+class DamNum : Actor
+{
+	int font; // [TODO] implement via enum
+	int digitCount;
+	int digitPlace;
+	uint8 digitValue;
+	
+	const fadeAmt = 0.05;
+	
+	Default
+	{
+		RenderStyle 'Add';
+		Alpha 1.0;
+		Gravity 0.5;
+		Scale 0.75;
+
+		-SOLID;
+		+NOBLOCKMAP;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay DamNum_A_InitFont();
+
+	Font_Modern_1_1: ND11 A 0 DamNum_A_InitDigit();
+	Font_Modern_2_1: ND21 A 0 DamNum_A_InitDigit();
+	Font_Modern_2_2: ND22 A 0 DamNum_A_InitDigit();
+	Font_Modern_3_1: ND31 A 0 DamNum_A_InitDigit();
+	Font_Modern_3_2: ND32 A 0 DamNum_A_InitDigit();
+	Font_Modern_3_3: ND33 A 0 DamNum_A_InitDigit();
+	Font_Modern_4_1: ND41 A 0 DamNum_A_InitDigit();
+	Font_Modern_4_2: ND42 A 0 DamNum_A_InitDigit();
+	Font_Modern_4_3: ND43 A 0 DamNum_A_InitDigit();
+	Font_Modern_4_4: ND44 A 0 DamNum_A_InitDigit();
+	Font_Modern_5_1: ND51 A 0 DamNum_A_InitDigit();
+	Font_Modern_5_2: ND52 A 0 DamNum_A_InitDigit();
+	Font_Modern_5_3: ND53 A 0 DamNum_A_InitDigit();
+	Font_Modern_5_4: ND54 A 0 DamNum_A_InitDigit();
+	Font_Modern_5_5: ND55 A 0 DamNum_A_InitDigit();
+
+	Display:
+		#### # 10 Bright;
+		#### # 1 Bright A_FadeOut(fadeAmt, 1);
+		Wait;
+	}
+	
+	/*
+	 *
+	 */
+	action state DamNum_A_InitFont()
+	{
+		DamNum this = DamNum(self);
+		int digitCount = (this.digitCount == 0) ? 1 : this.digitCount;
+		int digitPlace = (this.digitPlace == 0) ? 1 : this.digitPlace;
+
+		// [TODO] add more fonts. Just assume the only one we have so far.
+		string fontName   = "Modern";
+		string fontState  = "Font_" .. fontName .. "_" .. digitCount .. "_" .. digitPlace;
+		return ResolveState('Font_Modern_1_1');
+	}
+	
+	/*
+	 *
+	 */
+	action state DamNum_A_InitDigit()
+	{
+		// set the frame to the desired digit; since frames A-J (which is 0-9
+		// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
+		// [XA] investigate bizarre "Self pointer used in ambiguous context" error o_O
+		self.frame = DamNum(self).digitValue;
+		return ResolveState('Display');
+	}
+}
