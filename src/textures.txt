@@ -1,0 +1,156 @@
+/*
+ * DamNums: by Xaser Acheron
+ */
+
+/*
+ * Modern font
+ */
+Sprite "ND21A0", 22, 13 { Offset 11, 11 Patch "ND11A0", 11, 0 }
+Sprite "ND22A0", 22, 13 { Offset 11, 11 Patch "ND11A0",  0, 0 }
+Sprite "ND31A0", 33, 13 { Offset 16, 11 Patch "ND11A0", 22, 0 }
+Sprite "ND32A0", 33, 13 { Offset 16, 11 Patch "ND11A0", 11, 0 }
+Sprite "ND33A0", 33, 13 { Offset 16, 11 Patch "ND11A0",  0, 0 }
+Sprite "ND41A0", 44, 13 { Offset 22, 11 Patch "ND11A0", 33, 0 }
+Sprite "ND42A0", 44, 13 { Offset 22, 11 Patch "ND11A0", 22, 0 }
+Sprite "ND43A0", 44, 13 { Offset 22, 11 Patch "ND11A0", 11, 0 }
+Sprite "ND44A0", 44, 13 { Offset 22, 11 Patch "ND11A0",  0, 0 }
+Sprite "ND51A0", 55, 13 { Offset 27, 11 Patch "ND11A0", 44, 0 }
+Sprite "ND52A0", 55, 13 { Offset 27, 11 Patch "ND11A0", 33, 0 }
+Sprite "ND53A0", 55, 13 { Offset 27, 11 Patch "ND11A0", 22, 0 }
+Sprite "ND54A0", 55, 13 { Offset 27, 11 Patch "ND11A0", 11, 0 }
+Sprite "ND55A0", 55, 13 { Offset 27, 11 Patch "ND11A0",  0, 0 }
+
+Sprite "ND21B0", 22, 13 { Offset 11, 11 Patch "ND11B0", 11, 0 }
+Sprite "ND22B0", 22, 13 { Offset 11, 11 Patch "ND11B0",  0, 0 }
+Sprite "ND31B0", 33, 13 { Offset 16, 11 Patch "ND11B0", 22, 0 }
+Sprite "ND32B0", 33, 13 { Offset 16, 11 Patch "ND11B0", 11, 0 }
+Sprite "ND33B0", 33, 13 { Offset 16, 11 Patch "ND11B0",  0, 0 }
+Sprite "ND41B0", 44, 13 { Offset 22, 11 Patch "ND11B0", 33, 0 }
+Sprite "ND42B0", 44, 13 { Offset 22, 11 Patch "ND11B0", 22, 0 }
+Sprite "ND43B0", 44, 13 { Offset 22, 11 Patch "ND11B0", 11, 0 }
+Sprite "ND44B0", 44, 13 { Offset 22, 11 Patch "ND11B0",  0, 0 }
+Sprite "ND51B0", 55, 13 { Offset 27, 11 Patch "ND11B0", 44, 0 }
+Sprite "ND52B0", 55, 13 { Offset 27, 11 Patch "ND11B0", 33, 0 }
+Sprite "ND53B0", 55, 13 { Offset 27, 11 Patch "ND11B0", 22, 0 }
+Sprite "ND54B0", 55, 13 { Offset 27, 11 Patch "ND11B0", 11, 0 }
+Sprite "ND55B0", 55, 13 { Offset 27, 11 Patch "ND11B0",  0, 0 }
+
+Sprite "ND21C0", 22, 13 { Offset 11, 11 Patch "ND11C0", 11, 0 }
+Sprite "ND22C0", 22, 13 { Offset 11, 11 Patch "ND11C0",  0, 0 }
+Sprite "ND31C0", 33, 13 { Offset 16, 11 Patch "ND11C0", 22, 0 }
+Sprite "ND32C0", 33, 13 { Offset 16, 11 Patch "ND11C0", 11, 0 }
+Sprite "ND33C0", 33, 13 { Offset 16, 11 Patch "ND11C0",  0, 0 }
+Sprite "ND41C0", 44, 13 { Offset 22, 11 Patch "ND11C0", 33, 0 }
+Sprite "ND42C0", 44, 13 { Offset 22, 11 Patch "ND11C0", 22, 0 }
+Sprite "ND43C0", 44, 13 { Offset 22, 11 Patch "ND11C0", 11, 0 }
+Sprite "ND44C0", 44, 13 { Offset 22, 11 Patch "ND11C0",  0, 0 }
+Sprite "ND51C0", 55, 13 { Offset 27, 11 Patch "ND11C0", 44, 0 }
+Sprite "ND52C0", 55, 13 { Offset 27, 11 Patch "ND11C0", 33, 0 }
+Sprite "ND53C0", 55, 13 { Offset 27, 11 Patch "ND11C0", 22, 0 }
+Sprite "ND54C0", 55, 13 { Offset 27, 11 Patch "ND11C0", 11, 0 }
+Sprite "ND55C0", 55, 13 { Offset 27, 11 Patch "ND11C0",  0, 0 }
+
+Sprite "ND21D0", 22, 13 { Offset 11, 11 Patch "ND11D0", 11, 0 }
+Sprite "ND22D0", 22, 13 { Offset 11, 11 Patch "ND11D0",  0, 0 }
+Sprite "ND31D0", 33, 13 { Offset 16, 11 Patch "ND11D0", 22, 0 }
+Sprite "ND32D0", 33, 13 { Offset 16, 11 Patch "ND11D0", 11, 0 }
+Sprite "ND33D0", 33, 13 { Offset 16, 11 Patch "ND11D0",  0, 0 }
+Sprite "ND41D0", 44, 13 { Offset 22, 11 Patch "ND11D0", 33, 0 }
+Sprite "ND42D0", 44, 13 { Offset 22, 11 Patch "ND11D0", 22, 0 }
+Sprite "ND43D0", 44, 13 { Offset 22, 11 Patch "ND11D0", 11, 0 }
+Sprite "ND44D0", 44, 13 { Offset 22, 11 Patch "ND11D0",  0, 0 }
+Sprite "ND51D0", 55, 13 { Offset 27, 11 Patch "ND11D0", 44, 0 }
+Sprite "ND52D0", 55, 13 { Offset 27, 11 Patch "ND11D0", 33, 0 }
+Sprite "ND53D0", 55, 13 { Offset 27, 11 Patch "ND11D0", 22, 0 }
+Sprite "ND54D0", 55, 13 { Offset 27, 11 Patch "ND11D0", 11, 0 }
+Sprite "ND55D0", 55, 13 { Offset 27, 11 Patch "ND11D0",  0, 0 }
+
+Sprite "ND21E0", 22, 13 { Offset 11, 11 Patch "ND11E0", 11, 0 }
+Sprite "ND22E0", 22, 13 { Offset 11, 11 Patch "ND11E0",  0, 0 }
+Sprite "ND31E0", 33, 13 { Offset 16, 11 Patch "ND11E0", 22, 0 }
+Sprite "ND32E0", 33, 13 { Offset 16, 11 Patch "ND11E0", 11, 0 }
+Sprite "ND33E0", 33, 13 { Offset 16, 11 Patch "ND11E0",  0, 0 }
+Sprite "ND41E0", 44, 13 { Offset 22, 11 Patch "ND11E0", 33, 0 }
+Sprite "ND42E0", 44, 13 { Offset 22, 11 Patch "ND11E0", 22, 0 }
+Sprite "ND43E0", 44, 13 { Offset 22, 11 Patch "ND11E0", 11, 0 }
+Sprite "ND44E0", 44, 13 { Offset 22, 11 Patch "ND11E0",  0, 0 }
+Sprite "ND51E0", 55, 13 { Offset 27, 11 Patch "ND11E0", 44, 0 }
+Sprite "ND52E0", 55, 13 { Offset 27, 11 Patch "ND11E0", 33, 0 }
+Sprite "ND53E0", 55, 13 { Offset 27, 11 Patch "ND11E0", 22, 0 }
+Sprite "ND54E0", 55, 13 { Offset 27, 11 Patch "ND11E0", 11, 0 }
+Sprite "ND55E0", 55, 13 { Offset 27, 11 Patch "ND11E0",  0, 0 }
+
+Sprite "ND21F0", 22, 13 { Offset 11, 11 Patch "ND11F0", 11, 0 }
+Sprite "ND22F0", 22, 13 { Offset 11, 11 Patch "ND11F0",  0, 0 }
+Sprite "ND31F0", 33, 13 { Offset 16, 11 Patch "ND11F0", 22, 0 }
+Sprite "ND32F0", 33, 13 { Offset 16, 11 Patch "ND11F0", 11, 0 }
+Sprite "ND33F0", 33, 13 { Offset 16, 11 Patch "ND11F0",  0, 0 }
+Sprite "ND41F0", 44, 13 { Offset 22, 11 Patch "ND11F0", 33, 0 }
+Sprite "ND42F0", 44, 13 { Offset 22, 11 Patch "ND11F0", 22, 0 }
+Sprite "ND43F0", 44, 13 { Offset 22, 11 Patch "ND11F0", 11, 0 }
+Sprite "ND44F0", 44, 13 { Offset 22, 11 Patch "ND11F0",  0, 0 }
+Sprite "ND51F0", 55, 13 { Offset 27, 11 Patch "ND11F0", 44, 0 }
+Sprite "ND52F0", 55, 13 { Offset 27, 11 Patch "ND11F0", 33, 0 }
+Sprite "ND53F0", 55, 13 { Offset 27, 11 Patch "ND11F0", 22, 0 }
+Sprite "ND54F0", 55, 13 { Offset 27, 11 Patch "ND11F0", 11, 0 }
+Sprite "ND55F0", 55, 13 { Offset 27, 11 Patch "ND11F0",  0, 0 }
+
+Sprite "ND21G0", 22, 13 { Offset 11, 11 Patch "ND11G0", 11, 0 }
+Sprite "ND22G0", 22, 13 { Offset 11, 11 Patch "ND11G0",  0, 0 }
+Sprite "ND31G0", 33, 13 { Offset 16, 11 Patch "ND11G0", 22, 0 }
+Sprite "ND32G0", 33, 13 { Offset 16, 11 Patch "ND11G0", 11, 0 }
+Sprite "ND33G0", 33, 13 { Offset 16, 11 Patch "ND11G0",  0, 0 }
+Sprite "ND41G0", 44, 13 { Offset 22, 11 Patch "ND11G0", 33, 0 }
+Sprite "ND42G0", 44, 13 { Offset 22, 11 Patch "ND11G0", 22, 0 }
+Sprite "ND43G0", 44, 13 { Offset 22, 11 Patch "ND11G0", 11, 0 }
+Sprite "ND44G0", 44, 13 { Offset 22, 11 Patch "ND11G0",  0, 0 }
+Sprite "ND51G0", 55, 13 { Offset 27, 11 Patch "ND11G0", 44, 0 }
+Sprite "ND52G0", 55, 13 { Offset 27, 11 Patch "ND11G0", 33, 0 }
+Sprite "ND53G0", 55, 13 { Offset 27, 11 Patch "ND11G0", 22, 0 }
+Sprite "ND54G0", 55, 13 { Offset 27, 11 Patch "ND11G0", 11, 0 }
+Sprite "ND55G0", 55, 13 { Offset 27, 11 Patch "ND11G0",  0, 0 }
+
+Sprite "ND21H0", 22, 13 { Offset 11, 11 Patch "ND11H0", 11, 0 }
+Sprite "ND22H0", 22, 13 { Offset 11, 11 Patch "ND11H0",  0, 0 }
+Sprite "ND31H0", 33, 13 { Offset 16, 11 Patch "ND11H0", 22, 0 }
+Sprite "ND32H0", 33, 13 { Offset 16, 11 Patch "ND11H0", 11, 0 }
+Sprite "ND33H0", 33, 13 { Offset 16, 11 Patch "ND11H0",  0, 0 }
+Sprite "ND41H0", 44, 13 { Offset 22, 11 Patch "ND11H0", 33, 0 }
+Sprite "ND42H0", 44, 13 { Offset 22, 11 Patch "ND11H0", 22, 0 }
+Sprite "ND43H0", 44, 13 { Offset 22, 11 Patch "ND11H0", 11, 0 }
+Sprite "ND44H0", 44, 13 { Offset 22, 11 Patch "ND11H0",  0, 0 }
+Sprite "ND51H0", 55, 13 { Offset 27, 11 Patch "ND11H0", 44, 0 }
+Sprite "ND52H0", 55, 13 { Offset 27, 11 Patch "ND11H0", 33, 0 }
+Sprite "ND53H0", 55, 13 { Offset 27, 11 Patch "ND11H0", 22, 0 }
+Sprite "ND54H0", 55, 13 { Offset 27, 11 Patch "ND11H0", 11, 0 }
+Sprite "ND55H0", 55, 13 { Offset 27, 11 Patch "ND11H0",  0, 0 }
+
+Sprite "ND21I0", 22, 13 { Offset 11, 11 Patch "ND11I0", 11, 0 }
+Sprite "ND22I0", 22, 13 { Offset 11, 11 Patch "ND11I0",  0, 0 }
+Sprite "ND31I0", 33, 13 { Offset 16, 11 Patch "ND11I0", 22, 0 }
+Sprite "ND32I0", 33, 13 { Offset 16, 11 Patch "ND11I0", 11, 0 }
+Sprite "ND33I0", 33, 13 { Offset 16, 11 Patch "ND11I0",  0, 0 }
+Sprite "ND41I0", 44, 13 { Offset 22, 11 Patch "ND11I0", 33, 0 }
+Sprite "ND42I0", 44, 13 { Offset 22, 11 Patch "ND11I0", 22, 0 }
+Sprite "ND43I0", 44, 13 { Offset 22, 11 Patch "ND11I0", 11, 0 }
+Sprite "ND44I0", 44, 13 { Offset 22, 11 Patch "ND11I0",  0, 0 }
+Sprite "ND51I0", 55, 13 { Offset 27, 11 Patch "ND11I0", 44, 0 }
+Sprite "ND52I0", 55, 13 { Offset 27, 11 Patch "ND11I0", 33, 0 }
+Sprite "ND53I0", 55, 13 { Offset 27, 11 Patch "ND11I0", 22, 0 }
+Sprite "ND54I0", 55, 13 { Offset 27, 11 Patch "ND11I0", 11, 0 }
+Sprite "ND55I0", 55, 13 { Offset 27, 11 Patch "ND11I0",  0, 0 }
+
+Sprite "ND21J0", 22, 13 { Offset 11, 11 Patch "ND11J0", 11, 0 }
+Sprite "ND22J0", 22, 13 { Offset 11, 11 Patch "ND11J0",  0, 0 }
+Sprite "ND31J0", 33, 13 { Offset 16, 11 Patch "ND11J0", 22, 0 }
+Sprite "ND32J0", 33, 13 { Offset 16, 11 Patch "ND11J0", 11, 0 }
+Sprite "ND33J0", 33, 13 { Offset 16, 11 Patch "ND11J0",  0, 0 }
+Sprite "ND41J0", 44, 13 { Offset 22, 11 Patch "ND11J0", 33, 0 }
+Sprite "ND42J0", 44, 13 { Offset 22, 11 Patch "ND11J0", 22, 0 }
+Sprite "ND43J0", 44, 13 { Offset 22, 11 Patch "ND11J0", 11, 0 }
+Sprite "ND44J0", 44, 13 { Offset 22, 11 Patch "ND11J0",  0, 0 }
+Sprite "ND51J0", 55, 13 { Offset 27, 11 Patch "ND11J0", 44, 0 }
+Sprite "ND52J0", 55, 13 { Offset 27, 11 Patch "ND11J0", 33, 0 }
+Sprite "ND53J0", 55, 13 { Offset 27, 11 Patch "ND11J0", 22, 0 }
+Sprite "ND54J0", 55, 13 { Offset 27, 11 Patch "ND11J0", 11, 0 }
+Sprite "ND55J0", 55, 13 { Offset 27, 11 Patch "ND11J0",  0, 0 }

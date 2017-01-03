@@ -1,0 +1,32 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Font Cache class -- a simple placeholder actor that serves to load the
+ * font sprites into memory in some place or another. Without this,
+ * GetSpriteIndex will return junk when trying to access any of these. Weird.
+ */
+
+class _FontCache : Actor
+{
+	States
+	{
+	Spawn:
+		// Doom Modern font
+		ND11 A 0;
+		ND21 A 0;
+		ND22 A 0;
+		ND31 A 0;
+		ND32 A 0;
+		ND33 A 0;
+		ND41 A 0;
+		ND42 A 0;
+		ND43 A 0;
+		ND44 A 0;
+		ND51 A 0;
+		ND52 A 0;
+		ND53 A 0;
+		ND54 A 0;
+		ND55 A 0;
+		Stop;
+	}
+}

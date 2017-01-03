@@ -1,1 +1,7 @@
+/*
+ * DamNums: by Xaser Acheron
+ */
+
+#include "zscript/damnums/fontcache.txt"
 #include "zscript/damnums/damnums.txt"
+#include "zscript/damnums/games/doom.txt"

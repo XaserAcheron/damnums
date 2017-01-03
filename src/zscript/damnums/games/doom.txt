@@ -1,0 +1,22 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Doom monsters.
+ */
+
+class DamZombieman : Zombieman replaces Zombieman
+{
+	/*
+	 * Spawn damage numbers.
+	 *
+	 * [XA] will move this function to Actor once possible.
+	 */
+	action int spawnDamNum(int damage, Name damagetype) {
+		A_PrintBold("DAMNage: " .. damage);
+		
+		return damage;
+	}
+	
+	// [XA] will likely need to add this shim for all actors, ohno :<
+	override int TakeSpecialDamage(Actor inflictor, Actor source, int damage, Name damagetype) { return spawnDamNum(damage, damagetype); }
+}
