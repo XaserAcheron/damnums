@@ -8,6 +8,7 @@ class DamNum : Actor
 	int digitCount;
 	int digitPlace;
 	uint8 digitValue;
+	name damageType;
 	
 	const fadeAmt = 0.05;
 	
@@ -15,11 +16,13 @@ class DamNum : Actor
 	{
 		RenderStyle 'Add';
 		Alpha 1.0;
-		Gravity 0.5;
+		Gravity 0.4;
 		Scale 0.75;
 
 		-SOLID;
 		+NOBLOCKMAP;
+		+NOBLOCKMONST;
+		+THRUACTORS;
 	}
 	States
 	{
@@ -45,7 +48,6 @@ class DamNum : Actor
 		
 		// set the frame to the desired digit; since frames A-J (which is 0-9
 		// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
-		// [XA] investigate bizarre "Self pointer used in ambiguous context" error o_O
 		self.frame = DamNum(self).digitValue;
 	}
 }

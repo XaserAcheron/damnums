@@ -4,19 +4,53 @@
  * Doom monsters.
  */
 
-class DamZombieman : Zombieman replaces Zombieman
+class DamCacodemon : Cacodemon replaces Cacodemon
 {
 	/*
 	 * Spawn damage numbers.
 	 *
 	 * [XA] will move this function to Actor once possible.
 	 */
-	action int spawnDamNum(int damage, Name damagetype) {
-		A_PrintBold("DAMNage: " .. damage);
+	action int spawnDamNum(Actor inflictor, Actor source, int damage, Name damagetype) {
 		
+		// pre-calculate some things so we can apply 'em to all spawned nums.
+		float ang = frandom(0, 360);
+		vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
+		vector3 npos;
+		
+		// set the position to the inflictor if we've got one.
+		if(inflictor) {
+			npos = inflictor.pos;
+		} else {
+			npos = pos + (0, 0, height-16); // fallback default
+		}
+		
+		// spawn in the damage number digits.
+		int dam = damage;
+		int place = 1;
+		int length = log10(damage) + 1;
+		while(dam > 0) {
+			let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
+			
+			// init the digits... diginit?
+			if(damnum) {
+				damnum.vel = nvel;
+				damnum.angle = ang;
+				damnum.digitCount = length;
+				damnum.digitPlace = place;
+				damnum.digitValue = dam % 10;
+				damnum.damageType = damagetype;
+			}
+			
+			// well dam.
+			dam /= 10;
+			place++;
+		}
+		
+		// return the damage dealt; no modifications or whatnot.
 		return damage;
 	}
 	
 	// [XA] will likely need to add this shim for all actors, ohno :<
-	override int TakeSpecialDamage(Actor inflictor, Actor source, int damage, Name damagetype) { return spawnDamNum(damage, damagetype); }
+	override int TakeSpecialDamage(Actor inflictor, Actor source, int damage, Name damagetype) { return spawnDamNum(inflictor, source, damage, damagetype); }
 }
