@@ -69,7 +69,7 @@ class DamNum : Actor
 			// if we have a source, angle toward it a bit.
 			float ang;
 			if(source) {
-				ang = target.AngleTo(source, true) + frandom(-10, 10);
+				ang = target.AngleTo(source, true) + frandom(-20, 20);
 			} else {
 				ang = frandom(0, 360);
 			}
