@@ -7,5 +7,16 @@
 class DamCacodemon : Cacodemon replaces Cacodemon
 {
 	// [XA] will likely need to add this shim for all actors, ohno :<
-	override int TakeSpecialDamage(Actor inflictor, Actor source, int damage, Name damagetype) { return DamNum.create(self, inflictor, damage, damagetype); }
+	int lastHealth;
+	override void BeginPlay() {
+		super.BeginPlay();
+		self.lastHealth = self.health;
+	}
+	override void Tick() {
+		super.Tick();
+		if(self.health < self.lastHealth) {
+			DamNum.spawnDamageNumbers(self, self.lastHealth - self.Health, 'Default');
+			self.lastHealth = health;
+		}
+	}
 }

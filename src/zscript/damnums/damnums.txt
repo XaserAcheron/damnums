@@ -10,7 +10,8 @@ class DamNum : Actor
 	uint8 digitValue;
 	name damageType;
 	
-	const fadeAmt = 0.05;
+	const FADE_AMT = 0.05;
+	const DAMAGE_CAP = 99999;
 	
 	Default
 	{
@@ -28,7 +29,7 @@ class DamNum : Actor
 	{
 	Spawn:
 		#### # 10 Bright;
-		#### # 1 Bright A_FadeOut(fadeAmt, 1);
+		#### # 1 Bright A_FadeOut(FADE_AMT, 1);
 		Wait;
 	}
 	
@@ -54,42 +55,42 @@ class DamNum : Actor
 	}
 
 	/*
-	 * Create (spawn) damage numbers for a particular amount of damage/type.
+	 * Spawn damage numbers. Does what it says on the tin.
 	 */
-	static int create(Actor target, Actor inflictor, int damage, Name damagetype) {
+	static int spawnDamageNumbers(Actor target, int damage, Name damagetype) {
+
+		if(target)
+		{
+			// pre-calculate some things so we can apply 'em to all spawned nums.
+			float ang = frandom(0, 360);
+			vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
+			vector3 npos;
 		
-		// pre-calculate some things so we can apply 'em to all spawned nums.
-		float ang = frandom(0, 360);
-		vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
-		vector3 npos;
+			// multiply height by 4 if the target's dead to compensate for the reduction.
+			float targetHeight = (target.health > 0) ? target.height : (target.height * 4);
+			npos = target.pos + (0, 0, targetHeight-16);
 		
-		// set the position to the inflictor if we've got one.
-		if(inflictor) {
-			npos = inflictor.pos;
-		} else {
-			npos = target.pos + (0, 0, target.height-16); // fallback default
-		}
-		
-		// spawn in the damage number digits.
-		int dam = damage;
-		int place = 1;
-		int length = log10(damage) + 1;
-		while(dam > 0) {
-			let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
+			// spawn in the damage number digits.
+			int dam = min(damage, DAMAGE_CAP);
+			int place = 1;
+			int length = log10(damage) + 1;
+			while(dam > 0) {
+				let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
 			
-			// init the digits... diginit?
-			if(damnum) {
-				damnum.vel = nvel;
-				damnum.angle = ang;
-				damnum.digitCount = length;
-				damnum.digitPlace = place;
-				damnum.digitValue = dam % 10;
-				damnum.damageType = damagetype;
+				// init the digits... diginit?
+				if(damnum) {
+					damnum.vel = nvel;
+					damnum.angle = ang;
+					damnum.digitCount = length;
+					damnum.digitPlace = place;
+					damnum.digitValue = dam % 10;
+					damnum.damageType = damagetype;
+				}
+			
+				// well dam.
+				dam /= 10;
+				place++;
 			}
-			
-			// well dam.
-			dam /= 10;
-			place++;
 		}
 		
 		// return the damage, for easy chaining.
