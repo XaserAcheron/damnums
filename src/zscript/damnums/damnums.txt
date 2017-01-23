@@ -57,12 +57,24 @@ class DamNum : Actor
 	/*
 	 * Spawn damage numbers. Does what it says on the tin.
 	 */
-	static int spawnDamageNumbers(Actor target, int damage, Name damagetype) {
+	static int spawnDamageNumbers(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default') {
 
-		if(target)
-		{
-			// pre-calculate some things so we can apply 'em to all spawned nums.
-			float ang = frandom(0, 360);
+		if(target) {
+		
+			// if we don't have a source (or it's not a player), try and get one.
+			if((!source || !source.player) && playeringame[0]) {
+				source = players[0].mo; // player 1 is important! ;)
+			}
+		
+			// if we have a source, angle toward it a bit.
+			float ang;
+			if(source) {
+				ang = target.AngleTo(source, true) + frandom(-10, 10);
+			} else {
+				ang = frandom(0, 360);
+			}
+
+			// pre-calculate velocity/position so we can apply 'em to all spawned nums.
 			vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
 			vector3 npos;
 		

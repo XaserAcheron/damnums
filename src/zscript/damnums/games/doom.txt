@@ -4,18 +4,38 @@
  * Doom monsters.
  */
 
+// This first monster is well-commented; the rest of the actors have this stuff
+// all one-lined for brevity's sake. Hopefully this sort of copy+paste will be
+// unnecessary in the future due to some feature or another (C-style macros?)
 class DamCacodemon : Cacodemon replaces Cacodemon
 {
-	// [XA] will likely need to add this shim for all actors, ohno :<
+	// variables are important
 	int lastHealth;
+	Name lastDamageType;
+	Actor lastDamageSource;
+	
+	// some necessary init stuff.
 	override void BeginPlay() {
 		super.BeginPlay();
 		self.lastHealth = self.health;
 	}
+	
+	// when taking damage, keep a record of the last source of damage (e.g.
+	// Who Shot Me) and the type of damage it was.
+	override int TakeSpecialDamage(Actor inflictor, Actor source, int damage, Name damagetype) {
+		self.lastDamageType = damagetype;
+		self.lastDamageSource = source;
+		return damage;
+	}
+	
+	// Each tick, check to see if we've accumulated some damage since the last
+	// time we've set lastHealth; if so, spawn some super-trendy damage numbers.
+	// Note that we can't do this in TakeSpecialDamage above because that gets
+	// called multiple times per tick and we only wish to spawn damNums once.
 	override void Tick() {
 		super.Tick();
 		if(self.health < self.lastHealth) {
-			DamNum.spawnDamageNumbers(self, self.lastHealth - self.Health, 'Default');
+			DamNum.spawnDamageNumbers(self.lastDamageSource, self, self.lastHealth - self.Health, self.lastDamageType);
 			self.lastHealth = health;
 		}
 	}
