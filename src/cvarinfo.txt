@@ -1,0 +1,1 @@
+server int dam_font = 0;

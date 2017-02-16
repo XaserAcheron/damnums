@@ -1,0 +1,1 @@
+// [TODO] create a WADINFO using the usual boilerplate.

@@ -11,7 +11,39 @@ class _FontCache : Actor
 	States
 	{
 	Spawn:
-		// Doom Modern font
+		// Classic Doom
+		NC11 A 0;
+		NC21 A 0;
+		NC22 A 0;
+		NC31 A 0;
+		NC32 A 0;
+		NC33 A 0;
+		NC41 A 0;
+		NC42 A 0;
+		NC43 A 0;
+		NC44 A 0;
+		NC51 A 0;
+		NC52 A 0;
+		NC53 A 0;
+		NC54 A 0;
+		NC55 A 0;
+		// Classic Doom (Small)
+		NS11 A 0;
+		NS21 A 0;
+		NS22 A 0;
+		NS31 A 0;
+		NS32 A 0;
+		NS33 A 0;
+		NS41 A 0;
+		NS42 A 0;
+		NS43 A 0;
+		NS44 A 0;
+		NS51 A 0;
+		NS52 A 0;
+		NS53 A 0;
+		NS54 A 0;
+		NS55 A 0;
+		// Modern Doom
 		ND11 A 0;
 		ND21 A 0;
 		ND22 A 0;

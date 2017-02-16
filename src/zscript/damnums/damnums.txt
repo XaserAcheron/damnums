@@ -2,9 +2,16 @@
  * DamNums: by Xaser Acheron
  */
 
+enum DamNum_Fonts
+{
+	DAM_FONT_CLASSIC = 0,
+	DAM_FONT_SMALL   = 1,
+	DAM_FONT_MODERN  = 2,
+};
+
 class DamNum : Actor
 {
-	int font; // [TODO] implement via enum
+	string fontPrefix;
 	int digitCount;
 	int digitPlace;
 	uint8 digitValue;
@@ -40,14 +47,14 @@ class DamNum : Actor
 	 */
 	override void PostBeginPlay()
 	{
-		// Determine which font to use.
+		// Figure out what digit we are.
 		DamNum this = DamNum(self);
 		int digitCount = (this.digitCount == 0) ? 1 : this.digitCount;
 		int digitPlace = (this.digitPlace == 0) ? 1 : this.digitPlace;
+		string fontPrefix = (this.fontPrefix == "") ? "ND" : this.fontPrefix;
 
-		// [TODO] add more fonts. Just assume the only one we have so far.
-		string fontSprite = "ND" .. digitCount .. digitPlace;
-		self.sprite = GetSpriteIndex(fontSprite);
+		// set the sprite based on the above info.
+		self.sprite = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
 		
 		// set the frame to the desired digit; since frames A-J (which is 0-9
 		// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
@@ -81,6 +88,34 @@ class DamNum : Actor
 			// multiply height by 4 if the target's dead to compensate for the reduction.
 			float targetHeight = (target.health > 0) ? target.height : (target.height * 4);
 			npos = target.pos + (0, 0, targetHeight-16);
+			
+			// figure out which font to use. This is done here so it doesn't have to
+			// be determined for every single digit.
+
+			// [XA] I may turn this into something more interesting than an ugly ol'
+			//      switch statement, but laziness prevails at present. Plus I dunno
+			//      if we can initialize a const array of structs (yet?)
+			
+			string fontPrefix;
+			float  fontScale;
+			float  fontAlpha;
+			int    fontRender;
+
+			switch(target.GetCvar('dam_font')) {
+
+				case DAM_FONT_MODERN:
+					fontPrefix = 'ND';
+					fontScale  = 1.0;
+					fontAlpha  = 1.0;
+					fontRender = STYLE_Add;
+					break;
+
+				default: // DAM_FONT_CLASSIC
+					fontPrefix = 'NC';
+					fontScale  = 0.75;
+					fontAlpha  = 0.75;
+					fontRender = STYLE_Translucent;
+			}
 		
 			// spawn in the damage number digits.
 			int dam = min(damage, DAMAGE_CAP);
@@ -93,6 +128,9 @@ class DamNum : Actor
 				if(damnum) {
 					damnum.vel = nvel;
 					damnum.angle = ang;
+					damnum.A_SetScale(fontScale, fontScale);
+					damnum.A_SetRenderStyle(fontAlpha, fontRender);
+					damnum.fontPrefix = fontPrefix;
 					damnum.digitCount = length;
 					damnum.digitPlace = place;
 					damnum.digitValue = dam % 10;
