@@ -3,7 +3,7 @@
  *
  * Font Cache class -- a simple placeholder actor that serves to load the
  * font sprites into memory in some place or another. Without this,
- * GetSpriteIndex will return junk when trying to access any of these. Weird.
+ * GetSpriteIndex will return junk when trying to access any of these.
  */
 
 class _FontCache : Actor

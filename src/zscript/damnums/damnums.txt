@@ -103,6 +103,13 @@ class DamNum : Actor
 
 			switch(target.GetCvar('dam_font')) {
 
+				case DAM_FONT_SMALL:
+					fontPrefix = 'NS';
+					fontScale  = 1.0;
+					fontAlpha  = 0.75;
+					fontRender = STYLE_Translucent;
+					break;
+
 				case DAM_FONT_MODERN:
 					fontPrefix = 'ND';
 					fontScale  = 1.0;

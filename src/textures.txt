@@ -156,6 +156,159 @@ Sprite "NC54J0", 70, 16 { Offset 35, 14 Patch "NC11J0", 14, 0 }
 Sprite "NC55J0", 70, 16 { Offset 35, 14 Patch "NC11J0",  0, 0 }
 
 /*
+ * Classic Doom font
+ */
+Sprite "NS21A0", 16, 7 { Offset  8,  5 Patch "NS11A0",  8, 0 }
+Sprite "NS22A0", 16, 7 { Offset  8,  5 Patch "NS11A0",  0, 0 }
+Sprite "NS31A0", 24, 7 { Offset 12,  5 Patch "NS11A0", 16, 0 }
+Sprite "NS32A0", 24, 7 { Offset 12,  5 Patch "NS11A0",  8, 0 }
+Sprite "NS33A0", 24, 7 { Offset 12,  5 Patch "NS11A0",  0, 0 }
+Sprite "NS41A0", 32, 7 { Offset 16,  5 Patch "NS11A0", 24, 0 }
+Sprite "NS42A0", 32, 7 { Offset 16,  5 Patch "NS11A0", 16, 0 }
+Sprite "NS43A0", 32, 7 { Offset 16,  5 Patch "NS11A0",  8, 0 }
+Sprite "NS44A0", 32, 7 { Offset 16,  5 Patch "NS11A0",  0, 0 }
+Sprite "NS51A0", 40, 7 { Offset 18,  5 Patch "NS11A0", 32, 0 }
+Sprite "NS52A0", 40, 7 { Offset 18,  5 Patch "NS11A0", 24, 0 }
+Sprite "NS53A0", 40, 7 { Offset 18,  5 Patch "NS11A0", 16, 0 }
+Sprite "NS54A0", 40, 7 { Offset 18,  5 Patch "NS11A0",  8, 0 }
+Sprite "NS55A0", 40, 7 { Offset 18,  5 Patch "NS11A0",  0, 0 }
+
+Sprite "NS21B0", 16, 7 { Offset  8,  5 Patch "NS11B0",  8, 0 }
+Sprite "NS22B0", 16, 7 { Offset  8,  5 Patch "NS11B0",  0, 0 }
+Sprite "NS31B0", 24, 7 { Offset 12,  5 Patch "NS11B0", 16, 0 }
+Sprite "NS32B0", 24, 7 { Offset 12,  5 Patch "NS11B0",  8, 0 }
+Sprite "NS33B0", 24, 7 { Offset 12,  5 Patch "NS11B0",  0, 0 }
+Sprite "NS41B0", 32, 7 { Offset 16,  5 Patch "NS11B0", 24, 0 }
+Sprite "NS42B0", 32, 7 { Offset 16,  5 Patch "NS11B0", 16, 0 }
+Sprite "NS43B0", 32, 7 { Offset 16,  5 Patch "NS11B0",  8, 0 }
+Sprite "NS44B0", 32, 7 { Offset 16,  5 Patch "NS11B0",  0, 0 }
+Sprite "NS51B0", 40, 7 { Offset 18,  5 Patch "NS11B0", 32, 0 }
+Sprite "NS52B0", 40, 7 { Offset 18,  5 Patch "NS11B0", 24, 0 }
+Sprite "NS53B0", 40, 7 { Offset 18,  5 Patch "NS11B0", 16, 0 }
+Sprite "NS54B0", 40, 7 { Offset 18,  5 Patch "NS11B0",  8, 0 }
+Sprite "NS55B0", 40, 7 { Offset 18,  5 Patch "NS11B0",  0, 0 }
+
+Sprite "NS21C0", 16, 7 { Offset  8,  5 Patch "NS11C0",  8, 0 }
+Sprite "NS22C0", 16, 7 { Offset  8,  5 Patch "NS11C0",  0, 0 }
+Sprite "NS31C0", 24, 7 { Offset 12,  5 Patch "NS11C0", 16, 0 }
+Sprite "NS32C0", 24, 7 { Offset 12,  5 Patch "NS11C0",  8, 0 }
+Sprite "NS33C0", 24, 7 { Offset 12,  5 Patch "NS11C0",  0, 0 }
+Sprite "NS41C0", 32, 7 { Offset 16,  5 Patch "NS11C0", 24, 0 }
+Sprite "NS42C0", 32, 7 { Offset 16,  5 Patch "NS11C0", 16, 0 }
+Sprite "NS43C0", 32, 7 { Offset 16,  5 Patch "NS11C0",  8, 0 }
+Sprite "NS44C0", 32, 7 { Offset 16,  5 Patch "NS11C0",  0, 0 }
+Sprite "NS51C0", 40, 7 { Offset 18,  5 Patch "NS11C0", 32, 0 }
+Sprite "NS52C0", 40, 7 { Offset 18,  5 Patch "NS11C0", 24, 0 }
+Sprite "NS53C0", 40, 7 { Offset 18,  5 Patch "NS11C0", 16, 0 }
+Sprite "NS54C0", 40, 7 { Offset 18,  5 Patch "NS11C0",  8, 0 }
+Sprite "NS55C0", 40, 7 { Offset 18,  5 Patch "NS11C0",  0, 0 }
+
+Sprite "NS21D0", 16, 7 { Offset  8,  5 Patch "NS11D0",  8, 0 }
+Sprite "NS22D0", 16, 7 { Offset  8,  5 Patch "NS11D0",  0, 0 }
+Sprite "NS31D0", 24, 7 { Offset 12,  5 Patch "NS11D0", 16, 0 }
+Sprite "NS32D0", 24, 7 { Offset 12,  5 Patch "NS11D0",  8, 0 }
+Sprite "NS33D0", 24, 7 { Offset 12,  5 Patch "NS11D0",  0, 0 }
+Sprite "NS41D0", 32, 7 { Offset 16,  5 Patch "NS11D0", 24, 0 }
+Sprite "NS42D0", 32, 7 { Offset 16,  5 Patch "NS11D0", 16, 0 }
+Sprite "NS43D0", 32, 7 { Offset 16,  5 Patch "NS11D0",  8, 0 }
+Sprite "NS44D0", 32, 7 { Offset 16,  5 Patch "NS11D0",  0, 0 }
+Sprite "NS51D0", 40, 7 { Offset 18,  5 Patch "NS11D0", 32, 0 }
+Sprite "NS52D0", 40, 7 { Offset 18,  5 Patch "NS11D0", 24, 0 }
+Sprite "NS53D0", 40, 7 { Offset 18,  5 Patch "NS11D0", 16, 0 }
+Sprite "NS54D0", 40, 7 { Offset 18,  5 Patch "NS11D0",  8, 0 }
+Sprite "NS55D0", 40, 7 { Offset 18,  5 Patch "NS11D0",  0, 0 }
+
+Sprite "NS21E0", 16, 7 { Offset  8,  5 Patch "NS11E0",  8, 0 }
+Sprite "NS22E0", 16, 7 { Offset  8,  5 Patch "NS11E0",  0, 0 }
+Sprite "NS31E0", 24, 7 { Offset 12,  5 Patch "NS11E0", 16, 0 }
+Sprite "NS32E0", 24, 7 { Offset 12,  5 Patch "NS11E0",  8, 0 }
+Sprite "NS33E0", 24, 7 { Offset 12,  5 Patch "NS11E0",  0, 0 }
+Sprite "NS41E0", 32, 7 { Offset 16,  5 Patch "NS11E0", 24, 0 }
+Sprite "NS42E0", 32, 7 { Offset 16,  5 Patch "NS11E0", 16, 0 }
+Sprite "NS43E0", 32, 7 { Offset 16,  5 Patch "NS11E0",  8, 0 }
+Sprite "NS44E0", 32, 7 { Offset 16,  5 Patch "NS11E0",  0, 0 }
+Sprite "NS51E0", 40, 7 { Offset 18,  5 Patch "NS11E0", 32, 0 }
+Sprite "NS52E0", 40, 7 { Offset 18,  5 Patch "NS11E0", 24, 0 }
+Sprite "NS53E0", 40, 7 { Offset 18,  5 Patch "NS11E0", 16, 0 }
+Sprite "NS54E0", 40, 7 { Offset 18,  5 Patch "NS11E0",  8, 0 }
+Sprite "NS55E0", 40, 7 { Offset 18,  5 Patch "NS11E0",  0, 0 }
+
+Sprite "NS21F0", 16, 7 { Offset  8,  5 Patch "NS11F0",  8, 0 }
+Sprite "NS22F0", 16, 7 { Offset  8,  5 Patch "NS11F0",  0, 0 }
+Sprite "NS31F0", 24, 7 { Offset 12,  5 Patch "NS11F0", 16, 0 }
+Sprite "NS32F0", 24, 7 { Offset 12,  5 Patch "NS11F0",  8, 0 }
+Sprite "NS33F0", 24, 7 { Offset 12,  5 Patch "NS11F0",  0, 0 }
+Sprite "NS41F0", 32, 7 { Offset 16,  5 Patch "NS11F0", 24, 0 }
+Sprite "NS42F0", 32, 7 { Offset 16,  5 Patch "NS11F0", 16, 0 }
+Sprite "NS43F0", 32, 7 { Offset 16,  5 Patch "NS11F0",  8, 0 }
+Sprite "NS44F0", 32, 7 { Offset 16,  5 Patch "NS11F0",  0, 0 }
+Sprite "NS51F0", 40, 7 { Offset 18,  5 Patch "NS11F0", 32, 0 }
+Sprite "NS52F0", 40, 7 { Offset 18,  5 Patch "NS11F0", 24, 0 }
+Sprite "NS53F0", 40, 7 { Offset 18,  5 Patch "NS11F0", 16, 0 }
+Sprite "NS54F0", 40, 7 { Offset 18,  5 Patch "NS11F0",  8, 0 }
+Sprite "NS55F0", 40, 7 { Offset 18,  5 Patch "NS11F0",  0, 0 }
+
+Sprite "NS21G0", 16, 7 { Offset  8,  5 Patch "NS11G0",  8, 0 }
+Sprite "NS22G0", 16, 7 { Offset  8,  5 Patch "NS11G0",  0, 0 }
+Sprite "NS31G0", 24, 7 { Offset 12,  5 Patch "NS11G0", 16, 0 }
+Sprite "NS32G0", 24, 7 { Offset 12,  5 Patch "NS11G0",  8, 0 }
+Sprite "NS33G0", 24, 7 { Offset 12,  5 Patch "NS11G0",  0, 0 }
+Sprite "NS41G0", 32, 7 { Offset 16,  5 Patch "NS11G0", 24, 0 }
+Sprite "NS42G0", 32, 7 { Offset 16,  5 Patch "NS11G0", 16, 0 }
+Sprite "NS43G0", 32, 7 { Offset 16,  5 Patch "NS11G0",  8, 0 }
+Sprite "NS44G0", 32, 7 { Offset 16,  5 Patch "NS11G0",  0, 0 }
+Sprite "NS51G0", 40, 7 { Offset 18,  5 Patch "NS11G0", 32, 0 }
+Sprite "NS52G0", 40, 7 { Offset 18,  5 Patch "NS11G0", 24, 0 }
+Sprite "NS53G0", 40, 7 { Offset 18,  5 Patch "NS11G0", 16, 0 }
+Sprite "NS54G0", 40, 7 { Offset 18,  5 Patch "NS11G0",  8, 0 }
+Sprite "NS55G0", 40, 7 { Offset 18,  5 Patch "NS11G0",  0, 0 }
+
+Sprite "NS21H0", 16, 7 { Offset  8,  5 Patch "NS11H0",  8, 0 }
+Sprite "NS22H0", 16, 7 { Offset  8,  5 Patch "NS11H0",  0, 0 }
+Sprite "NS31H0", 24, 7 { Offset 12,  5 Patch "NS11H0", 16, 0 }
+Sprite "NS32H0", 24, 7 { Offset 12,  5 Patch "NS11H0",  8, 0 }
+Sprite "NS33H0", 24, 7 { Offset 12,  5 Patch "NS11H0",  0, 0 }
+Sprite "NS41H0", 32, 7 { Offset 16,  5 Patch "NS11H0", 24, 0 }
+Sprite "NS42H0", 32, 7 { Offset 16,  5 Patch "NS11H0", 16, 0 }
+Sprite "NS43H0", 32, 7 { Offset 16,  5 Patch "NS11H0",  8, 0 }
+Sprite "NS44H0", 32, 7 { Offset 16,  5 Patch "NS11H0",  0, 0 }
+Sprite "NS51H0", 40, 7 { Offset 18,  5 Patch "NS11H0", 32, 0 }
+Sprite "NS52H0", 40, 7 { Offset 18,  5 Patch "NS11H0", 24, 0 }
+Sprite "NS53H0", 40, 7 { Offset 18,  5 Patch "NS11H0", 16, 0 }
+Sprite "NS54H0", 40, 7 { Offset 18,  5 Patch "NS11H0",  8, 0 }
+Sprite "NS55H0", 40, 7 { Offset 18,  5 Patch "NS11H0",  0, 0 }
+
+Sprite "NS21I0", 16, 7 { Offset  8,  5 Patch "NS11I0",  8, 0 }
+Sprite "NS22I0", 16, 7 { Offset  8,  5 Patch "NS11I0",  0, 0 }
+Sprite "NS31I0", 24, 7 { Offset 12,  5 Patch "NS11I0", 16, 0 }
+Sprite "NS32I0", 24, 7 { Offset 12,  5 Patch "NS11I0",  8, 0 }
+Sprite "NS33I0", 24, 7 { Offset 12,  5 Patch "NS11I0",  0, 0 }
+Sprite "NS41I0", 32, 7 { Offset 16,  5 Patch "NS11I0", 24, 0 }
+Sprite "NS42I0", 32, 7 { Offset 16,  5 Patch "NS11I0", 16, 0 }
+Sprite "NS43I0", 32, 7 { Offset 16,  5 Patch "NS11I0",  8, 0 }
+Sprite "NS44I0", 32, 7 { Offset 16,  5 Patch "NS11I0",  0, 0 }
+Sprite "NS51I0", 40, 7 { Offset 18,  5 Patch "NS11I0", 32, 0 }
+Sprite "NS52I0", 40, 7 { Offset 18,  5 Patch "NS11I0", 24, 0 }
+Sprite "NS53I0", 40, 7 { Offset 18,  5 Patch "NS11I0", 16, 0 }
+Sprite "NS54I0", 40, 7 { Offset 18,  5 Patch "NS11I0",  8, 0 }
+Sprite "NS55I0", 40, 7 { Offset 18,  5 Patch "NS11I0",  0, 0 }
+
+Sprite "NS21J0", 16, 7 { Offset  8,  5 Patch "NS11J0",  8, 0 }
+Sprite "NS22J0", 16, 7 { Offset  8,  5 Patch "NS11J0",  0, 0 }
+Sprite "NS31J0", 24, 7 { Offset 12,  5 Patch "NS11J0", 16, 0 }
+Sprite "NS32J0", 24, 7 { Offset 12,  5 Patch "NS11J0",  8, 0 }
+Sprite "NS33J0", 24, 7 { Offset 12,  5 Patch "NS11J0",  0, 0 }
+Sprite "NS41J0", 32, 7 { Offset 16,  5 Patch "NS11J0", 24, 0 }
+Sprite "NS42J0", 32, 7 { Offset 16,  5 Patch "NS11J0", 16, 0 }
+Sprite "NS43J0", 32, 7 { Offset 16,  5 Patch "NS11J0",  8, 0 }
+Sprite "NS44J0", 32, 7 { Offset 16,  5 Patch "NS11J0",  0, 0 }
+Sprite "NS51J0", 40, 7 { Offset 18,  5 Patch "NS11J0", 32, 0 }
+Sprite "NS52J0", 40, 7 { Offset 18,  5 Patch "NS11J0", 24, 0 }
+Sprite "NS53J0", 40, 7 { Offset 18,  5 Patch "NS11J0", 16, 0 }
+Sprite "NS54J0", 40, 7 { Offset 18,  5 Patch "NS11J0",  8, 0 }
+Sprite "NS55J0", 40, 7 { Offset 18,  5 Patch "NS11J0",  0, 0 }
+
+/*
  * Modern Doom font
  */
 Sprite "ND21A0", 22, 13 { Offset 11, 11 Patch "ND11A0", 11, 0 }
