@@ -2,13 +2,6 @@
  * DamNums: by Xaser Acheron
  */
 
-enum DamNum_Fonts
-{
-	DAM_FONT_CLASSIC = 0,
-	DAM_FONT_SMALL   = 1,
-	DAM_FONT_MODERN  = 2,
-};
-
 class DamNum : Actor
 {
 	string fontPrefix;
@@ -67,6 +60,34 @@ class DamNum : Actor
 	 * Spawn damage numbers. Does what it says on the tin.
 	 */
 	static int spawnDamageNumbers(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default') {
+	
+		// [TODO] move this to the constants file when it's possible.
+
+		static const String DamTranslations[] =
+		{	 "DamBrick"
+		,	 "DamTan"
+		,	 "DamGray"
+		,	 "DamGreen"
+		,	 "DamBrown"
+		,	 "DamGold"
+		,	 "DamRed"
+		,	 "DamBlue"
+		,	 "DamOrange"
+		,	 "DamWhite"
+		,	 "DamYellow"
+		,	 "DamDefault"
+		,	 "DamBlack"
+		,	 "DamLightBlue"
+		,	 "DamCream"
+		,	 "DamOlive"
+		,	 "DamDarkGreen"
+		,	 "DamDarkRed"
+		,	 "DamDarkBrown"
+		,	 "DamPurple"
+		,	 "DamDarkGray"
+		,	 "DamCyan"
+		};
+		int DamTranslationCount = 22; // [TODO] this better
 
 		if(target) {
 		
@@ -130,7 +151,12 @@ class DamNum : Actor
 					fontRender = STYLE_Translucent;
 			}
 			
-			// [TODO] user translations
+			// check to see if the user is opting for a particular
+			// color choice. If so, use it.
+			int userColor = target.GetCvar("dam_color");
+			if(userColor >= 0 && userColor < DamTranslationCount) {
+				fontTrans = DamTranslations[userColor];
+			}
 		
 			// spawn in the damage number digits.
 			int dam = min(damage, DAMAGE_CAP);
