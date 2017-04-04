@@ -188,4 +188,24 @@ class DamNum : Actor
 		// return the damage, for easy chaining.
 		return damage;
 	}
+
+	/*
+	 * Accumulate damage. This sneakily uses an inventory item to track the
+	 * amount of damage done in a single tic, then spawn a single damage number
+	 * once the tic has passed. This allows shotgun-type weapons to spawn a
+	 * single damage number rather than an unreadable spray (though the "spray"
+	 * behavior is exposed via a cvar in case folks find that amusing).
+	 */
+	static DamNumAccumulator accumulateDamage(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default') {
+		DamNumAccumulator accumulator = null;
+		if(target) {
+			accumulator = DamNumAccumulator(target.FindInventory('DamNumAccumulator'));
+			if(!accumulator) {
+				target.A_GiveInventory('DamNumAccumulator', 1);
+				accumulator = DamNumAccumulator(target.FindInventory('DamNumAccumulator'));
+			}
+			accumulator.accumulateDamage(source, damage, damagetype);
+		}
+		return accumulator;
+	}
 }

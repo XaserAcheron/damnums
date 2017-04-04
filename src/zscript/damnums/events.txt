@@ -6,15 +6,43 @@
 
 class DamNumEventHandler : StaticEventHandler
 {
+	Array<DamNumAccumulator> accumulators;
+
 	/*
 	 * Universal DamNum spawner. If it's a monster, throw some nums!
-	 *
-	 * [TODO] add accumulator logic to prevent "shotgun spray"
 	 */
 	override void WorldThingDamaged(WorldEvent e)
 	{
-		if(e.thing && e.Thing.bISMONSTER && e.DamageSource) {
-			DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
+		if(e.thing && e.Thing.bISMONSTER && e.DamageSource)
+		{
+			// Just spawn the numbers directly in "shotgun spray" mode;
+			// otherwise, fire up the accumulator.
+			if(dam_spray) {
+				DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
+			} else {
+				let accumulator = DamNum.accumulateDamage(e.DamageSource, e.Thing, e.Damage, e.DamageType);
+				if(accumulator) {
+					self.accumulators.Push(accumulator);
+				}
+			}
+		}
+	}
+	
+	/*
+	 * Universal DamNum accumulator release valve. It does stuff.
+	 */
+	override void WorldTick()
+	{
+		// if we've got a few things in our "to damage" array, do it.
+		int size = self.accumulators.Size();
+		if(size) {
+			for(int i = 0; i < size; i++) {
+				let accumulator = self.accumulators[i];
+				if(accumulator) {
+					accumulator.releaseDamage();
+				}
+			}
+			self.accumulators.Clear();
 		}
 	}
 }

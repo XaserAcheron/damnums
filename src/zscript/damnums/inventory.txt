@@ -1,0 +1,31 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Inventory Hackage. Basically just the Accumulator class, because yes.
+ */
+
+class DamNumAccumulator : Inventory
+{
+	Actor source     ;
+	int   totalDamage;
+	Name  damageType ;
+	
+	/*
+	 * Accumulate damage... i.e. exactly what the function says. Welp.
+	 */
+	action void accumulateDamage(Actor source, int damage, Name damageType) {
+		invoker.totalDamage += damage;
+	
+		// Just set the source n' damageType to whatever the last one was.
+		invoker.source     = source    ;
+		invoker.damageType = damageType;
+	}
+	
+	/*
+	 * Spawn damage numbers for what's been accumulated and remove oneself.
+	 */
+	action void releaseDamage() {
+		DamNum.spawnDamageNumbers(invoker.source, invoker.owner, invoker.totalDamage, invoker.damageType);
+		invoker.owner.A_TakeInventory('DamNumAccumulator');
+	}
+}
