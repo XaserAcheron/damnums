@@ -6,7 +6,7 @@
  * GetSpriteIndex will return junk when trying to access any of these.
  */
 
-class _FontCache : Actor
+class DamNumFontCache : Actor
 {
 	States
 	{

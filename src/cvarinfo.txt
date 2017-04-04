@@ -1,2 +1,3 @@
 server int dam_font  =  0;
 server int dam_color = -1;
+server int dam_spray =  0;

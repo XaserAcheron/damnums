@@ -4,7 +4,7 @@
  * Events. 'Nuff said.
  */
 
-class DamnumEventHandler : StaticEventHandler
+class DamNumEventHandler : StaticEventHandler
 {
 	/*
 	 * Universal DamNum spawner. If it's a monster, throw some nums!

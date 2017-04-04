@@ -63,6 +63,7 @@ OptionMenu "DamNumsOptions"
 	Title       "DamNums Options"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
-	Option      "Font" , "dam_font" , "DamFonts"
-	Option      "Color", "dam_color", "DamColors"
+	Option      "Font"         , "dam_font" , "DamFonts"
+	Option      "Color"        , "dam_color", "DamColors"
+	Option      "Shotgun Spray", "dam_spray", "YesNo"
 }
