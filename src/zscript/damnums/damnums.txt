@@ -161,7 +161,7 @@ class DamNum : Actor
 			// spawn in the damage number digits.
 			int dam = min(damage, DAMAGE_CAP);
 			int place = 1;
-			int length = log10(damage) + 1;
+			int length = log10(dam) + 1;
 			while(dam > 0) {
 				let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
 			

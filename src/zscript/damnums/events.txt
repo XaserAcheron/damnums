@@ -1,0 +1,20 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Events. 'Nuff said.
+ */
+
+class DamnumEventHandler : StaticEventHandler
+{
+	/*
+	 * Universal DamNum spawner. If it's a monster, throw some nums!
+	 *
+	 * [TODO] add accumulator logic to prevent "shotgun spray"
+	 */
+	override void WorldThingDamaged(WorldEvent e)
+	{
+		if(e.thing && e.Thing.bISMONSTER && e.DamageSource) {
+			DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
+		}
+	}
+}

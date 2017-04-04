@@ -1,0 +1,3 @@
+gameinfo {
+	AddEventHandlers = "DamnumEventHandler"
+}
