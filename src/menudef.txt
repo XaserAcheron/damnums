@@ -32,7 +32,7 @@ OptionValue "DamFonts"
 
 OptionValue "DamColors"
 {
-	-1, "Default"
+	-1, "$C_DEFAULT" // [XA] bumped from slot 11 to here.
 	 0, "$C_BRICK"
 	 1, "$C_TAN"
 	 2, "$C_GRAY"
@@ -44,7 +44,6 @@ OptionValue "DamColors"
 	 8, "$C_ORANGE"
 	 9, "$C_WHITE"
 	10, "$C_YELLOW"
-	11, "$C_DEFAULT"
 	12, "$C_BLACK"
 	13, "$C_LIGHTBLUE"
 	14, "$C_CREAM"
