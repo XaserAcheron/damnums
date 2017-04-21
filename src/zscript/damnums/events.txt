@@ -6,43 +6,125 @@
 
 class DamNumEventHandler : StaticEventHandler
 {
-	Array<DamNumAccumulator> accumulators;
-
 	/*
 	 * Universal DamNum spawner. If it's a monster, throw some nums!
 	 */
+	
 	override void WorldThingDamaged(WorldEvent e)
 	{
-		if(e.thing && e.Thing.bISMONSTER && e.DamageSource)
+		if (dam_enabled && e.thing && e.Thing.bISMONSTER && e.DamageSource)
 		{
 			// Just spawn the numbers directly in "shotgun spray" mode;
 			// otherwise, fire up the accumulator.
-			if(dam_spray) {
-				DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
-			} else {
-				let accumulator = DamNum.accumulateDamage(e.DamageSource, e.Thing, e.Damage, e.DamageType);
-				if(accumulator) {
-					self.accumulators.Push(accumulator);
-				}
+			let dni = DamNumInv(e.Thing.FindInventory("DamNumInv"));
+			if (dni)
+			{
+				let tdk = dni.dk;
+				if (tdk && tdk.thing)
+					tdk.position = tdk.thing.pos + (0,0,tdk.thing.height);
 			}
-		}
+			if (dam_spray) 
+			{
+				DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
+			}
+		}	
 	}
 	
-	/*
-	 * Universal DamNum accumulator release valve. It does stuff.
-	 */
-	override void WorldTick()
+	override void WorldThingSpawned(WorldEvent e)
 	{
-		// if we've got a few things in our "to damage" array, do it.
-		int size = self.accumulators.Size();
-		if(size) {
-			for(int i = 0; i < size; i++) {
-				let accumulator = self.accumulators[i];
-				if(accumulator) {
-					accumulator.releaseDamage();
-				}
-			}
-			self.accumulators.Clear();
+		if (e.Thing && e.Thing.bISMONSTER)
+		{
+			// Create a damage keeper for the monster.
+			DamageKeeper dk = new("DamageKeeper");
+			dk.thing = e.Thing;
+			dk.position = e.Thing.pos;
+			e.thing.A_SetInventory("DamNumInv",1);
+			
+			// Give it the inventory so when the monster dies, it can properly
+			// release the damage numbers without needing to do anything special
+			// in the event the monster disappears immediately afterwards.
+			let dni = DamNumInv(e.Thing.FindInventory("DamNumInv"));
+			if (dni)
+				dni.dk = dk;
+			
 		}
+	}
+}
+
+// The inventory actor. The only thing this needs to track is damage keeper.
+// The OwnerDied function is called by the monster itself, which is handy.
+// The inventory will take care of removing the thinker when finished.
+class DamNumInv : Inventory
+{
+	DamageKeeper dk;
+	
+	override void OwnerDied()
+	{
+		if (dk) 
+		{
+			if (dam_enabled)
+			{
+				if (dk.thing)
+				{
+					dk.position = dk.thing.pos + (0,0,dk.thing.height - 16);
+					dk.totalDamage = dk.curHealth - dk.thing.health;
+				}
+				dk.UnleashTheNumbers(true);
+			}
+			else
+				dk.Destroy();
+		}
+	}
+}
+
+// Thinkers are considerably lighter than actors, which makes them ideal for
+// attaching to actors. They do no special processing -- only what's done in
+// the tick functions, etc.
+class DamageKeeper : Thinker
+{
+	Vector3 position;
+	Actor thing;
+	Actor source;
+	uint totalDamage;
+	Name damageType;
+	int curHealth;
+	
+	override void PostBeginPlay()
+	{
+		// For those unaware, when something is created and immediately modified,
+		// it's all done before the PostBeginPlay function is called. As seen
+		// in WorldThingSpawned, the modifications (assigning thing, etc)
+		// are performed within the same code block, allowing this to work.
+		
+		if (!thing || thing.health < 1)
+			return Destroy();
+			
+		position = thing.pos + (0, 0, thing.height);
+		curHealth = thing.health;
+		
+		Super.PostBeginPlay();
+	}
+	
+	
+	override void Tick()
+	{
+		if (dam_enabled && !dam_spray && thing)
+		{
+			if (thing.health < curHealth)
+			{
+				totalDamage = curHealth - thing.health;
+				DamNum.spawnDamageNumbers(source, thing, totalDamage, damageType, true, position);
+				curHealth = thing.health;
+			}
+		}
+		
+		Super.Tick();
+	}
+	
+	void UnleashTheNumbers(bool usePos)
+	{
+		if (dam_enabled)	
+			DamNum.spawnDamageNumbers(source, thing, totalDamage, damageType, usePos, position);
+		return Destroy();
 	}
 }
