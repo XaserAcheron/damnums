@@ -21,7 +21,10 @@ class DamNumEventHandler : StaticEventHandler
 			{
 				let tdk = dni.dk;
 				if (tdk && tdk.thing)
+				{
 					tdk.position = tdk.thing.pos + (0,0,tdk.thing.height);
+					tdk.DamageType = e.DamageType;
+				}
 			}
 			if (dam_spray) 
 			{
@@ -35,7 +38,7 @@ class DamNumEventHandler : StaticEventHandler
 		if (e.Thing && e.Thing.bISMONSTER)
 		{
 			// Create a damage keeper for the monster.
-			DamageKeeper dk = new("DamageKeeper");
+			DamNumKeeper dk = new("DamNumKeeper");
 			dk.thing = e.Thing;
 			dk.position = e.Thing.pos;
 			e.thing.A_SetInventory("DamNumInv",1);
@@ -56,7 +59,7 @@ class DamNumEventHandler : StaticEventHandler
 // The inventory will take care of removing the thinker when finished.
 class DamNumInv : Inventory
 {
-	DamageKeeper dk;
+	DamNumKeeper dk;
 	
 	override void OwnerDied()
 	{
@@ -80,7 +83,7 @@ class DamNumInv : Inventory
 // Thinkers are considerably lighter than actors, which makes them ideal for
 // attaching to actors. They do no special processing -- only what's done in
 // the tick functions, etc.
-class DamageKeeper : Thinker
+class DamNumKeeper : Thinker
 {
 	Vector3 position;
 	Actor thing;
