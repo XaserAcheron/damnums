@@ -12,7 +12,7 @@ class DamNumEventHandler : StaticEventHandler
 	 */
 	override void WorldThingDamaged(WorldEvent e)
 	{
-		if (dam_enabled && e.thing && e.Thing.bISMONSTER && dam_spray)
+		if (dam_enabled && e.thing && e.Thing.bISMONSTER && dam_spray && e.DamageType != 'Massacre')
 		{
 			// Since WorldThingDamaged is (oddly) called after the actor's officially dead,
 			// we need to account for the case where the actor's height has been quartered.
@@ -132,7 +132,7 @@ class DamNumKeeper : Thinker
 	 */
 	void SpawnNumbers()
 	{
-		if (dam_enabled && !dam_spray && self.thing)
+		if (dam_enabled && !dam_spray && self.thing && self.thing.DamageTypeReceived != 'Massacre')
 		{
 			Vector3 position = self.thing.pos + (0, 0, self.thing.height - 16);
 			self.totalDamage = self.curHealth - self.thing.health;
