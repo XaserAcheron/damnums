@@ -7,32 +7,14 @@
 class DamNumEventHandler : StaticEventHandler
 {
 	/*
-	 * Universal DamNum spawner. If it's a monster, throw some nums!
+	 * Original DamNum spawner, for "shotgun spray" mode. Everything else
+	 * is handled by the keeper now.
 	 */
 	override void WorldThingDamaged(WorldEvent e)
 	{
-		if (dam_enabled && e.thing && e.Thing.bISMONSTER && e.DamageSource)
+		if (dam_enabled && e.thing && e.Thing.bISMONSTER && dam_spray)
 		{
-			// Just spawn the numbers directly in "shotgun spray" mode;
-			// otherwise, let the keeper do its magic.
-			if (dam_spray) 
-			{
-				DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
-			}
-			else
-			{
-				// Update the keeper's source here, since this is
-				// the only event that has access to this info.
-				let courier = DamNumCourier(e.Thing.FindInventory("DamNumCourier"));
-				if (courier)
-				{
-					let keeper = courier.keeper;
-					if (keeper && keeper.thing)
-					{
-						keeper.source = e.DamageSource;
-					}
-				}
-			}
+			DamNum.spawnDamageNumbers(e.Thing, e.Damage, e.DamageType);
 		}
 	}
 
@@ -97,7 +79,6 @@ class DamNumCourier : Inventory
 class DamNumKeeper : Thinker
 {
 	Actor thing;
-	Actor source;
 	uint totalDamage;
 	int curHealth;
 
@@ -151,7 +132,7 @@ class DamNumKeeper : Thinker
 		{
 			Vector3 position = self.thing.pos + (0, 0, self.thing.height - 16);
 			self.totalDamage = self.curHealth - self.thing.health;
-			DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.thing.DamageTypeReceived, true, position);
+			DamNum.spawnDamageNumbers(self.thing, self.totalDamage, self.thing.DamageTypeReceived, true, position);
 		}
 	}
 
