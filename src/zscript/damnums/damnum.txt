@@ -27,12 +27,21 @@ class DamNum : Actor
 		+NOBLOCKMONST;
 		+THRUACTORS;
 		+BRIGHT
+		+NOINTERACTION
+		+NOTONAUTOMAP
 	}
 	States
 	{
 	Spawn:
-		#### # 10 Bright;
-		#### # 1 Bright A_FadeOut(FADE_AMT, 1);
+		#### ########## 1 Bright
+		{
+			vel.z -= Gravity;
+		}
+		#### # 1 Bright 
+		{
+			A_FadeOut(FADE_AMT, 1);
+			vel.z -= Gravity;
+		}
 		Wait;
 	}
 	
