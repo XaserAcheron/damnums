@@ -23,26 +23,20 @@ class DamNumEventHandler : StaticEventHandler
 	}
 
 	/*
-	 * Setup function for actors. Creates a Keeper & Courier pair for monsters
-	 * and handles all the relevant setup.
+	 * Create Keeper+Courier on thing spawn and revive.
 	 */
 	override void WorldThingSpawned(WorldEvent e)
 	{
 		if (e.Thing && e.Thing.bISMONSTER)
 		{
-			// Create a Keeper for the monster.
-			DamNumKeeper keeper = new("DamNumKeeper");
-			keeper.thing = e.Thing;
-
-			// Create and gift a Courier to the monster, Give it the inventory so when the monster dies, it can properly
-			// release the damage numbers without needing to do anything special
-			// in the event the monster disappears immediately afterwards.
-			e.Thing.A_SetInventory("DamNumCourier",1);
-			let courier = DamNumCourier(e.Thing.FindInventory("DamNumCourier"));
-			if (courier)
-			{
-				courier.keeper = keeper;
-			}
+			DamNumCourier.Create(e.thing);
+		}
+	}
+	override void WorldThingRevived(WorldEvent e)
+	{
+		if (e.Thing && e.Thing.bISMONSTER)
+		{
+			DamNumCourier.Create(e.thing);
 		}
 	}
 }
@@ -56,6 +50,29 @@ class DamNumEventHandler : StaticEventHandler
 class DamNumCourier : Inventory
 {
 	DamNumKeeper keeper;
+	
+	/*
+	 * Create & set up a Keeper and Courier pair for the specified actor. 
+	 */
+	static void Create(Actor thing)
+	{
+		if (thing)
+		{
+			// Create a Keeper for the monster.
+			DamNumKeeper keeper = new("DamNumKeeper");
+			keeper.thing = thing;
+
+			// Create and gift a Courier to the monster, Give it the inventory so when the monster dies, it can properly
+			// release the damage numbers without needing to do anything special
+			// in the event the monster disappears immediately afterwards.
+			thing.A_SetInventory("DamNumCourier",1);
+			let courier = DamNumCourier(thing.FindInventory("DamNumCourier"));
+			if (courier)
+			{
+				courier.keeper = keeper;
+			}
+		}
+	}
 
 	/*
 	 * Upon owner death, spawn the last round of numbers. This is necessary to
@@ -114,14 +131,23 @@ class DamNumKeeper : Thinker
 	 */
 	override void Tick()
 	{
-		if (dam_enabled && !dam_spray && self.thing)
+		if (self.thing)
 		{
-			if (self.thing.health < self.curHealth)
+			if (dam_enabled && !dam_spray)
 			{
-				self.SpawnNumbers();
-				self.curHealth = self.thing.health;
-			}
+				if (self.thing.health < self.curHealth)
+				{
+					self.SpawnNumbers();
+					self.curHealth = self.thing.health;
+				}
 			// [XA] if I ever add "healing" support, that goes here.
+			}
+		}
+		else
+		{
+			// clean up after oneself just in case an actor gets
+			// Thing_Remove'd or similar.
+			self.Destroy();
 		}
 		Super.Tick();
 	}
