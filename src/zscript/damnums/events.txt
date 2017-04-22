@@ -21,7 +21,7 @@ class DamNumEventHandler : StaticEventHandler
 			}
 			else
 			{
-				// Update the keeper's damagetype, and source here, since this is
+				// Update the keeper's source here, since this is
 				// the only event that has access to this info.
 				let courier = DamNumCourier(e.Thing.FindInventory("DamNumCourier"));
 				if (courier)
@@ -29,8 +29,6 @@ class DamNumEventHandler : StaticEventHandler
 					let keeper = courier.keeper;
 					if (keeper && keeper.thing)
 					{
-						keeper.position = keeper.thing.pos + (0, 0, keeper.thing.height - 16);
-						keeper.damageType = e.DamageType;
 						keeper.source = e.DamageSource;
 					}
 				}
@@ -98,11 +96,9 @@ class DamNumCourier : Inventory
  */
 class DamNumKeeper : Thinker
 {
-	Vector3 position; // last position of the Keeper; used in case the thing vanishes.
 	Actor thing;
 	Actor source;
 	uint totalDamage;
-	Name damageType;
 	int curHealth;
 
 	/*
@@ -123,7 +119,6 @@ class DamNumKeeper : Thinker
 			return self.Destroy();
 		}
 
-		self.position = thing.pos + (0, 0, thing.height - 16);
 		self.curHealth = thing.health;
 
 		Super.PostBeginPlay();
@@ -138,13 +133,26 @@ class DamNumKeeper : Thinker
 		{
 			if (self.thing.health < self.curHealth)
 			{
-				self.totalDamage = self.curHealth - self.thing.health;
-				DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.damageType, true, self.position);
+				self.SpawnNumbers();
 				self.curHealth = self.thing.health;
 			}
 			// [XA] if I ever add "healing" support, that goes here.
 		}
 		Super.Tick();
+	}
+
+	/*
+	 * Do the actual number spawn. There's a bit of calculation and checking
+	 * that's common to all Keeper spawns, so it's done here for convenience.
+	 */
+	void SpawnNumbers()
+	{
+		if (dam_enabled && !dam_spray && self.thing)
+		{
+			Vector3 position = self.thing.pos + (0, 0, self.thing.height - 16);
+			self.totalDamage = self.curHealth - self.thing.health;
+			DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.thing.DamageTypeReceived, true, position);
+		}
 	}
 
 	/*
@@ -155,12 +163,7 @@ class DamNumKeeper : Thinker
 	 */
 	void SpawnAndDestroy()
 	{
-		if (dam_enabled && !dam_spray && self.thing)
-		{
-			self.position = self.thing.pos + (0, 0, self.thing.height - 16);
-			self.totalDamage = self.curHealth - self.thing.health;
-			DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.damageType, true, self.position);
-		}
+		self.SpawnNumbers();
 		self.Destroy();
 	}
 }
