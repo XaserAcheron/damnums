@@ -9,125 +9,158 @@ class DamNumEventHandler : StaticEventHandler
 	/*
 	 * Universal DamNum spawner. If it's a monster, throw some nums!
 	 */
-	
 	override void WorldThingDamaged(WorldEvent e)
 	{
 		if (dam_enabled && e.thing && e.Thing.bISMONSTER && e.DamageSource)
 		{
 			// Just spawn the numbers directly in "shotgun spray" mode;
-			// otherwise, fire up the accumulator.
-			let dni = DamNumInv(e.Thing.FindInventory("DamNumInv"));
-			if (dni)
-			{
-				let tdk = dni.dk;
-				if (tdk && tdk.thing)
-				{
-					tdk.position = tdk.thing.pos + (0,0,tdk.thing.height);
-					tdk.DamageType = e.DamageType;
-				}
-			}
+			// otherwise, let the keeper do its magic.
 			if (dam_spray) 
 			{
 				DamNum.spawnDamageNumbers(e.DamageSource, e.Thing, e.Damage, e.DamageType);
 			}
-		}	
+			else
+			{
+				// Update the keeper's damagetype, and source here, since this is
+				// the only event that has access to this info.
+				let courier = DamNumCourier(e.Thing.FindInventory("DamNumCourier"));
+				if (courier)
+				{
+					let keeper = courier.keeper;
+					if (keeper && keeper.thing)
+					{
+						keeper.position = keeper.thing.pos + (0, 0, keeper.thing.height - 16);
+						keeper.damageType = e.DamageType;
+						keeper.source = e.DamageSource;
+					}
+				}
+			}
+		}
 	}
-	
+
+	/*
+	 * Setup function for actors. Creates a Keeper & Courier pair for monsters
+	 * and handles all the relevant setup.
+	 */
 	override void WorldThingSpawned(WorldEvent e)
 	{
 		if (e.Thing && e.Thing.bISMONSTER)
 		{
-			// Create a damage keeper for the monster.
-			DamNumKeeper dk = new("DamNumKeeper");
-			dk.thing = e.Thing;
-			dk.position = e.Thing.pos;
-			e.thing.A_SetInventory("DamNumInv",1);
-			
-			// Give it the inventory so when the monster dies, it can properly
+			// Create a Keeper for the monster.
+			DamNumKeeper keeper = new("DamNumKeeper");
+			keeper.thing = e.Thing;
+
+			// Create and gift a Courier to the monster, Give it the inventory so when the monster dies, it can properly
 			// release the damage numbers without needing to do anything special
 			// in the event the monster disappears immediately afterwards.
-			let dni = DamNumInv(e.Thing.FindInventory("DamNumInv"));
-			if (dni)
-				dni.dk = dk;
-			
+			e.Thing.A_SetInventory("DamNumCourier",1);
+			let courier = DamNumCourier(e.Thing.FindInventory("DamNumCourier"));
+			if (courier)
+			{
+				courier.keeper = keeper;
+			}
 		}
 	}
 }
 
-// The inventory actor. The only thing this needs to track is damage keeper.
-// The OwnerDied function is called by the monster itself, which is handy.
-// The inventory will take care of removing the thinker when finished.
-class DamNumInv : Inventory
+/*
+ * The Courier. This serves as a link between the Keeper and the tracked
+ * monster, allowing the latter to communicate with the former (since we can't
+ * actually modify the monster definitions to contain an actor pointer to the
+ * keeper directly).
+ */
+class DamNumCourier : Inventory
 {
-	DamNumKeeper dk;
-	
+	DamNumKeeper keeper;
+
+	/*
+	 * Upon owner death, spawn the last round of numbers. This is necessary to
+	 * cover the case where an actor is removed immediately upon death. 
+	 *
+	 * [MC] The OwnerDied function is called by the monster itself, which is handy.
+	 */
 	override void OwnerDied()
 	{
-		if (dk) 
+		if (self.keeper) 
 		{
-			if (dam_enabled)
-			{
-				if (dk.thing)
-				{
-					dk.position = dk.thing.pos + (0,0,dk.thing.height - 16);
-					dk.totalDamage = dk.curHealth - dk.thing.health;
-				}
-				dk.UnleashTheNumbers(true);
-			}
-			else
-				dk.Destroy();
+			self.keeper.SpawnAndDestroy();
 		}
 	}
 }
 
-// Thinkers are considerably lighter than actors, which makes them ideal for
-// attaching to actors. They do no special processing -- only what's done in
-// the tick functions, etc.
+/*
+ * The Keeper. Observes an actor, tracks damage changes over the course of a tic,
+ * and spawns damage numbers once the tic is complete.
+ *
+ * [MC] Thinkers are considerably lighter than actors, which makes them ideal for
+ *      attaching to actors. They do no special processing -- only what's done in
+ *      the tick functions, etc.
+ */
 class DamNumKeeper : Thinker
 {
-	Vector3 position;
+	Vector3 position; // last position of the Keeper; used in case the thing vanishes.
 	Actor thing;
 	Actor source;
 	uint totalDamage;
 	Name damageType;
 	int curHealth;
-	
+
+	/*
+	 * Initialize the keeper.
+	 *
+	 * [MC] For those unaware, when something is created and immediately modified,
+	 *      it's all done before the PostBeginPlay function is called. As seen
+	 *      in WorldThingSpawned, the modifications (assigning thing, etc)
+	 *      are performed within the same code block, allowing this to work.
+	 */
 	override void PostBeginPlay()
 	{
-		// For those unaware, when something is created and immediately modified,
-		// it's all done before the PostBeginPlay function is called. As seen
-		// in WorldThingSpawned, the modifications (assigning thing, etc)
-		// are performed within the same code block, allowing this to work.
-		
+		// Don't spawn a keeper if our tracked thing is gone or already dead.
+		// This stops numbers from spawning for PE-spawned Lost Souls that die
+		// instantly due to being in a wall. Was amusing, but unintentional. :P
 		if (!thing || thing.health < 1)
-			return Destroy();
-			
-		position = thing.pos + (0, 0, thing.height);
-		curHealth = thing.health;
-		
+		{
+			return self.Destroy();
+		}
+
+		self.position = thing.pos + (0, 0, thing.height - 16);
+		self.curHealth = thing.health;
+
 		Super.PostBeginPlay();
 	}
-	
-	
+
+	/*
+	 * Track damage and spawn stuff while the actor is alive.
+	 */
 	override void Tick()
 	{
-		if (dam_enabled && !dam_spray && thing)
+		if (dam_enabled && !dam_spray && self.thing)
 		{
-			if (thing.health < curHealth)
+			if (self.thing.health < self.curHealth)
 			{
-				totalDamage = curHealth - thing.health;
-				DamNum.spawnDamageNumbers(source, thing, totalDamage, damageType, true, position);
-				curHealth = thing.health;
+				self.totalDamage = self.curHealth - self.thing.health;
+				DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.damageType, true, self.position);
+				self.curHealth = self.thing.health;
 			}
+			// [XA] if I ever add "healing" support, that goes here.
 		}
-		
 		Super.Tick();
 	}
-	
-	void UnleashTheNumbers(bool usePos)
+
+	/*
+	 * Does what it says on the tin. Spawns the final round of numbers, then goes "poof".
+	 * This seems redundant with Tick(), but there are cases where an actor can
+	 * die and be removed before the keeper's Tick() gets called (i.e. D4D's gib deaths),
+	 * so we handle actor death as a specific case.
+	 */
+	void SpawnAndDestroy()
 	{
-		if (dam_enabled)	
-			DamNum.spawnDamageNumbers(source, thing, totalDamage, damageType, usePos, position);
-		return Destroy();
+		if (dam_enabled && !dam_spray && self.thing)
+		{
+			self.position = self.thing.pos + (0, 0, self.thing.height - 16);
+			self.totalDamage = self.curHealth - self.thing.health;
+			DamNum.spawnDamageNumbers(self.source, self.thing, self.totalDamage, self.damageType, true, self.position);
+		}
+		self.Destroy();
 	}
 }

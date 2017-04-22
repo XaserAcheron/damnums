@@ -11,6 +11,12 @@ OptionValue "DamFonts"
 	2, "Modern Doom"
 }
 
+OptionValue "DamEnabled"
+{
+	0, "Disabled"
+	1, "Enabled"
+}
+
 OptionValue "DamColors"
 {
 	-1, "$C_DEFAULT" // [XA] bumped from slot 11 to here.
@@ -41,7 +47,7 @@ OptionMenu "DamNumsOptions"
 {
 	Position -15
 	Title       "DamNums Options"
-	Option		"DamNums",		"dam_enabled", "OnOff"
+	Option		"Mod Enabled"  , "dam_enabled", "DamEnabled"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
 	Option      "Font"         , "dam_font" , "DamFonts"

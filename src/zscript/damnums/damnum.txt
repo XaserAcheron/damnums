@@ -19,8 +19,6 @@ class DamNum : Actor
 		Alpha 1.0;
 		Gravity 0.4;
 		Scale 0.75;
-	
-	Translation "DamRed";
 
 		-SOLID;
 		+NOBLOCKMAP;
@@ -33,18 +31,26 @@ class DamNum : Actor
 	States
 	{
 	Spawn:
-		#### ########## 1 Bright
-		{
-			vel.z -= Gravity;
-		}
-		#### # 1 Bright 
-		{
-			A_FadeOut(FADE_AMT, 1);
-			vel.z -= Gravity;
-		}
+		#### ########## 1 Bright A_DamNumMovement();
+		#### # 1 Bright A_DamNumMovement(FADE_AMT);
 		Wait;
 	}
-	
+
+	/*
+	 * DamNum movement function. Handles gravity and/or floatiness.
+	 * [Coulda done this in a tick function, but nah.
+	 */
+	action void A_DamNumMovement(float fade = 0)
+	{
+		// [TODO] switch movement types here
+		self.vel.z -= self.Gravity;
+
+		// fade to nothing
+		if(fade) {
+			A_FadeOut(fade, 1);
+		}
+	}
+
 	/*
 	 * DamNum setup function. Sets the correct sprite based
 	 * on the digit and the place/number-length. This is necessary
@@ -171,7 +177,7 @@ class DamNum : Actor
 					fontAlpha  = 0.75;
 					fontRender = STYLE_Translucent;
 			}
-			
+
 			// check to see if the user is opting for a particular
 			// color choice. If so, use it.
 			cv = CVar.FindCvar("dam_color");
@@ -180,14 +186,14 @@ class DamNum : Actor
 			{
 				fontTrans = DamTranslations[userColor];
 			}
-		
+
 			// spawn in the damage number digits.
 			int dam = min(damage, DAMAGE_CAP);
 			int place = 1;
 			int length = log10(dam) + 1;
 			while(dam > 0) {
 				let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
-			
+
 				// init the digits... diginit?
 				if(damnum) {
 					damnum.vel = nvel;
@@ -201,7 +207,7 @@ class DamNum : Actor
 					damnum.digitValue = dam % 10;
 					damnum.damageType = damagetype;
 				}
-			
+
 				// well dam.
 				dam /= 10;
 				place++;
