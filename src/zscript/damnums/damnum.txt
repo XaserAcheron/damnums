@@ -105,95 +105,97 @@ class DamNum : Actor
 		};
 		int DamTranslationCount = 22; // [TODO] this better
 
-		// [XA] will remove this level of indentation in the next commit
+		// angle toward the console player just a bit. This is safe now
+		// that the nums have +NOINTERACTION.
+		Actor curPlayer = players[consoleplayer].mo;
+		Vector3 posDiff = (curPlayer.pos - position);
+		double ang = ((atan2(posDiff.y, posDiff.x) + 360.0) % 360.0) + frandom(-20, 20);
 
-			// angle toward the console player just a bit. This is safe now
-			// that the nums have +NOINTERACTION.
-			Actor curPlayer = players[consoleplayer].mo;
-			Vector3 posDiff = (curPlayer.pos - position);
-			double ang = ((atan2(posDiff.y, posDiff.x) + 360.0) % 360.0) + frandom(-20, 20);
+		// pre-calculate velocity so we can apply it to all spawned nums.
+		vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
 
-			// pre-calculate velocity so we can apply it to all spawned nums.
-			vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
+		// figure out which font to use. This is done here so it doesn't have to
+		// be determined for every single digit.
 
-			// figure out which font to use. This is done here so it doesn't have to
-			// be determined for every single digit.
+		// [XA] I may turn this into something more interesting than an ugly ol'
+		//      switch statement, but laziness prevails at present. Plus I dunno
+		//      if we can initialize a const array of structs (yet?)
 
-			// [XA] I may turn this into something more interesting than an ugly ol'
-			//      switch statement, but laziness prevails at present. Plus I dunno
-			//      if we can initialize a const array of structs (yet?)
-			
-			string fontPrefix;
-			string fontTrans;
-			double fontScale;
-			double fontAlpha;
-			int    fontRender;
-			
-			CVar cv = CVar.FindCvar("dam_font");
-			int cval = (cv) ? cv.GetInt() : 0;
+		// [XA] If I can instantiate a class by name (i.e. what's in dam_font),
+		//      that would let me just make a base class and do it that way.
+		//      Perhaps make them Actors and replace the FontCache concept.
+	
+		string fontPrefix;
+		string fontTrans;
+		double fontScale;
+		double fontAlpha;
+		int    fontRender;
+	
+		CVar cv = CVar.FindCvar("dam_font");
+		int cval = (cv) ? cv.GetInt() : 0;
 
-			switch(cval)
-			{
+		switch(cval)
+		{
 
-				case DAM_FONT_SMALL:
-					fontPrefix = "NS";
-					fontTrans  = "DamRed";
-					fontScale  = 1.0;
-					fontAlpha  = 0.75;
-					fontRender = STYLE_Translucent;
-					break;
+			case DAM_FONT_SMALL:
+				fontPrefix = "NS";
+				fontTrans  = "DamRed";
+				fontScale  = 1.0;
+				fontAlpha  = 0.75;
+				fontRender = STYLE_Translucent;
+				break;
 
-				case DAM_FONT_MODERN:
-					fontPrefix = "ND";
-					fontTrans  = "DamWhite";
-					fontScale  = 1.0;
-					fontAlpha  = 1.0;
-					fontRender = STYLE_Add;
-					break;
+			case DAM_FONT_MODERN:
+				fontPrefix = "ND";
+				fontTrans  = "DamWhite";
+				fontScale  = 1.0;
+				fontAlpha  = 1.0;
+				fontRender = STYLE_Add;
+				break;
 
-				default: // DAM_FONT_CLASSIC
-					fontPrefix = "NC";
-					fontTrans  = "DamRed";
-					fontScale  = 0.75;
-					fontAlpha  = 0.75;
-					fontRender = STYLE_Translucent;
+			default: // DAM_FONT_CLASSIC
+				fontPrefix = "NC";
+				fontTrans  = "DamRed";
+				fontScale  = 0.75;
+				fontAlpha  = 0.75;
+				fontRender = STYLE_Translucent;
+		}
+
+		// check to see if the user is opting for a particular
+		// color choice. If so, use it.
+		cv = CVar.FindCvar("dam_color");
+		int userColor = cv ? cv.GetInt() : 0;
+		if(userColor >= 0 && userColor < DamTranslationCount) 
+		{
+			fontTrans = DamTranslations[userColor];
+		}
+
+		// spawn in the damage number digits.
+		int dam = min(damage, DAMAGE_CAP);
+		int place = 1;
+		int length = log10(dam) + 1;
+		while(dam > 0) {
+			let damnum = DamNum(Spawn("DamNum", position, ALLOW_REPLACE));
+
+			// init the digits... diginit?
+			if(damnum) {
+				damnum.vel = nvel;
+				damnum.angle = ang;
+				damnum.A_SetScale(fontScale, fontScale);
+				damnum.A_SetRenderStyle(fontAlpha, fontRender);
+				damnum.A_SetTranslation(fontTrans);
+				damnum.fontPrefix = fontPrefix;
+				damnum.digitCount = length;
+				damnum.digitPlace = place;
+				damnum.digitValue = dam % 10;
+				damnum.damageType = damagetype;
 			}
 
-			// check to see if the user is opting for a particular
-			// color choice. If so, use it.
-			cv = CVar.FindCvar("dam_color");
-			int userColor = cv ? cv.GetInt() : 0;
-			if(userColor >= 0 && userColor < DamTranslationCount) 
-			{
-				fontTrans = DamTranslations[userColor];
-			}
+			// well dam.
+			dam /= 10;
+			place++;
+		}
 
-			// spawn in the damage number digits.
-			int dam = min(damage, DAMAGE_CAP);
-			int place = 1;
-			int length = log10(dam) + 1;
-			while(dam > 0) {
-				let damnum = DamNum(Spawn("DamNum", position, ALLOW_REPLACE));
-
-				// init the digits... diginit?
-				if(damnum) {
-					damnum.vel = nvel;
-					damnum.angle = ang;
-					damnum.A_SetScale(fontScale, fontScale);
-					damnum.A_SetRenderStyle(fontAlpha, fontRender);
-					damnum.A_SetTranslation(fontTrans);
-					damnum.fontPrefix = fontPrefix;
-					damnum.digitCount = length;
-					damnum.digitPlace = place;
-					damnum.digitValue = dam % 10;
-					damnum.damageType = damagetype;
-				}
-
-				// well dam.
-				dam /= 10;
-				place++;
-			}
-		
 		// return the damage, for easy chaining.
 		return damage;
 	}
