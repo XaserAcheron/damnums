@@ -78,8 +78,7 @@ class DamNum : Actor
 	static int spawnDamageNumbers(Vector3 position = (0,0,0), int damage = 0, Name damagetype = 'Default') 
 	{
 		// [TODO] move this to the constants file when it's possible.
-
-		static const String DamTranslations[] =
+		static const String DamNum_Translations[] =
 		{	 "DamBrick"
 		,	 "DamTan"
 		,	 "DamGray"
@@ -103,7 +102,6 @@ class DamNum : Actor
 		,	 "DamDarkGray"
 		,	 "DamCyan"
 		};
-		int DamTranslationCount = 22; // [TODO] this better
 
 		// angle toward the console player just a bit. This is safe now
 		// that the nums have +NOINTERACTION.
@@ -165,9 +163,9 @@ class DamNum : Actor
 		// color choice. If so, use it.
 		cv = CVar.FindCvar("dam_color");
 		int userColor = cv ? cv.GetInt() : 0;
-		if(userColor >= 0 && userColor < DamTranslationCount) 
+		if(userColor >= 0 && userColor < DamNum_Translations.Size()) 
 		{
-			fontTrans = DamTranslations[userColor];
+			fontTrans = DamNum_Translations[userColor];
 		}
 
 		// spawn in the damage number digits.
