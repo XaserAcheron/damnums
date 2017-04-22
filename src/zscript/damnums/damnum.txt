@@ -26,12 +26,22 @@ class DamNum : Actor
 		+NOBLOCKMAP;
 		+NOBLOCKMONST;
 		+THRUACTORS;
+		+BRIGHT
+		+NOINTERACTION
+		+NOTONAUTOMAP
 	}
 	States
 	{
 	Spawn:
-		#### # 10 Bright;
-		#### # 1 Bright A_FadeOut(FADE_AMT, 1);
+		#### ########## 1 Bright
+		{
+			vel.z -= Gravity;
+		}
+		#### # 1 Bright 
+		{
+			A_FadeOut(FADE_AMT, 1);
+			vel.z -= Gravity;
+		}
 		Wait;
 	}
 	
@@ -59,7 +69,9 @@ class DamNum : Actor
 	/*
 	 * Spawn damage numbers. Does what it says on the tin.
 	 */
-	static int spawnDamageNumbers(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default') {
+	static int spawnDamageNumbers(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default', 
+		bool usePos = false, Vector3 dnpos = (0,0,0)) 
+	{
 	
 		// [TODO] move this to the constants file when it's possible.
 
@@ -89,7 +101,8 @@ class DamNum : Actor
 		};
 		int DamTranslationCount = 22; // [TODO] this better
 
-		if(target) {
+		if (target || usePos) 
+		{
 		
 			// if we don't have a source (or it's not a player), try and get one.
 			if((!source || !source.player) && playeringame[0]) {
@@ -97,11 +110,11 @@ class DamNum : Actor
 			}
 		
 			// if we have a source, angle toward it a bit.
-			float ang;
-			if(source) {
+			double ang;
+			if (source && target) {
 				ang = target.AngleTo(source, true) + frandom(-20, 20);
 			} else {
-				ang = frandom(0, 360);
+				ang = frandom(0, 359);
 			}
 
 			// pre-calculate velocity/position so we can apply 'em to all spawned nums.
@@ -109,9 +122,13 @@ class DamNum : Actor
 			vector3 npos;
 		
 			// multiply height by 4 if the target's dead to compensate for the reduction.
-			float targetHeight = (target.health > 0) ? target.height : (target.height * 4);
-			npos = target.pos + (0, 0, targetHeight-16);
-			
+			if (!usePos)
+			{
+				double targetHeight = (target.health > 0) ? target.height : (target.height * 4);
+				npos = target.pos + (0, 0, targetHeight-16);
+			}
+			else
+				npos = dnpos;
 			// figure out which font to use. This is done here so it doesn't have to
 			// be determined for every single digit.
 
@@ -121,11 +138,15 @@ class DamNum : Actor
 			
 			string fontPrefix;
 			string fontTrans;
-			float  fontScale;
-			float  fontAlpha;
+			double fontScale;
+			double fontAlpha;
 			int    fontRender;
+			
+			CVar cv = CVar.FindCvar("dam_font");
+			int cval = (cv) ? cv.GetInt() : 0;
 
-			switch(target.GetCvar("dam_font")) {
+			switch(cval)
+			{
 
 				case DAM_FONT_SMALL:
 					fontPrefix = "NS";
@@ -153,8 +174,10 @@ class DamNum : Actor
 			
 			// check to see if the user is opting for a particular
 			// color choice. If so, use it.
-			int userColor = target.GetCvar("dam_color");
-			if(userColor >= 0 && userColor < DamTranslationCount) {
+			cv = CVar.FindCvar("dam_color");
+			int userColor = cv ? cv.GetInt() : 0;
+			if(userColor >= 0 && userColor < DamTranslationCount) 
+			{
 				fontTrans = DamTranslations[userColor];
 			}
 		
@@ -187,25 +210,5 @@ class DamNum : Actor
 		
 		// return the damage, for easy chaining.
 		return damage;
-	}
-
-	/*
-	 * Accumulate damage. This sneakily uses an inventory item to track the
-	 * amount of damage done in a single tic, then spawn a single damage number
-	 * once the tic has passed. This allows shotgun-type weapons to spawn a
-	 * single damage number rather than an unreadable spray (though the "spray"
-	 * behavior is exposed via a cvar in case folks find that amusing).
-	 */
-	static DamNumAccumulator accumulateDamage(Actor source = null, Actor target = null, int damage = 0, Name damagetype = 'Default') {
-		DamNumAccumulator accumulator = null;
-		if(target) {
-			accumulator = DamNumAccumulator(target.FindInventory('DamNumAccumulator'));
-			if(!accumulator) {
-				target.A_GiveInventory('DamNumAccumulator', 1);
-				accumulator = DamNumAccumulator(target.FindInventory('DamNumAccumulator'));
-			}
-			accumulator.accumulateDamage(source, damage, damagetype);
-		}
-		return accumulator;
 	}
 }
