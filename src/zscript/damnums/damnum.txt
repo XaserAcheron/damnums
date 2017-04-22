@@ -75,10 +75,8 @@ class DamNum : Actor
 	/*
 	 * Spawn damage numbers. Does what it says on the tin.
 	 */
-	static int spawnDamageNumbers(Actor target = null, int damage = 0, Name damagetype = 'Default', 
-		bool usePos = false, Vector3 dnpos = (0,0,0)) 
+	static int spawnDamageNumbers(Vector3 position = (0,0,0), int damage = 0, Name damagetype = 'Default') 
 	{
-
 		// [TODO] move this to the constants file when it's possible.
 
 		static const String DamTranslations[] =
@@ -107,25 +105,17 @@ class DamNum : Actor
 		};
 		int DamTranslationCount = 22; // [TODO] this better
 
-		if (target || usePos) 
-		{
+		// [XA] will remove this level of indentation in the next commit
+
 			// angle toward the console player just a bit. This is safe now
 			// that the nums have +NOINTERACTION.
 			Actor curPlayer = players[consoleplayer].mo;
-			double ang = target.AngleTo(curPlayer, true) + frandom(-20, 20);
+			Vector3 posDiff = (curPlayer.pos - position);
+			double ang = ((atan2(posDiff.y, posDiff.x) + 360.0) % 360.0) + frandom(-20, 20);
 
-			// pre-calculate velocity/position so we can apply 'em to all spawned nums.
+			// pre-calculate velocity so we can apply it to all spawned nums.
 			vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
-			vector3 npos;
-		
-			// multiply height by 4 if the target's dead to compensate for the reduction.
-			if (!usePos)
-			{
-				double targetHeight = (target.health > 0) ? target.height : (target.height * 4);
-				npos = target.pos + (0, 0, targetHeight-16);
-			}
-			else
-				npos = dnpos;
+
 			// figure out which font to use. This is done here so it doesn't have to
 			// be determined for every single digit.
 
@@ -183,7 +173,7 @@ class DamNum : Actor
 			int place = 1;
 			int length = log10(dam) + 1;
 			while(dam > 0) {
-				let damnum = DamNum(Spawn("DamNum", npos, ALLOW_REPLACE));
+				let damnum = DamNum(Spawn("DamNum", position, ALLOW_REPLACE));
 
 				// init the digits... diginit?
 				if(damnum) {
@@ -203,7 +193,6 @@ class DamNum : Actor
 				dam /= 10;
 				place++;
 			}
-		}
 		
 		// return the damage, for easy chaining.
 		return damage;
