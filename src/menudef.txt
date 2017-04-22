@@ -41,6 +41,7 @@ OptionMenu "DamNumsOptions"
 {
 	Position -15
 	Title       "DamNums Options"
+	Option		"DamNums",		"dam_enabled", "OnOff"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
 	Option      "Font"         , "dam_font" , "DamFonts"
