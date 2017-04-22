@@ -1,6 +1,6 @@
 /*
  * DamNums: by Xaser Acheron
- * Modified by Major Cooke
+ * w/contributions by Major Cooke
  */
 
 version "2.4"
