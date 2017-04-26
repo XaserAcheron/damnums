@@ -40,7 +40,7 @@ class DamNum : Actor
 	 * DamNum movement function. Handles gravity and/or floatiness.
 	 * [Coulda done this in a tick function, but nah.
 	 */
-	action void A_DamNumMovement(float fade = 0)
+	action void A_DamNumMovement(double fade = 0)
 	{
 		// [TODO] switch movement types here
 		self.vel.z -= self.Gravity;
