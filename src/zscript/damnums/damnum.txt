@@ -42,8 +42,10 @@ class DamNum : Actor
 	 */
 	action void A_DamNumMovement(double fade = 0)
 	{
-		// [TODO] switch movement types here
-		self.vel.z -= self.Gravity;
+		// gravity is a fundamental force, yo
+		if(!self.bNoGravity) {
+			self.vel.z -= self.Gravity;
+		}
 
 		// fade to nothing
 		if(fade) {
@@ -109,8 +111,24 @@ class DamNum : Actor
 		Vector3 posDiff = (curPlayer.pos - position);
 		double ang = ((atan2(posDiff.y, posDiff.x) + 360.0) % 360.0) + frandom(-20, 20);
 
-		// pre-calculate velocity so we can apply it to all spawned nums.
-		vector3 nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
+		// determine the physics style pre-spawn, so the cvar doesn't
+		// have to be checked every single tic (and the physics style
+		// doesn't abruptly shift if the user changes it later).
+		Cvar cv = CVar.FindCvar("dam_physics");
+		int physics = (cv) ? cv.GetInt() : 0;
+		vector3 nvel;
+		bool noGravity;
+		switch(physics)
+		{
+			case DAM_PHYSICS_TOSS:
+				nvel = (1.0 * cos(ang), 1.0 * sin(ang), frandom(3.0, 4.0));
+				noGravity = false;
+				break;
+
+			case DAM_PHYSICS_FLOAT:
+				nvel = (0, 0, 1.0);
+				noGravity = true;
+		}
 
 		// figure out which font to use. This is done here so it doesn't have to
 		// be determined for every single digit.
@@ -129,12 +147,11 @@ class DamNum : Actor
 		double fontAlpha;
 		int    fontRender;
 	
-		CVar cv = CVar.FindCvar("dam_font");
-		int cval = (cv) ? cv.GetInt() : 0;
+		cv = CVar.FindCvar("dam_font");
+		int font = (cv) ? cv.GetInt() : 0;
 
-		switch(cval)
+		switch(font)
 		{
-
 			case DAM_FONT_SMALL:
 				fontPrefix = "NS";
 				fontTrans  = "DamRed";
@@ -179,6 +196,7 @@ class DamNum : Actor
 			if(damnum) {
 				damnum.vel = nvel;
 				damnum.angle = ang;
+				damnum.bNoGravity = noGravity;
 				damnum.A_SetScale(fontScale, fontScale);
 				damnum.A_SetRenderStyle(fontAlpha, fontRender);
 				damnum.A_SetTranslation(fontTrans);

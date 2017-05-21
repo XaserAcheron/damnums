@@ -11,6 +11,12 @@ OptionValue "DamFonts"
 	2, "Modern Doom"
 }
 
+OptionValue "DamPhysics"
+{
+	0, "Toss"
+	1, "Float"
+}
+
 OptionValue "DamEnabled"
 {
 	0, "Disabled"
@@ -50,7 +56,8 @@ OptionMenu "DamNumsOptions"
 	Option		"Mod Enabled"  , "dam_enabled", "DamEnabled"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
-	Option      "Font"         , "dam_font" , "DamFonts"
-	Option      "Color"        , "dam_color", "DamColors"
-	Option      "Shotgun Spray", "dam_spray", "YesNo"
+	Option      "Font"         , "dam_font"   , "DamFonts"
+	Option      "Color"        , "dam_color"  , "DamColors"
+	Option      "Physics"      , "dam_physics", "DamPhysics"
+	Option      "Shotgun Spray", "dam_spray"  , "YesNo"
 }

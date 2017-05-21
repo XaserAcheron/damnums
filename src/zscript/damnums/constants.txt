@@ -10,3 +10,9 @@ enum DamNum_Fonts
 	DAM_FONT_SMALL   = 1,
 	DAM_FONT_MODERN  = 2,
 };
+
+enum DamNum_Physics
+{
+	DAM_PHYSICS_TOSS  = 0,
+	DAM_PHYSICS_FLOAT = 1,
+};
