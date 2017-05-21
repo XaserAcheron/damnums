@@ -31,8 +31,8 @@ class DamNum : Actor
 	States
 	{
 	Spawn:
-		#### ########## 1 Bright A_DamNumMovement();
-		#### # 1 Bright A_DamNumMovement(FADE_AMT);
+		"####" "##########" 1 Bright A_DamNumMovement();
+		"####" "#" 1 Bright A_DamNumMovement(FADE_AMT);
 		Wait;
 	}
 
@@ -40,13 +40,14 @@ class DamNum : Actor
 	 * DamNum movement function. Handles gravity and/or floatiness.
 	 * [Coulda done this in a tick function, but nah.
 	 */
-	action void A_DamNumMovement(double fade = 0)
+	void A_DamNumMovement(double fade = 0)
 	{
 		// [TODO] switch movement types here
-		self.vel.z -= self.Gravity;
+		vel.z -= Gravity;
 
 		// fade to nothing
-		if(fade) {
+		if (fade) 
+		{
 			A_FadeOut(fade, 1);
 		}
 	}
@@ -65,11 +66,11 @@ class DamNum : Actor
 		string fontPrefix = (this.fontPrefix == "") ? "ND" : this.fontPrefix;
 
 		// set the sprite based on the above info.
-		self.sprite = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
+		sprite = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
 		
 		// set the frame to the desired digit; since frames A-J (which is 0-9
 		// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
-		self.frame = DamNum(self).digitValue;
+		frame = digitValue;
 	}
 
 	/*

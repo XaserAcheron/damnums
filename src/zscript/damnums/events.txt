@@ -82,9 +82,9 @@ class DamNumCourier : Inventory
 	 */
 	override void OwnerDied()
 	{
-		if (self.keeper) 
+		if (keeper) 
 		{
-			self.keeper.SpawnAndDestroy();
+			keeper.SpawnAndDestroy();
 		}
 	}
 }
@@ -102,6 +102,7 @@ class DamNumKeeper : Thinker
 	Actor thing;
 	uint totalDamage;
 	int curHealth;
+	bool ReadyToDestroy;
 
 	/*
 	 * Initialize the keeper.
@@ -118,10 +119,10 @@ class DamNumKeeper : Thinker
 		// instantly due to being in a wall. Was amusing, but unintentional. :P
 		if (!thing || thing.health < 1)
 		{
-			return self.Destroy();
+			return Destroy();
 		}
 
-		self.curHealth = thing.health;
+		curHealth = thing.health;
 
 		Super.PostBeginPlay();
 	}
@@ -131,23 +132,25 @@ class DamNumKeeper : Thinker
 	 */
 	override void Tick()
 	{
-		if (self.thing)
+		if (!ReadyToDestroy && thing)
 		{
 			if (dam_enabled && !dam_spray)
 			{
-				if (self.thing.health < self.curHealth)
+				if (thing.health < curHealth)
 				{
-					self.SpawnNumbers();
-					self.curHealth = self.thing.health;
+					SpawnNumbers();
+					curHealth = thing.health;
 				}
-			// [XA] if I ever add "healing" support, that goes here.
+			// [XA] If I ever add "healing" support, that goes here.
 			}
 		}
 		else
 		{
-			// clean up after oneself just in case an actor gets
+			// Clean up after oneself just in case an actor gets
 			// Thing_Remove'd or similar.
-			self.Destroy();
+			
+			// Do not process the super tick, it's just wasting computation.
+			return Destroy();
 		}
 		Super.Tick();
 	}
@@ -158,11 +161,11 @@ class DamNumKeeper : Thinker
 	 */
 	void SpawnNumbers()
 	{
-		if (dam_enabled && !dam_spray && self.thing && self.thing.DamageTypeReceived != 'Massacre')
+		if (dam_enabled && !dam_spray && thing && thing.DamageTypeReceived != 'Massacre')
 		{
-			Vector3 position = self.thing.pos + (0, 0, self.thing.height - 16);
-			self.totalDamage = self.curHealth - self.thing.health;
-			DamNum.spawnDamageNumbers(position, self.totalDamage, self.thing.DamageTypeReceived);
+			Vector3 position = thing.pos + (0, 0, thing.height - 16);
+			totalDamage = curHealth - thing.health;
+			DamNum.spawnDamageNumbers(position, totalDamage, thing.DamageTypeReceived);
 		}
 	}
 
@@ -174,7 +177,9 @@ class DamNumKeeper : Thinker
 	 */
 	void SpawnAndDestroy()
 	{
-		self.SpawnNumbers();
-		self.Destroy();
+		// Do not destroy the thinker here. Let the Tick destroy it instead,
+		// or else it'll break thinker iterators!
+		SpawnNumbers();
+		ReadyToDestroy = true;
 	}
 }
