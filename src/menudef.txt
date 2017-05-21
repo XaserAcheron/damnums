@@ -17,6 +17,12 @@ OptionValue "DamPhysics"
 	1, "Float"
 }
 
+OptionValue "DamShootable"
+{
+	0, "Monsters Only"
+	1, "All Shootable Objects"
+}
+
 OptionValue "DamEnabled"
 {
 	0, "Disabled"
@@ -53,11 +59,16 @@ OptionMenu "DamNumsOptions"
 {
 	Position -15
 	Title       "DamNums Options"
-	Option		"Mod Enabled"  , "dam_enabled", "DamEnabled"
+	Option		"Mod Enabled"       , "dam_enabled"  , "DamEnabled"
+	Option      "Spawn Numbers For*", "dam_shootable", "DamShootable"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
 	Option      "Font"         , "dam_font"   , "DamFonts"
 	Option      "Color"        , "dam_color"  , "DamColors"
 	Option      "Physics"      , "dam_physics", "DamPhysics"
 	Option      "Shotgun Spray", "dam_spray"  , "YesNo"
+	StaticText 	""
+	StaticText 	"Settings marked with an asterisk (*)", "Tan"
+	StaticText 	"will only take effect after changing", "Tan"
+	StaticText 	"maps or starting a new game.", "Tan"
 }

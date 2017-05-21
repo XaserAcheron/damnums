@@ -12,7 +12,7 @@ class DamNumEventHandler : StaticEventHandler
 	 */
 	override void WorldThingDamaged(WorldEvent e)
 	{
-		if (dam_enabled && e.thing && e.Thing.bISMONSTER && dam_spray && e.DamageType != 'Massacre')
+		if (dam_enabled && self.ShouldSpawn(e.Thing) && dam_spray && e.DamageType != 'Massacre')
 		{
 			// Since WorldThingDamaged is (oddly) called after the actor's officially dead,
 			// we need to account for the case where the actor's height has been quartered.
@@ -27,17 +27,25 @@ class DamNumEventHandler : StaticEventHandler
 	 */
 	override void WorldThingSpawned(WorldEvent e)
 	{
-		if (e.Thing && e.Thing.bISMONSTER)
+		if (self.ShouldSpawn(e.Thing))
 		{
 			DamNumCourier.Create(e.thing);
 		}
 	}
 	override void WorldThingRevived(WorldEvent e)
 	{
-		if (e.Thing && e.Thing.bISMONSTER)
+		if (self.ShouldSpawn(e.Thing))
 		{
 			DamNumCourier.Create(e.thing);
 		}
+	}
+
+	/*
+	 * Determine if we should spawn/track a particular thing. Basically
+	 * an easy abstraction for the dam_shootable parameter.
+	 */
+	bool ShouldSpawn(Actor thing) {
+		return thing && (thing.bIsMonster || (dam_shootable && thing.bShootable));
 	}
 }
 
