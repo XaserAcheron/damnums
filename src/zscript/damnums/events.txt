@@ -175,6 +175,8 @@ class DamNumKeeper : Thinker
 	void SpawnAndDestroy()
 	{
 		self.SpawnNumbers();
-		self.Destroy();
+		// don't actually call Destroy() here, since that mucks with ThinkerIterators.
+		// Simply null out the referenced thing so Tick() will scrub it next tick.
+		self.thing = null;
 	}
 }
