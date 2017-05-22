@@ -1,10 +1,10 @@
 {
   "name": "damnums",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "DamNums: a damage numbers mod for GZDoom/QZDoom.",
   "private": true,
   "author": "Xaser Acheron",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/XaserAcheron/damnums.git"
