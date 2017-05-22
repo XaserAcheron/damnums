@@ -1,0 +1,8 @@
+header=# damnums Changelog
+enhancement_prefix=New:
+bug_prefix=Fixed:
+issue_prefix=Closed:
+merge_prefix=Merged:
+include-labels=bug,enhancement,feature
+exclude-labels=question,nope,duplicate,invalid,wontfix
+enhancement-labels=enhancement,Enhancement,feature,Feature
