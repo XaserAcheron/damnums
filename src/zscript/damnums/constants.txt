@@ -1,15 +1,8 @@
 /*
  * DamNums: by Xaser Acheron
  *
- * Big Class o' Constants.
+ * Not-So-Big Class o' Constants.
  */
-
-enum DamNum_Fonts
-{
-	DAM_FONT_CLASSIC = 0,
-	DAM_FONT_SMALL   = 1,
-	DAM_FONT_MODERN  = 2,
-};
 
 enum DamNum_Physics
 {

@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Doom Small font.
+ */
+
+class DamNumFontSmall : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "NS";
+		DamNumFont.DefaultTranslation "DamRed";
+		Scale 1.0;
+		Alpha 1.0;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		NS11 A 0;
+		NS21 A 0;
+		NS22 A 0;
+		NS31 A 0;
+		NS32 A 0;
+		NS33 A 0;
+		NS41 A 0;
+		NS42 A 0;
+		NS43 A 0;
+		NS44 A 0;
+		NS51 A 0;
+		NS52 A 0;
+		NS53 A 0;
+		NS54 A 0;
+		NS55 A 0;
+		Stop;
+	}
+}

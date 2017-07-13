@@ -6,6 +6,9 @@
 version "2.4"
 
 #include "zscript/damnums/constants.txt"
-#include "zscript/damnums/fontcache.txt"
 #include "zscript/damnums/damnum.txt"
 #include "zscript/damnums/events.txt"
+#include "zscript/damnums/fonts/base.txt"
+#include "zscript/damnums/fonts/doomclassic.txt"
+#include "zscript/damnums/fonts/doomsmall.txt"
+#include "zscript/damnums/fonts/doommodern.txt"

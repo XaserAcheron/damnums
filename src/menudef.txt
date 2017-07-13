@@ -4,13 +4,6 @@ AddOptionMenu "OptionsMenu"
 	Submenu "DamNums Options", "DamNumsOptions"
 }
 
-OptionValue "DamFonts"
-{
-	0, "Classic Doom"
-	1, "Classic Doom (small)"
-	2, "Modern Doom"
-}
-
 OptionValue "DamPhysics"
 {
 	0, "Toss"
@@ -27,6 +20,13 @@ OptionValue "DamEnabled"
 {
 	0, "Disabled"
 	1, "Enabled"
+}
+
+OptionString "DamFonts"
+{
+	"DamNumFontClassic", "Classic Doom"
+	"DamNumFontSmall"  , "Classic Doom (small)"
+	"DamNumFontModern" , "Modern Doom"
 }
 
 OptionValue "DamColors"
@@ -63,10 +63,10 @@ OptionMenu "DamNumsOptions"
 	Option      "Spawn Numbers For*", "dam_shootable", "DamShootable"
 	StaticText 	""
 	StaticText 	"Number Display Settings", 1
-	Option      "Font"         , "dam_font"   , "DamFonts"
-	Option      "Color"        , "dam_color"  , "DamColors"
-	Option      "Physics"      , "dam_physics", "DamPhysics"
-	Option      "Shotgun Spray", "dam_spray"  , "YesNo"
+	Option      "Font"         , "dam_fontclass", "DamFonts"
+	Option      "Color"        , "dam_color"    , "DamColors"
+	Option      "Physics"      , "dam_physics"  , "DamPhysics"
+	Option      "Shotgun Spray", "dam_spray"    , "YesNo"
 	StaticText 	""
 	StaticText 	"Settings marked with an asterisk (*)", "Tan"
 	StaticText 	"will only take effect after changing", "Tan"

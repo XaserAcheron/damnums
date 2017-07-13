@@ -1,0 +1,25 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Base Font class -- this is an Actor since it not only defines some properties,
+ * but also serves to load the font's sprites into memory. Without this step,
+ * GetSpriteIndex will return junk when trying to access any of the sprites.
+ */
+
+class DamNumFont : Actor
+{
+	string fontPrefix;
+	string fontTrans;
+
+	property Prefix: fontPrefix;
+	property DefaultTranslation: fontTrans;
+
+	Default
+	{
+		+NOINTERACTION
+		+INVISIBLE
+
+		DamNumFont.Prefix "NC";
+		DamNumFont.DefaultTranslation "DamWhite";
+	}
+}
