@@ -1,6 +1,9 @@
 /*
  * DamNums: by Xaser Acheron
  * w/contributions by Major Cooke
+ *
+ * special thx to Marrub & Zombie for
+ * tech support & sanity maintenance
  */
 
 version "2.4"
