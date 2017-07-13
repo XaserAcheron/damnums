@@ -19,7 +19,7 @@ class DamNumFont : Actor
 		+NOINTERACTION
 		+INVISIBLE
 
-		DamNumFont.Prefix "FC";
-		DamNumFont.DefaultTranslation "DamWhite";
+		DamNumFont.Prefix DamNum_DefaultFontPrefix;
+		DamNumFont.DefaultTranslation DamNum_DefaultTranslation;
 	}
 }

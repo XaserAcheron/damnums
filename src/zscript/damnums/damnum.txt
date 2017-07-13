@@ -108,7 +108,7 @@ class DamNum : Actor
 		// be determined for every single digit.
 
 		cv = CVar.FindCvar("dam_fontclass");
-		string fontname = (cv) ? cv.getString() : "DamNumFontClassic";
+		string fontname = (cv) ? cv.getString() : DamNum_DefaultFontName;
 
 		// spawn the font class by name. 'fontclass' below yields null if
 		// 'fontname' is not the name of a DamNumFont subclass -- handy!
@@ -117,16 +117,16 @@ class DamNum : Actor
 		if(fontclass) {
 			font = DamNumFont(Spawn(fontclass));
 		} else {
-			font = DamNumFont(Spawn("DamNumFontClassic")); // good ol' default.
+			font = DamNumFont(Spawn(DamNum_DefaultFontName)); // good ol' default.
 		}
 
 		// check to see if the user is opting for a particular
 		// color choice. If so, use it. While we're at it,
 		// treat the string "DamDefault" as 'use what the mod suggests'.
 		cv = CVar.FindCvar("dam_translation");
-		string userTranslation = cv ? cv.GetString() : "DamDefault";
-		string fontTrans = font ? font.fontTrans : "DamWhite";
-		if(userTranslation != "DamDefault") {
+		string userTranslation = cv ? cv.GetString() : DamNum_PlaceholderTranslation;
+		string fontTrans = font ? font.fontTrans : DamNum_DefaultTranslation;
+		if(userTranslation != DamNum_PlaceholderTranslation) {
 			fontTrans = userTranslation;
 		}
 
