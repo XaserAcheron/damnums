@@ -1,14 +1,14 @@
 /*
  * DamNums: by Xaser Acheron
  *
- * Doom Moden font.
+ * Doom Modern font.
  */
 
 class DamNumFontModern : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "ND";
+		DamNumFont.Prefix "FM";
 		DamNumFont.DefaultTranslation "DamWhite";
 		Scale 1.0;
 		Alpha 1.0;
@@ -17,21 +17,21 @@ class DamNumFontModern : DamNumFont
 	States
 	{
 	Spawn:
-		ND11 A 0;
-		ND21 A 0;
-		ND22 A 0;
-		ND31 A 0;
-		ND32 A 0;
-		ND33 A 0;
-		ND41 A 0;
-		ND42 A 0;
-		ND43 A 0;
-		ND44 A 0;
-		ND51 A 0;
-		ND52 A 0;
-		ND53 A 0;
-		ND54 A 0;
-		ND55 A 0;
+		FM11 A 0;
+		FM21 A 0;
+		FM22 A 0;
+		FM31 A 0;
+		FM32 A 0;
+		FM33 A 0;
+		FM41 A 0;
+		FM42 A 0;
+		FM43 A 0;
+		FM44 A 0;
+		FM51 A 0;
+		FM52 A 0;
+		FM53 A 0;
+		FM54 A 0;
+		FM55 A 0;
 		Stop;
 	}
 }
