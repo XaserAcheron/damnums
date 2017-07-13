@@ -79,32 +79,6 @@ class DamNum : Actor
 	 */
 	static int spawnDamageNumbers(Vector3 position = (0,0,0), int damage = 0, Name damagetype = 'Default') 
 	{
-		// [TODO] move this to the constants file when it's possible.
-		static const String DamNum_Translations[] =
-		{	 "DamBrick"
-		,	 "DamTan"
-		,	 "DamGray"
-		,	 "DamGreen"
-		,	 "DamBrown"
-		,	 "DamGold"
-		,	 "DamRed"
-		,	 "DamBlue"
-		,	 "DamOrange"
-		,	 "DamWhite"
-		,	 "DamYellow"
-		,	 "DamDefault"
-		,	 "DamBlack"
-		,	 "DamLightBlue"
-		,	 "DamCream"
-		,	 "DamOlive"
-		,	 "DamDarkGreen"
-		,	 "DamDarkRed"
-		,	 "DamDarkBrown"
-		,	 "DamPurple"
-		,	 "DamDarkGray"
-		,	 "DamCyan"
-		};
-
 		// angle toward the console player just a bit. This is safe now
 		// that the nums have +NOINTERACTION.
 		Actor curPlayer = players[consoleplayer].mo;
@@ -147,13 +121,13 @@ class DamNum : Actor
 		}
 
 		// check to see if the user is opting for a particular
-		// color choice. If so, use it.
+		// color choice. If so, use it. While we're at it,
+		// treat the string "DamDefault" as 'use what the mod suggests'.
+		cv = CVar.FindCvar("dam_translation");
+		string userTranslation = cv ? cv.GetString() : "DamDefault";
 		string fontTrans = font ? font.fontTrans : "DamWhite";
-		cv = CVar.FindCvar("dam_color");
-		int userColor = cv ? cv.GetInt() : 0;
-		if(userColor >= 0 && userColor < DamNum_Translations.Size()) 
-		{
-			fontTrans = DamNum_Translations[userColor];
+		if(userTranslation != "DamDefault") {
+			fontTrans = userTranslation;
 		}
 
 		// spawn in the damage number digits.
