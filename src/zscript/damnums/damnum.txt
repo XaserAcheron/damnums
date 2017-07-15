@@ -67,11 +67,17 @@ class DamNum : Actor
 		string fontPrefix = (this.fontPrefix == "") ? "ND" : this.fontPrefix;
 
 		// set the sprite based on the above info.
-		self.sprite = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
-		
-		// set the frame to the desired digit; since frames A-J (which is 0-9
-		// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
-		self.frame = DamNum(self).digitValue;
+		int spriteindex = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
+		if(spriteindex != -1) {
+			// set the frame to the desired digit; since frames A-J (which is 0-9
+			// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
+			self.sprite = spriteindex;
+			self.frame = DamNum(self).digitValue;
+		} else {
+			// if sprite is unknown, display UNKNA0 rather than crash. ;)
+			self.sprite = GetSpriteIndex('UNKN');
+			self.frame = 0;
+		}
 	}
 
 	/*
