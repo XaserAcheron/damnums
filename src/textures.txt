@@ -467,7 +467,7 @@ Sprite "FM55J0", 55, 13 { Offset 27, 11 Patch "FM11J0",  0, 0 }
 Sprite "FR21A0", 24, 16 { Offset 12, 14 Patch "FR11A0", 12, 0 }
 Sprite "FR22A0", 24, 16 { Offset 12, 14 Patch "FR11A0",  0, 0 }
 Sprite "FR31A0", 36, 16 { Offset 12, 14 Patch "FR11A0", 24, 0 }
-Sprite "FR48A0", 36, 16 { Offset 12, 14 Patch "FR11A0", 12, 0 }
+Sprite "FR32A0", 36, 16 { Offset 12, 14 Patch "FR11A0", 12, 0 }
 Sprite "FR33A0", 36, 16 { Offset 12, 14 Patch "FR11A0",  0, 0 }
 Sprite "FR41A0", 48, 16 { Offset 24, 14 Patch "FR11A0", 36, 0 }
 Sprite "FR42A0", 48, 16 { Offset 24, 14 Patch "FR11A0", 24, 0 }
@@ -482,7 +482,7 @@ Sprite "FR55A0", 60, 16 { Offset 30, 14 Patch "FR11A0",  0, 0 }
 Sprite "FR21B0", 24, 16 { Offset 12, 14 Patch "FR11B0", 12, 0 }
 Sprite "FR22B0", 24, 16 { Offset 12, 14 Patch "FR11B0",  0, 0 }
 Sprite "FR31B0", 36, 16 { Offset 12, 14 Patch "FR11B0", 24, 0 }
-Sprite "FR48B0", 36, 16 { Offset 12, 14 Patch "FR11B0", 12, 0 }
+Sprite "FR32B0", 36, 16 { Offset 12, 14 Patch "FR11B0", 12, 0 }
 Sprite "FR33B0", 36, 16 { Offset 12, 14 Patch "FR11B0",  0, 0 }
 Sprite "FR41B0", 48, 16 { Offset 24, 14 Patch "FR11B0", 36, 0 }
 Sprite "FR42B0", 48, 16 { Offset 24, 14 Patch "FR11B0", 24, 0 }
@@ -497,7 +497,7 @@ Sprite "FR55B0", 60, 16 { Offset 30, 14 Patch "FR11B0",  0, 0 }
 Sprite "FR21C0", 24, 16 { Offset 12, 14 Patch "FR11C0", 12, 0 }
 Sprite "FR22C0", 24, 16 { Offset 12, 14 Patch "FR11C0",  0, 0 }
 Sprite "FR31C0", 36, 16 { Offset 12, 14 Patch "FR11C0", 24, 0 }
-Sprite "FR48C0", 36, 16 { Offset 12, 14 Patch "FR11C0", 12, 0 }
+Sprite "FR32C0", 36, 16 { Offset 12, 14 Patch "FR11C0", 12, 0 }
 Sprite "FR33C0", 36, 16 { Offset 12, 14 Patch "FR11C0",  0, 0 }
 Sprite "FR41C0", 48, 16 { Offset 24, 14 Patch "FR11C0", 36, 0 }
 Sprite "FR42C0", 48, 16 { Offset 24, 14 Patch "FR11C0", 24, 0 }
@@ -512,7 +512,7 @@ Sprite "FR55C0", 60, 16 { Offset 30, 14 Patch "FR11C0",  0, 0 }
 Sprite "FR21D0", 24, 16 { Offset 12, 14 Patch "FR11D0", 12, 0 }
 Sprite "FR22D0", 24, 16 { Offset 12, 14 Patch "FR11D0",  0, 0 }
 Sprite "FR31D0", 36, 16 { Offset 12, 14 Patch "FR11D0", 24, 0 }
-Sprite "FR48D0", 36, 16 { Offset 12, 14 Patch "FR11D0", 12, 0 }
+Sprite "FR32D0", 36, 16 { Offset 12, 14 Patch "FR11D0", 12, 0 }
 Sprite "FR33D0", 36, 16 { Offset 12, 14 Patch "FR11D0",  0, 0 }
 Sprite "FR41D0", 48, 16 { Offset 24, 14 Patch "FR11D0", 36, 0 }
 Sprite "FR42D0", 48, 16 { Offset 24, 14 Patch "FR11D0", 24, 0 }
@@ -527,7 +527,7 @@ Sprite "FR55D0", 60, 16 { Offset 30, 14 Patch "FR11D0",  0, 0 }
 Sprite "FR21E0", 24, 16 { Offset 12, 14 Patch "FR11E0", 12, 0 }
 Sprite "FR22E0", 24, 16 { Offset 12, 14 Patch "FR11E0",  0, 0 }
 Sprite "FR31E0", 36, 16 { Offset 12, 14 Patch "FR11E0", 24, 0 }
-Sprite "FR48E0", 36, 16 { Offset 12, 14 Patch "FR11E0", 12, 0 }
+Sprite "FR32E0", 36, 16 { Offset 12, 14 Patch "FR11E0", 12, 0 }
 Sprite "FR33E0", 36, 16 { Offset 12, 14 Patch "FR11E0",  0, 0 }
 Sprite "FR41E0", 48, 16 { Offset 24, 14 Patch "FR11E0", 36, 0 }
 Sprite "FR42E0", 48, 16 { Offset 24, 14 Patch "FR11E0", 24, 0 }
@@ -542,7 +542,7 @@ Sprite "FR55E0", 60, 16 { Offset 30, 14 Patch "FR11E0",  0, 0 }
 Sprite "FR21F0", 24, 16 { Offset 12, 14 Patch "FR11F0", 12, 0 }
 Sprite "FR22F0", 24, 16 { Offset 12, 14 Patch "FR11F0",  0, 0 }
 Sprite "FR31F0", 36, 16 { Offset 12, 14 Patch "FR11F0", 24, 0 }
-Sprite "FR48F0", 36, 16 { Offset 12, 14 Patch "FR11F0", 12, 0 }
+Sprite "FR32F0", 36, 16 { Offset 12, 14 Patch "FR11F0", 12, 0 }
 Sprite "FR33F0", 36, 16 { Offset 12, 14 Patch "FR11F0",  0, 0 }
 Sprite "FR41F0", 48, 16 { Offset 24, 14 Patch "FR11F0", 36, 0 }
 Sprite "FR42F0", 48, 16 { Offset 24, 14 Patch "FR11F0", 24, 0 }
@@ -557,7 +557,7 @@ Sprite "FR55F0", 60, 16 { Offset 30, 14 Patch "FR11F0",  0, 0 }
 Sprite "FR21G0", 24, 16 { Offset 12, 14 Patch "FR11G0", 12, 0 }
 Sprite "FR22G0", 24, 16 { Offset 12, 14 Patch "FR11G0",  0, 0 }
 Sprite "FR31G0", 36, 16 { Offset 12, 14 Patch "FR11G0", 24, 0 }
-Sprite "FR48G0", 36, 16 { Offset 12, 14 Patch "FR11G0", 12, 0 }
+Sprite "FR32G0", 36, 16 { Offset 12, 14 Patch "FR11G0", 12, 0 }
 Sprite "FR33G0", 36, 16 { Offset 12, 14 Patch "FR11G0",  0, 0 }
 Sprite "FR41G0", 48, 16 { Offset 24, 14 Patch "FR11G0", 36, 0 }
 Sprite "FR42G0", 48, 16 { Offset 24, 14 Patch "FR11G0", 24, 0 }
@@ -572,7 +572,7 @@ Sprite "FR55G0", 60, 16 { Offset 30, 14 Patch "FR11G0",  0, 0 }
 Sprite "FR21H0", 24, 16 { Offset 12, 14 Patch "FR11H0", 12, 0 }
 Sprite "FR22H0", 24, 16 { Offset 12, 14 Patch "FR11H0",  0, 0 }
 Sprite "FR31H0", 36, 16 { Offset 12, 14 Patch "FR11H0", 24, 0 }
-Sprite "FR48H0", 36, 16 { Offset 12, 14 Patch "FR11H0", 12, 0 }
+Sprite "FR32H0", 36, 16 { Offset 12, 14 Patch "FR11H0", 12, 0 }
 Sprite "FR33H0", 36, 16 { Offset 12, 14 Patch "FR11H0",  0, 0 }
 Sprite "FR41H0", 48, 16 { Offset 24, 14 Patch "FR11H0", 36, 0 }
 Sprite "FR42H0", 48, 16 { Offset 24, 14 Patch "FR11H0", 24, 0 }
@@ -587,7 +587,7 @@ Sprite "FR55H0", 60, 16 { Offset 30, 14 Patch "FR11H0",  0, 0 }
 Sprite "FR21I0", 24, 16 { Offset 12, 14 Patch "FR11I0", 12, 0 }
 Sprite "FR22I0", 24, 16 { Offset 12, 14 Patch "FR11I0",  0, 0 }
 Sprite "FR31I0", 36, 16 { Offset 12, 14 Patch "FR11I0", 24, 0 }
-Sprite "FR48I0", 36, 16 { Offset 12, 14 Patch "FR11I0", 12, 0 }
+Sprite "FR32I0", 36, 16 { Offset 12, 14 Patch "FR11I0", 12, 0 }
 Sprite "FR33I0", 36, 16 { Offset 12, 14 Patch "FR11I0",  0, 0 }
 Sprite "FR41I0", 48, 16 { Offset 24, 14 Patch "FR11I0", 36, 0 }
 Sprite "FR42I0", 48, 16 { Offset 24, 14 Patch "FR11I0", 24, 0 }
@@ -602,7 +602,7 @@ Sprite "FR55I0", 60, 16 { Offset 30, 14 Patch "FR11I0",  0, 0 }
 Sprite "FR21J0", 24, 16 { Offset 12, 14 Patch "FR11J0", 12, 0 }
 Sprite "FR22J0", 24, 16 { Offset 12, 14 Patch "FR11J0",  0, 0 }
 Sprite "FR31J0", 36, 16 { Offset 12, 14 Patch "FR11J0", 24, 0 }
-Sprite "FR48J0", 36, 16 { Offset 12, 14 Patch "FR11J0", 12, 0 }
+Sprite "FR32J0", 36, 16 { Offset 12, 14 Patch "FR11J0", 12, 0 }
 Sprite "FR33J0", 36, 16 { Offset 12, 14 Patch "FR11J0",  0, 0 }
 Sprite "FR41J0", 48, 16 { Offset 24, 14 Patch "FR11J0", 36, 0 }
 Sprite "FR42J0", 48, 16 { Offset 24, 14 Patch "FR11J0", 24, 0 }
