@@ -29,6 +29,7 @@ OptionString "DamFonts"
 	"DamNumFontModern"    , "Modern Doom"
 	"DamNumFontRavenBig"  , "Raven (big)"
 	"DamNumFontRavenSmall", "Raven (small)"
+	"DamNumFontRaventory" , "Raven (inventory)"
 }
 
 OptionString "DamTranslations"
