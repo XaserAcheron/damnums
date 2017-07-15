@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Raven Small font.
+ */
+
+class DamNumFontRavenSmall : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "FT";
+		DamNumFont.DefaultTranslation "DamGreen";
+		Scale 1.0;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		FT11 A 0;
+		FT21 A 0;
+		FT22 A 0;
+		FT31 A 0;
+		FT32 A 0;
+		FT33 A 0;
+		FT41 A 0;
+		FT42 A 0;
+		FT43 A 0;
+		FT44 A 0;
+		FT51 A 0;
+		FT52 A 0;
+		FT53 A 0;
+		FT54 A 0;
+		FT55 A 0;
+		Stop;
+	}
+}
