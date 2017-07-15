@@ -24,9 +24,10 @@ OptionValue "DamEnabled"
 
 OptionString "DamFonts"
 {
-	"DamNumFontClassic", "Classic Doom"
-	"DamNumFontSmall"  , "Classic Doom (small)"
-	"DamNumFontModern" , "Modern Doom"
+	"DamNumFontClassic" , "Classic Doom"
+	"DamNumFontSmall"   , "Classic Doom (small)"
+	"DamNumFontModern"  , "Modern Doom"
+	"DamNumFontRavenBig", "Raven (big)"
 }
 
 OptionString "DamTranslations"
