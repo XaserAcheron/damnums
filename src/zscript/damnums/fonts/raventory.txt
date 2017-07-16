@@ -8,7 +8,7 @@ class DamNumFontRaventory : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "FI";
+		DamNumFont.Prefix "_I";
 		DamNumFont.DefaultTranslation "DamGold";
 		Scale 1.0;
 		Alpha 0.85;
@@ -17,21 +17,21 @@ class DamNumFontRaventory : DamNumFont
 	States
 	{
 	Spawn:
-		FI11 A 0;
-		FI21 A 0;
-		FI22 A 0;
-		FI31 A 0;
-		FI32 A 0;
-		FI33 A 0;
-		FI41 A 0;
-		FI42 A 0;
-		FI43 A 0;
-		FI44 A 0;
-		FI51 A 0;
-		FI52 A 0;
-		FI53 A 0;
-		FI54 A 0;
-		FI55 A 0;
+		_I11 A 0;
+		_I21 A 0;
+		_I22 A 0;
+		_I31 A 0;
+		_I32 A 0;
+		_I33 A 0;
+		_I41 A 0;
+		_I42 A 0;
+		_I43 A 0;
+		_I44 A 0;
+		_I51 A 0;
+		_I52 A 0;
+		_I53 A 0;
+		_I54 A 0;
+		_I55 A 0;
 		Stop;
 	}
 }

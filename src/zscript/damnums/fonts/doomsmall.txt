@@ -8,7 +8,7 @@ class DamNumFontSmall : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "FD";
+		DamNumFont.Prefix "_D";
 		DamNumFont.DefaultTranslation "DamRed";
 		Scale 1.0;
 		Alpha 1.0;
@@ -17,21 +17,21 @@ class DamNumFontSmall : DamNumFont
 	States
 	{
 	Spawn:
-		FD11 A 0;
-		FD21 A 0;
-		FD22 A 0;
-		FD31 A 0;
-		FD32 A 0;
-		FD33 A 0;
-		FD41 A 0;
-		FD42 A 0;
-		FD43 A 0;
-		FD44 A 0;
-		FD51 A 0;
-		FD52 A 0;
-		FD53 A 0;
-		FD54 A 0;
-		FD55 A 0;
+		_D11 A 0;
+		_D21 A 0;
+		_D22 A 0;
+		_D31 A 0;
+		_D32 A 0;
+		_D33 A 0;
+		_D41 A 0;
+		_D42 A 0;
+		_D43 A 0;
+		_D44 A 0;
+		_D51 A 0;
+		_D52 A 0;
+		_D53 A 0;
+		_D54 A 0;
+		_D55 A 0;
 		Stop;
 	}
 }

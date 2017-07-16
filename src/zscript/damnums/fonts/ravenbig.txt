@@ -8,7 +8,7 @@ class DamNumFontRavenBig : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "FR";
+		DamNumFont.Prefix "_R";
 		DamNumFont.DefaultTranslation "DamGreen";
 		Scale 0.75;
 		Alpha 0.85;
@@ -17,21 +17,21 @@ class DamNumFontRavenBig : DamNumFont
 	States
 	{
 	Spawn:
-		FR11 A 0;
-		FR21 A 0;
-		FR22 A 0;
-		FR31 A 0;
-		FR32 A 0;
-		FR33 A 0;
-		FR41 A 0;
-		FR42 A 0;
-		FR43 A 0;
-		FR44 A 0;
-		FR51 A 0;
-		FR52 A 0;
-		FR53 A 0;
-		FR54 A 0;
-		FR55 A 0;
+		_R11 A 0;
+		_R21 A 0;
+		_R22 A 0;
+		_R31 A 0;
+		_R32 A 0;
+		_R33 A 0;
+		_R41 A 0;
+		_R42 A 0;
+		_R43 A 0;
+		_R44 A 0;
+		_R51 A 0;
+		_R52 A 0;
+		_R53 A 0;
+		_R54 A 0;
+		_R55 A 0;
 		Stop;
 	}
 }

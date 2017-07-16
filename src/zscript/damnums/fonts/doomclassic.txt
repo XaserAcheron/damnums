@@ -8,7 +8,7 @@ class DamNumFontClassic : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "FC";
+		DamNumFont.Prefix "_C";
 		DamNumFont.DefaultTranslation "DamRed";
 		Scale 0.75;
 		Alpha 0.75;
@@ -17,21 +17,21 @@ class DamNumFontClassic : DamNumFont
 	States
 	{
 	Spawn:
-		FC11 A 0;
-		FC21 A 0;
-		FC22 A 0;
-		FC31 A 0;
-		FC32 A 0;
-		FC33 A 0;
-		FC41 A 0;
-		FC42 A 0;
-		FC43 A 0;
-		FC44 A 0;
-		FC51 A 0;
-		FC52 A 0;
-		FC53 A 0;
-		FC54 A 0;
-		FC55 A 0;
+		_C11 A 0;
+		_C21 A 0;
+		_C22 A 0;
+		_C31 A 0;
+		_C32 A 0;
+		_C33 A 0;
+		_C41 A 0;
+		_C42 A 0;
+		_C43 A 0;
+		_C44 A 0;
+		_C51 A 0;
+		_C52 A 0;
+		_C53 A 0;
+		_C54 A 0;
+		_C55 A 0;
 		Stop;
 	}
 }

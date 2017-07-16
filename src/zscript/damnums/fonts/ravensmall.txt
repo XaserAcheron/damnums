@@ -8,7 +8,7 @@ class DamNumFontRavenSmall : DamNumFont
 {
 	Default
 	{
-		DamNumFont.Prefix "FT";
+		DamNumFont.Prefix "_T";
 		DamNumFont.DefaultTranslation "DamGreen";
 		Scale 1.0;
 		Alpha 0.85;
@@ -17,21 +17,21 @@ class DamNumFontRavenSmall : DamNumFont
 	States
 	{
 	Spawn:
-		FT11 A 0;
-		FT21 A 0;
-		FT22 A 0;
-		FT31 A 0;
-		FT32 A 0;
-		FT33 A 0;
-		FT41 A 0;
-		FT42 A 0;
-		FT43 A 0;
-		FT44 A 0;
-		FT51 A 0;
-		FT52 A 0;
-		FT53 A 0;
-		FT54 A 0;
-		FT55 A 0;
+		_T11 A 0;
+		_T21 A 0;
+		_T22 A 0;
+		_T31 A 0;
+		_T32 A 0;
+		_T33 A 0;
+		_T41 A 0;
+		_T42 A 0;
+		_T43 A 0;
+		_T44 A 0;
+		_T51 A 0;
+		_T52 A 0;
+		_T53 A 0;
+		_T54 A 0;
+		_T55 A 0;
 		Stop;
 	}
 }
