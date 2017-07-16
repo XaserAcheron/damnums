@@ -1,5 +1,17 @@
 # damnums Changelog
 
+## [v1.0.0](https://github.com/XaserAcheron/damnums/tree/v1.0.0) (2017-07-17)
+
+[Full Changelog](https://github.com/XaserAcheron/damnums/compare/v1.0.0...HEAD)
+
+New:
+
+- Optimize font PNG images [\#23](https://github.com/XaserAcheron/damnums/issues/23)
+- Make Font/Color choice user cvars [\#20](https://github.com/XaserAcheron/damnums/issues/20)
+- WADINFO [\#12](https://github.com/XaserAcheron/damnums/issues/12)
+- Damage Types [\#9](https://github.com/XaserAcheron/damnums/issues/9)
+- Fonts [\#4](https://github.com/XaserAcheron/damnums/issues/4)
+
 ## [v0.2.0](https://github.com/XaserAcheron/damnums/tree/v0.2.0) (2017-05-22)
 [Full Changelog](https://github.com/XaserAcheron/damnums/compare/v0.1.1...v0.2.0)
 
