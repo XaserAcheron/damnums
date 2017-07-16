@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Harmony font.
+ */
+
+class DamNumFontHarmony : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_N";
+		DamNumFont.DefaultTranslation "DamCyan";
+		Scale 0.75;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_N11 A 0;
+		_N21 A 0;
+		_N22 A 0;
+		_N31 A 0;
+		_N32 A 0;
+		_N33 A 0;
+		_N41 A 0;
+		_N42 A 0;
+		_N43 A 0;
+		_N44 A 0;
+		_N51 A 0;
+		_N52 A 0;
+		_N53 A 0;
+		_N54 A 0;
+		_N55 A 0;
+		Stop;
+	}
+}

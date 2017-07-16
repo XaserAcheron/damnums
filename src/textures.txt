@@ -1378,3 +1378,157 @@ Sprite "_H52J0", 80, 12 { Offset 40, 10 Patch "_H11J0", 48, 0 }
 Sprite "_H53J0", 80, 12 { Offset 40, 10 Patch "_H11J0", 32, 0 }
 Sprite "_H54J0", 80, 12 { Offset 40, 10 Patch "_H11J0", 16, 0 }
 Sprite "_H55J0", 80, 12 { Offset 40, 10 Patch "_H11J0", 0, 0 }
+
+/*
+ * Harmony font
+ */
+Sprite "_N21A0", 24, 12 { Offset 12, 10 Patch "_N11A0", 12, 0 }
+Sprite "_N22A0", 24, 12 { Offset 12, 10 Patch "_N11A0", 0, 0 }
+Sprite "_N31A0", 36, 12 { Offset 18, 10 Patch "_N11A0", 24, 0 }
+Sprite "_N32A0", 36, 12 { Offset 18, 10 Patch "_N11A0", 12, 0 }
+Sprite "_N33A0", 36, 12 { Offset 18, 10 Patch "_N11A0", 0, 0 }
+Sprite "_N41A0", 48, 12 { Offset 24, 10 Patch "_N11A0", 36, 0 }
+Sprite "_N42A0", 48, 12 { Offset 24, 10 Patch "_N11A0", 24, 0 }
+Sprite "_N43A0", 48, 12 { Offset 24, 10 Patch "_N11A0", 12, 0 }
+Sprite "_N44A0", 48, 12 { Offset 24, 10 Patch "_N11A0", 0, 0 }
+Sprite "_N51A0", 60, 12 { Offset 30, 10 Patch "_N11A0", 48, 0 }
+Sprite "_N52A0", 60, 12 { Offset 30, 10 Patch "_N11A0", 36, 0 }
+Sprite "_N53A0", 60, 12 { Offset 30, 10 Patch "_N11A0", 24, 0 }
+Sprite "_N54A0", 60, 12 { Offset 30, 10 Patch "_N11A0", 12, 0 }
+Sprite "_N55A0", 60, 12 { Offset 30, 10 Patch "_N11A0", 0, 0 }
+
+Sprite "_N21B0", 24, 12 { Offset 12, 10 Patch "_N11B0", 12, 0 }
+Sprite "_N22B0", 24, 12 { Offset 12, 10 Patch "_N11B0", 0, 0 }
+Sprite "_N31B0", 36, 12 { Offset 18, 10 Patch "_N11B0", 24, 0 }
+Sprite "_N32B0", 36, 12 { Offset 18, 10 Patch "_N11B0", 12, 0 }
+Sprite "_N33B0", 36, 12 { Offset 18, 10 Patch "_N11B0", 0, 0 }
+Sprite "_N41B0", 48, 12 { Offset 24, 10 Patch "_N11B0", 36, 0 }
+Sprite "_N42B0", 48, 12 { Offset 24, 10 Patch "_N11B0", 24, 0 }
+Sprite "_N43B0", 48, 12 { Offset 24, 10 Patch "_N11B0", 12, 0 }
+Sprite "_N44B0", 48, 12 { Offset 24, 10 Patch "_N11B0", 0, 0 }
+Sprite "_N51B0", 60, 12 { Offset 30, 10 Patch "_N11B0", 48, 0 }
+Sprite "_N52B0", 60, 12 { Offset 30, 10 Patch "_N11B0", 36, 0 }
+Sprite "_N53B0", 60, 12 { Offset 30, 10 Patch "_N11B0", 24, 0 }
+Sprite "_N54B0", 60, 12 { Offset 30, 10 Patch "_N11B0", 12, 0 }
+Sprite "_N55B0", 60, 12 { Offset 30, 10 Patch "_N11B0", 0, 0 }
+
+Sprite "_N21C0", 24, 12 { Offset 12, 10 Patch "_N11C0", 12, 0 }
+Sprite "_N22C0", 24, 12 { Offset 12, 10 Patch "_N11C0", 0, 0 }
+Sprite "_N31C0", 36, 12 { Offset 18, 10 Patch "_N11C0", 24, 0 }
+Sprite "_N32C0", 36, 12 { Offset 18, 10 Patch "_N11C0", 12, 0 }
+Sprite "_N33C0", 36, 12 { Offset 18, 10 Patch "_N11C0", 0, 0 }
+Sprite "_N41C0", 48, 12 { Offset 24, 10 Patch "_N11C0", 36, 0 }
+Sprite "_N42C0", 48, 12 { Offset 24, 10 Patch "_N11C0", 24, 0 }
+Sprite "_N43C0", 48, 12 { Offset 24, 10 Patch "_N11C0", 12, 0 }
+Sprite "_N44C0", 48, 12 { Offset 24, 10 Patch "_N11C0", 0, 0 }
+Sprite "_N51C0", 60, 12 { Offset 30, 10 Patch "_N11C0", 48, 0 }
+Sprite "_N52C0", 60, 12 { Offset 30, 10 Patch "_N11C0", 36, 0 }
+Sprite "_N53C0", 60, 12 { Offset 30, 10 Patch "_N11C0", 24, 0 }
+Sprite "_N54C0", 60, 12 { Offset 30, 10 Patch "_N11C0", 12, 0 }
+Sprite "_N55C0", 60, 12 { Offset 30, 10 Patch "_N11C0", 0, 0 }
+
+Sprite "_N21D0", 24, 12 { Offset 12, 10 Patch "_N11D0", 12, 0 }
+Sprite "_N22D0", 24, 12 { Offset 12, 10 Patch "_N11D0", 0, 0 }
+Sprite "_N31D0", 36, 12 { Offset 18, 10 Patch "_N11D0", 24, 0 }
+Sprite "_N32D0", 36, 12 { Offset 18, 10 Patch "_N11D0", 12, 0 }
+Sprite "_N33D0", 36, 12 { Offset 18, 10 Patch "_N11D0", 0, 0 }
+Sprite "_N41D0", 48, 12 { Offset 24, 10 Patch "_N11D0", 36, 0 }
+Sprite "_N42D0", 48, 12 { Offset 24, 10 Patch "_N11D0", 24, 0 }
+Sprite "_N43D0", 48, 12 { Offset 24, 10 Patch "_N11D0", 12, 0 }
+Sprite "_N44D0", 48, 12 { Offset 24, 10 Patch "_N11D0", 0, 0 }
+Sprite "_N51D0", 60, 12 { Offset 30, 10 Patch "_N11D0", 48, 0 }
+Sprite "_N52D0", 60, 12 { Offset 30, 10 Patch "_N11D0", 36, 0 }
+Sprite "_N53D0", 60, 12 { Offset 30, 10 Patch "_N11D0", 24, 0 }
+Sprite "_N54D0", 60, 12 { Offset 30, 10 Patch "_N11D0", 12, 0 }
+Sprite "_N55D0", 60, 12 { Offset 30, 10 Patch "_N11D0", 0, 0 }
+
+Sprite "_N21E0", 24, 12 { Offset 12, 10 Patch "_N11E0", 12, 0 }
+Sprite "_N22E0", 24, 12 { Offset 12, 10 Patch "_N11E0", 0, 0 }
+Sprite "_N31E0", 36, 12 { Offset 18, 10 Patch "_N11E0", 24, 0 }
+Sprite "_N32E0", 36, 12 { Offset 18, 10 Patch "_N11E0", 12, 0 }
+Sprite "_N33E0", 36, 12 { Offset 18, 10 Patch "_N11E0", 0, 0 }
+Sprite "_N41E0", 48, 12 { Offset 24, 10 Patch "_N11E0", 36, 0 }
+Sprite "_N42E0", 48, 12 { Offset 24, 10 Patch "_N11E0", 24, 0 }
+Sprite "_N43E0", 48, 12 { Offset 24, 10 Patch "_N11E0", 12, 0 }
+Sprite "_N44E0", 48, 12 { Offset 24, 10 Patch "_N11E0", 0, 0 }
+Sprite "_N51E0", 60, 12 { Offset 30, 10 Patch "_N11E0", 48, 0 }
+Sprite "_N52E0", 60, 12 { Offset 30, 10 Patch "_N11E0", 36, 0 }
+Sprite "_N53E0", 60, 12 { Offset 30, 10 Patch "_N11E0", 24, 0 }
+Sprite "_N54E0", 60, 12 { Offset 30, 10 Patch "_N11E0", 12, 0 }
+Sprite "_N55E0", 60, 12 { Offset 30, 10 Patch "_N11E0", 0, 0 }
+
+Sprite "_N21F0", 24, 12 { Offset 12, 10 Patch "_N11F0", 12, 0 }
+Sprite "_N22F0", 24, 12 { Offset 12, 10 Patch "_N11F0", 0, 0 }
+Sprite "_N31F0", 36, 12 { Offset 18, 10 Patch "_N11F0", 24, 0 }
+Sprite "_N32F0", 36, 12 { Offset 18, 10 Patch "_N11F0", 12, 0 }
+Sprite "_N33F0", 36, 12 { Offset 18, 10 Patch "_N11F0", 0, 0 }
+Sprite "_N41F0", 48, 12 { Offset 24, 10 Patch "_N11F0", 36, 0 }
+Sprite "_N42F0", 48, 12 { Offset 24, 10 Patch "_N11F0", 24, 0 }
+Sprite "_N43F0", 48, 12 { Offset 24, 10 Patch "_N11F0", 12, 0 }
+Sprite "_N44F0", 48, 12 { Offset 24, 10 Patch "_N11F0", 0, 0 }
+Sprite "_N51F0", 60, 12 { Offset 30, 10 Patch "_N11F0", 48, 0 }
+Sprite "_N52F0", 60, 12 { Offset 30, 10 Patch "_N11F0", 36, 0 }
+Sprite "_N53F0", 60, 12 { Offset 30, 10 Patch "_N11F0", 24, 0 }
+Sprite "_N54F0", 60, 12 { Offset 30, 10 Patch "_N11F0", 12, 0 }
+Sprite "_N55F0", 60, 12 { Offset 30, 10 Patch "_N11F0", 0, 0 }
+
+Sprite "_N21G0", 24, 12 { Offset 12, 10 Patch "_N11G0", 12, 0 }
+Sprite "_N22G0", 24, 12 { Offset 12, 10 Patch "_N11G0", 0, 0 }
+Sprite "_N31G0", 36, 12 { Offset 18, 10 Patch "_N11G0", 24, 0 }
+Sprite "_N32G0", 36, 12 { Offset 18, 10 Patch "_N11G0", 12, 0 }
+Sprite "_N33G0", 36, 12 { Offset 18, 10 Patch "_N11G0", 0, 0 }
+Sprite "_N41G0", 48, 12 { Offset 24, 10 Patch "_N11G0", 36, 0 }
+Sprite "_N42G0", 48, 12 { Offset 24, 10 Patch "_N11G0", 24, 0 }
+Sprite "_N43G0", 48, 12 { Offset 24, 10 Patch "_N11G0", 12, 0 }
+Sprite "_N44G0", 48, 12 { Offset 24, 10 Patch "_N11G0", 0, 0 }
+Sprite "_N51G0", 60, 12 { Offset 30, 10 Patch "_N11G0", 48, 0 }
+Sprite "_N52G0", 60, 12 { Offset 30, 10 Patch "_N11G0", 36, 0 }
+Sprite "_N53G0", 60, 12 { Offset 30, 10 Patch "_N11G0", 24, 0 }
+Sprite "_N54G0", 60, 12 { Offset 30, 10 Patch "_N11G0", 12, 0 }
+Sprite "_N55G0", 60, 12 { Offset 30, 10 Patch "_N11G0", 0, 0 }
+
+Sprite "_N21H0", 24, 12 { Offset 12, 10 Patch "_N11H0", 12, 0 }
+Sprite "_N22H0", 24, 12 { Offset 12, 10 Patch "_N11H0", 0, 0 }
+Sprite "_N31H0", 36, 12 { Offset 18, 10 Patch "_N11H0", 24, 0 }
+Sprite "_N32H0", 36, 12 { Offset 18, 10 Patch "_N11H0", 12, 0 }
+Sprite "_N33H0", 36, 12 { Offset 18, 10 Patch "_N11H0", 0, 0 }
+Sprite "_N41H0", 48, 12 { Offset 24, 10 Patch "_N11H0", 36, 0 }
+Sprite "_N42H0", 48, 12 { Offset 24, 10 Patch "_N11H0", 24, 0 }
+Sprite "_N43H0", 48, 12 { Offset 24, 10 Patch "_N11H0", 12, 0 }
+Sprite "_N44H0", 48, 12 { Offset 24, 10 Patch "_N11H0", 0, 0 }
+Sprite "_N51H0", 60, 12 { Offset 30, 10 Patch "_N11H0", 48, 0 }
+Sprite "_N52H0", 60, 12 { Offset 30, 10 Patch "_N11H0", 36, 0 }
+Sprite "_N53H0", 60, 12 { Offset 30, 10 Patch "_N11H0", 24, 0 }
+Sprite "_N54H0", 60, 12 { Offset 30, 10 Patch "_N11H0", 12, 0 }
+Sprite "_N55H0", 60, 12 { Offset 30, 10 Patch "_N11H0", 0, 0 }
+
+Sprite "_N21I0", 24, 12 { Offset 12, 10 Patch "_N11I0", 12, 0 }
+Sprite "_N22I0", 24, 12 { Offset 12, 10 Patch "_N11I0", 0, 0 }
+Sprite "_N31I0", 36, 12 { Offset 18, 10 Patch "_N11I0", 24, 0 }
+Sprite "_N32I0", 36, 12 { Offset 18, 10 Patch "_N11I0", 12, 0 }
+Sprite "_N33I0", 36, 12 { Offset 18, 10 Patch "_N11I0", 0, 0 }
+Sprite "_N41I0", 48, 12 { Offset 24, 10 Patch "_N11I0", 36, 0 }
+Sprite "_N42I0", 48, 12 { Offset 24, 10 Patch "_N11I0", 24, 0 }
+Sprite "_N43I0", 48, 12 { Offset 24, 10 Patch "_N11I0", 12, 0 }
+Sprite "_N44I0", 48, 12 { Offset 24, 10 Patch "_N11I0", 0, 0 }
+Sprite "_N51I0", 60, 12 { Offset 30, 10 Patch "_N11I0", 48, 0 }
+Sprite "_N52I0", 60, 12 { Offset 30, 10 Patch "_N11I0", 36, 0 }
+Sprite "_N53I0", 60, 12 { Offset 30, 10 Patch "_N11I0", 24, 0 }
+Sprite "_N54I0", 60, 12 { Offset 30, 10 Patch "_N11I0", 12, 0 }
+Sprite "_N55I0", 60, 12 { Offset 30, 10 Patch "_N11I0", 0, 0 }
+
+Sprite "_N21J0", 24, 12 { Offset 12, 10 Patch "_N11J0", 12, 0 }
+Sprite "_N22J0", 24, 12 { Offset 12, 10 Patch "_N11J0", 0, 0 }
+Sprite "_N31J0", 36, 12 { Offset 18, 10 Patch "_N11J0", 24, 0 }
+Sprite "_N32J0", 36, 12 { Offset 18, 10 Patch "_N11J0", 12, 0 }
+Sprite "_N33J0", 36, 12 { Offset 18, 10 Patch "_N11J0", 0, 0 }
+Sprite "_N41J0", 48, 12 { Offset 24, 10 Patch "_N11J0", 36, 0 }
+Sprite "_N42J0", 48, 12 { Offset 24, 10 Patch "_N11J0", 24, 0 }
+Sprite "_N43J0", 48, 12 { Offset 24, 10 Patch "_N11J0", 12, 0 }
+Sprite "_N44J0", 48, 12 { Offset 24, 10 Patch "_N11J0", 0, 0 }
+Sprite "_N51J0", 60, 12 { Offset 30, 10 Patch "_N11J0", 48, 0 }
+Sprite "_N52J0", 60, 12 { Offset 30, 10 Patch "_N11J0", 36, 0 }
+Sprite "_N53J0", 60, 12 { Offset 30, 10 Patch "_N11J0", 24, 0 }
+Sprite "_N54J0", 60, 12 { Offset 30, 10 Patch "_N11J0", 12, 0 }
+Sprite "_N55J0", 60, 12 { Offset 30, 10 Patch "_N11J0", 0, 0 }
+

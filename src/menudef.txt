@@ -33,6 +33,7 @@ OptionString "DamFonts"
 	"DamNumFontStrife"    , "Strife"
 	"DamNumFontChex"      , "Chex Quest"
 	"DamNumFontHacx"      , "Hacx"
+	"DamNumFontHarmony"   , "Harmony"
 }
 
 OptionString "DamTranslations"
