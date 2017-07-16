@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Urban Brawl font.
+ */
+
+class DamNumFontUrbanBrawl : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_U";
+		DamNumFont.DefaultTranslation "DamWhite";
+		Scale 0.75;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_U11 A 0;
+		_U21 A 0;
+		_U22 A 0;
+		_U31 A 0;
+		_U32 A 0;
+		_U33 A 0;
+		_U41 A 0;
+		_U42 A 0;
+		_U43 A 0;
+		_U44 A 0;
+		_U51 A 0;
+		_U52 A 0;
+		_U53 A 0;
+		_U54 A 0;
+		_U55 A 0;
+		Stop;
+	}
+}
