@@ -1,0 +1,8 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Doom
+ */
+
+class DamNumFontGameDefault : DamNumFontClassic {}
+class DamNumFontGameSmall   : DamNumFontSmall   {}

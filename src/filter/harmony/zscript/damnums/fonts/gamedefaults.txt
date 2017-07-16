@@ -1,0 +1,12 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Harmony
+ */
+
+class DamNumFontGameDefault : DamNumFontHarmony {}
+class DamNumFontGameSmall   : DamNumFontHarmony {
+	Default {
+		Scale 0.44;
+	}
+}

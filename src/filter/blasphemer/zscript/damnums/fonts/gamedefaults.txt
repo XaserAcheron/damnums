@@ -1,0 +1,16 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Blasphemer; just use Hexen's because Blasphemer's font sucks.
+ */
+
+class DamNumFontGameDefault : DamNumFontRavenBig   {
+	Default {
+		DamNumFont.DefaultTranslation "DamRed";
+	}
+}
+class DamNumFontGameSmall   : DamNumFontRavenSmall {
+	Default {
+		DamNumFont.DefaultTranslation "DamRed";
+	}
+}

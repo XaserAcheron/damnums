@@ -1,0 +1,12 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Hacx
+ */
+
+class DamNumFontGameDefault : DamNumFontHacx {}
+class DamNumFontGameSmall   : DamNumFontHacx {
+	Default {
+		Scale 0.44;
+	}
+}

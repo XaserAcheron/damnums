@@ -1,0 +1,8 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Heretic
+ */
+
+class DamNumFontGameDefault : DamNumFontRavenBig   {}
+class DamNumFontGameSmall   : DamNumFontRavenSmall {}

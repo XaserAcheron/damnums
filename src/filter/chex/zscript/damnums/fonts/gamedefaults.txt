@@ -1,0 +1,12 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Chex Quest
+ */
+
+class DamNumFontGameDefault : DamNumFontChex  {}
+class DamNumFontGameSmall   : DamNumFontSmall {
+	Default {
+		DamNumFont.DefaultTranslation "DamGreen";
+	}
+}

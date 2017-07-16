@@ -1,0 +1,16 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Hexen
+ */
+
+class DamNumFontGameDefault : DamNumFontRavenBig   {
+	Default {
+		DamNumFont.DefaultTranslation "DamRed";
+	}
+}
+class DamNumFontGameSmall   : DamNumFontRavenSmall {
+	Default {
+		DamNumFont.DefaultTranslation "DamRed";
+	}
+}

@@ -1,4 +1,4 @@
-server string dam_fontclass = "DamNumFontClassic";
+server string dam_fontclass = "DamNumFontGameDefault";
 server string dam_translation = "DamDefault";
 server int dam_spray = 0;
 server int dam_physics = 0;

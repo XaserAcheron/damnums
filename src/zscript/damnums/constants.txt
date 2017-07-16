@@ -10,7 +10,7 @@ enum DamNum_Physics
 	DAM_PHYSICS_FLOAT = 1,
 };
 
-const DamNum_DefaultFontName = "DamNumFontClassic";
+const DamNum_DefaultFontName = "DamNumFontGameDefault";
 const DamNum_DefaultFontPrefix = "FC";
 const DamNum_DefaultTranslation = "DamWhite";
 const DamNum_PlaceholderTranslation = "DamDefault";

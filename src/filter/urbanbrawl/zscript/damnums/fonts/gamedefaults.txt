@@ -1,0 +1,12 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for Urban Brawl
+ */
+
+class DamNumFontGameDefault: DamNumFontUrbanBrawl {}
+class DamNumFontGameSmall  : DamNumFontUrbanBrawl {
+	Default {
+		Scale 0.44;
+	}
+}

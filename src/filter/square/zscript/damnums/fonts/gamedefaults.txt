@@ -1,0 +1,12 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Game Defaults for The Adventures of Square
+ */
+
+class DamNumFontGameDefault : DamNumFontSquare {}
+class DamNumFontGameSmall   : DamNumFontSquare {
+	Default {
+		Scale 0.44;
+	}
+}
