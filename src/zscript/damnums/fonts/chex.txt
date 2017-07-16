@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Chex Quest font.
+ */
+
+class DamNumFontChex : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_X";
+		DamNumFont.DefaultTranslation "DamGreen";
+		Scale 0.75;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_X11 A 0;
+		_X21 A 0;
+		_X22 A 0;
+		_X31 A 0;
+		_X32 A 0;
+		_X33 A 0;
+		_X41 A 0;
+		_X42 A 0;
+		_X43 A 0;
+		_X44 A 0;
+		_X51 A 0;
+		_X52 A 0;
+		_X53 A 0;
+		_X54 A 0;
+		_X55 A 0;
+		Stop;
+	}
+}
