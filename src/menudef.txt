@@ -38,6 +38,7 @@ OptionString "DamFonts"
 	"DamNumFontHarmony"    , "Harmony"
 	"DamNumFontSquare"     , "The Adventures of Square"
 	"DamNumFontUrbanBrawl" , "Urban Brawl"
+	"DamNumFontBorderlands", "Borderlands"
 }
 
 OptionString "DamTranslations"

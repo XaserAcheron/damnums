@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Borderlands font.
+ */
+
+class DamNumFontBorderlands : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_L";
+		DamNumFont.DefaultTranslation "DamWhite";
+		Scale 0.33;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_L11 A 0;
+		_L21 A 0;
+		_L22 A 0;
+		_L31 A 0;
+		_L32 A 0;
+		_L33 A 0;
+		_L41 A 0;
+		_L42 A 0;
+		_L43 A 0;
+		_L44 A 0;
+		_L51 A 0;
+		_L52 A 0;
+		_L53 A 0;
+		_L54 A 0;
+		_L55 A 0;
+		Stop;
+	}
+}
