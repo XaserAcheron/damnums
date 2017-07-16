@@ -1,7 +1,7 @@
 /*
  * DamNums: by Xaser Acheron
  */
- 
+
 /*
  * Doom Classic font
  */
@@ -919,3 +919,156 @@ Sprite "FI52J0", 40, 9 { Offset 20, 7 Patch "FI11J0", 24, 0 }
 Sprite "FI53J0", 40, 9 { Offset 20, 7 Patch "FI11J0", 16, 0 }
 Sprite "FI54J0", 40, 9 { Offset 20, 7 Patch "FI11J0", 8, 0 }
 Sprite "FI55J0", 40, 9 { Offset 20, 7 Patch "FI11J0", 0, 0 }
+
+/*
+ * Strife font
+ */
+Sprite "FS21A0", 20, 7 { Offset 10, 5 Patch "FS11A0", 10, 0 }
+Sprite "FS22A0", 20, 7 { Offset 10, 5 Patch "FS11A0", 0, 0 }
+Sprite "FS31A0", 30, 7 { Offset 15, 5 Patch "FS11A0", 20, 0 }
+Sprite "FS32A0", 30, 7 { Offset 15, 5 Patch "FS11A0", 10, 0 }
+Sprite "FS33A0", 30, 7 { Offset 15, 5 Patch "FS11A0", 0, 0 }
+Sprite "FS41A0", 40, 7 { Offset 20, 5 Patch "FS11A0", 30, 0 }
+Sprite "FS42A0", 40, 7 { Offset 20, 5 Patch "FS11A0", 20, 0 }
+Sprite "FS43A0", 40, 7 { Offset 20, 5 Patch "FS11A0", 10, 0 }
+Sprite "FS44A0", 40, 7 { Offset 20, 5 Patch "FS11A0", 0, 0 }
+Sprite "FS51A0", 50, 7 { Offset 25, 5 Patch "FS11A0", 40, 0 }
+Sprite "FS52A0", 50, 7 { Offset 25, 5 Patch "FS11A0", 30, 0 }
+Sprite "FS53A0", 50, 7 { Offset 25, 5 Patch "FS11A0", 20, 0 }
+Sprite "FS54A0", 50, 7 { Offset 25, 5 Patch "FS11A0", 10, 0 }
+Sprite "FS55A0", 50, 7 { Offset 25, 5 Patch "FS11A0", 0, 0 }
+
+Sprite "FS21B0", 20, 7 { Offset 10, 5 Patch "FS11B0", 10, 0 }
+Sprite "FS22B0", 20, 7 { Offset 10, 5 Patch "FS11B0", 0, 0 }
+Sprite "FS31B0", 30, 7 { Offset 15, 5 Patch "FS11B0", 20, 0 }
+Sprite "FS32B0", 30, 7 { Offset 15, 5 Patch "FS11B0", 10, 0 }
+Sprite "FS33B0", 30, 7 { Offset 15, 5 Patch "FS11B0", 0, 0 }
+Sprite "FS41B0", 40, 7 { Offset 20, 5 Patch "FS11B0", 30, 0 }
+Sprite "FS42B0", 40, 7 { Offset 20, 5 Patch "FS11B0", 20, 0 }
+Sprite "FS43B0", 40, 7 { Offset 20, 5 Patch "FS11B0", 10, 0 }
+Sprite "FS44B0", 40, 7 { Offset 20, 5 Patch "FS11B0", 0, 0 }
+Sprite "FS51B0", 50, 7 { Offset 25, 5 Patch "FS11B0", 40, 0 }
+Sprite "FS52B0", 50, 7 { Offset 25, 5 Patch "FS11B0", 30, 0 }
+Sprite "FS53B0", 50, 7 { Offset 25, 5 Patch "FS11B0", 20, 0 }
+Sprite "FS54B0", 50, 7 { Offset 25, 5 Patch "FS11B0", 10, 0 }
+Sprite "FS55B0", 50, 7 { Offset 25, 5 Patch "FS11B0", 0, 0 }
+
+Sprite "FS21C0", 20, 7 { Offset 10, 5 Patch "FS11C0", 10, 0 }
+Sprite "FS22C0", 20, 7 { Offset 10, 5 Patch "FS11C0", 0, 0 }
+Sprite "FS31C0", 30, 7 { Offset 15, 5 Patch "FS11C0", 20, 0 }
+Sprite "FS32C0", 30, 7 { Offset 15, 5 Patch "FS11C0", 10, 0 }
+Sprite "FS33C0", 30, 7 { Offset 15, 5 Patch "FS11C0", 0, 0 }
+Sprite "FS41C0", 40, 7 { Offset 20, 5 Patch "FS11C0", 30, 0 }
+Sprite "FS42C0", 40, 7 { Offset 20, 5 Patch "FS11C0", 20, 0 }
+Sprite "FS43C0", 40, 7 { Offset 20, 5 Patch "FS11C0", 10, 0 }
+Sprite "FS44C0", 40, 7 { Offset 20, 5 Patch "FS11C0", 0, 0 }
+Sprite "FS51C0", 50, 7 { Offset 25, 5 Patch "FS11C0", 40, 0 }
+Sprite "FS52C0", 50, 7 { Offset 25, 5 Patch "FS11C0", 30, 0 }
+Sprite "FS53C0", 50, 7 { Offset 25, 5 Patch "FS11C0", 20, 0 }
+Sprite "FS54C0", 50, 7 { Offset 25, 5 Patch "FS11C0", 10, 0 }
+Sprite "FS55C0", 50, 7 { Offset 25, 5 Patch "FS11C0", 0, 0 }
+
+Sprite "FS21D0", 20, 7 { Offset 10, 5 Patch "FS11D0", 10, 0 }
+Sprite "FS22D0", 20, 7 { Offset 10, 5 Patch "FS11D0", 0, 0 }
+Sprite "FS31D0", 30, 7 { Offset 15, 5 Patch "FS11D0", 20, 0 }
+Sprite "FS32D0", 30, 7 { Offset 15, 5 Patch "FS11D0", 10, 0 }
+Sprite "FS33D0", 30, 7 { Offset 15, 5 Patch "FS11D0", 0, 0 }
+Sprite "FS41D0", 40, 7 { Offset 20, 5 Patch "FS11D0", 30, 0 }
+Sprite "FS42D0", 40, 7 { Offset 20, 5 Patch "FS11D0", 20, 0 }
+Sprite "FS43D0", 40, 7 { Offset 20, 5 Patch "FS11D0", 10, 0 }
+Sprite "FS44D0", 40, 7 { Offset 20, 5 Patch "FS11D0", 0, 0 }
+Sprite "FS51D0", 50, 7 { Offset 25, 5 Patch "FS11D0", 40, 0 }
+Sprite "FS52D0", 50, 7 { Offset 25, 5 Patch "FS11D0", 30, 0 }
+Sprite "FS53D0", 50, 7 { Offset 25, 5 Patch "FS11D0", 20, 0 }
+Sprite "FS54D0", 50, 7 { Offset 25, 5 Patch "FS11D0", 10, 0 }
+Sprite "FS55D0", 50, 7 { Offset 25, 5 Patch "FS11D0", 0, 0 }
+
+Sprite "FS21E0", 20, 7 { Offset 10, 5 Patch "FS11E0", 10, 0 }
+Sprite "FS22E0", 20, 7 { Offset 10, 5 Patch "FS11E0", 0, 0 }
+Sprite "FS31E0", 30, 7 { Offset 15, 5 Patch "FS11E0", 20, 0 }
+Sprite "FS32E0", 30, 7 { Offset 15, 5 Patch "FS11E0", 10, 0 }
+Sprite "FS33E0", 30, 7 { Offset 15, 5 Patch "FS11E0", 0, 0 }
+Sprite "FS41E0", 40, 7 { Offset 20, 5 Patch "FS11E0", 30, 0 }
+Sprite "FS42E0", 40, 7 { Offset 20, 5 Patch "FS11E0", 20, 0 }
+Sprite "FS43E0", 40, 7 { Offset 20, 5 Patch "FS11E0", 10, 0 }
+Sprite "FS44E0", 40, 7 { Offset 20, 5 Patch "FS11E0", 0, 0 }
+Sprite "FS51E0", 50, 7 { Offset 25, 5 Patch "FS11E0", 40, 0 }
+Sprite "FS52E0", 50, 7 { Offset 25, 5 Patch "FS11E0", 30, 0 }
+Sprite "FS53E0", 50, 7 { Offset 25, 5 Patch "FS11E0", 20, 0 }
+Sprite "FS54E0", 50, 7 { Offset 25, 5 Patch "FS11E0", 10, 0 }
+Sprite "FS55E0", 50, 7 { Offset 25, 5 Patch "FS11E0", 0, 0 }
+
+Sprite "FS21F0", 20, 7 { Offset 10, 5 Patch "FS11F0", 10, 0 }
+Sprite "FS22F0", 20, 7 { Offset 10, 5 Patch "FS11F0", 0, 0 }
+Sprite "FS31F0", 30, 7 { Offset 15, 5 Patch "FS11F0", 20, 0 }
+Sprite "FS32F0", 30, 7 { Offset 15, 5 Patch "FS11F0", 10, 0 }
+Sprite "FS33F0", 30, 7 { Offset 15, 5 Patch "FS11F0", 0, 0 }
+Sprite "FS41F0", 40, 7 { Offset 20, 5 Patch "FS11F0", 30, 0 }
+Sprite "FS42F0", 40, 7 { Offset 20, 5 Patch "FS11F0", 20, 0 }
+Sprite "FS43F0", 40, 7 { Offset 20, 5 Patch "FS11F0", 10, 0 }
+Sprite "FS44F0", 40, 7 { Offset 20, 5 Patch "FS11F0", 0, 0 }
+Sprite "FS51F0", 50, 7 { Offset 25, 5 Patch "FS11F0", 40, 0 }
+Sprite "FS52F0", 50, 7 { Offset 25, 5 Patch "FS11F0", 30, 0 }
+Sprite "FS53F0", 50, 7 { Offset 25, 5 Patch "FS11F0", 20, 0 }
+Sprite "FS54F0", 50, 7 { Offset 25, 5 Patch "FS11F0", 10, 0 }
+Sprite "FS55F0", 50, 7 { Offset 25, 5 Patch "FS11F0", 0, 0 }
+
+Sprite "FS21G0", 20, 7 { Offset 10, 5 Patch "FS11G0", 10, 0 }
+Sprite "FS22G0", 20, 7 { Offset 10, 5 Patch "FS11G0", 0, 0 }
+Sprite "FS31G0", 30, 7 { Offset 15, 5 Patch "FS11G0", 20, 0 }
+Sprite "FS32G0", 30, 7 { Offset 15, 5 Patch "FS11G0", 10, 0 }
+Sprite "FS33G0", 30, 7 { Offset 15, 5 Patch "FS11G0", 0, 0 }
+Sprite "FS41G0", 40, 7 { Offset 20, 5 Patch "FS11G0", 30, 0 }
+Sprite "FS42G0", 40, 7 { Offset 20, 5 Patch "FS11G0", 20, 0 }
+Sprite "FS43G0", 40, 7 { Offset 20, 5 Patch "FS11G0", 10, 0 }
+Sprite "FS44G0", 40, 7 { Offset 20, 5 Patch "FS11G0", 0, 0 }
+Sprite "FS51G0", 50, 7 { Offset 25, 5 Patch "FS11G0", 40, 0 }
+Sprite "FS52G0", 50, 7 { Offset 25, 5 Patch "FS11G0", 30, 0 }
+Sprite "FS53G0", 50, 7 { Offset 25, 5 Patch "FS11G0", 20, 0 }
+Sprite "FS54G0", 50, 7 { Offset 25, 5 Patch "FS11G0", 10, 0 }
+Sprite "FS55G0", 50, 7 { Offset 25, 5 Patch "FS11G0", 0, 0 }
+
+Sprite "FS21H0", 20, 7 { Offset 10, 5 Patch "FS11H0", 10, 0 }
+Sprite "FS22H0", 20, 7 { Offset 10, 5 Patch "FS11H0", 0, 0 }
+Sprite "FS31H0", 30, 7 { Offset 15, 5 Patch "FS11H0", 20, 0 }
+Sprite "FS32H0", 30, 7 { Offset 15, 5 Patch "FS11H0", 10, 0 }
+Sprite "FS33H0", 30, 7 { Offset 15, 5 Patch "FS11H0", 0, 0 }
+Sprite "FS41H0", 40, 7 { Offset 20, 5 Patch "FS11H0", 30, 0 }
+Sprite "FS42H0", 40, 7 { Offset 20, 5 Patch "FS11H0", 20, 0 }
+Sprite "FS43H0", 40, 7 { Offset 20, 5 Patch "FS11H0", 10, 0 }
+Sprite "FS44H0", 40, 7 { Offset 20, 5 Patch "FS11H0", 0, 0 }
+Sprite "FS51H0", 50, 7 { Offset 25, 5 Patch "FS11H0", 40, 0 }
+Sprite "FS52H0", 50, 7 { Offset 25, 5 Patch "FS11H0", 30, 0 }
+Sprite "FS53H0", 50, 7 { Offset 25, 5 Patch "FS11H0", 20, 0 }
+Sprite "FS54H0", 50, 7 { Offset 25, 5 Patch "FS11H0", 10, 0 }
+Sprite "FS55H0", 50, 7 { Offset 25, 5 Patch "FS11H0", 0, 0 }
+
+Sprite "FS21I0", 20, 7 { Offset 10, 5 Patch "FS11I0", 10, 0 }
+Sprite "FS22I0", 20, 7 { Offset 10, 5 Patch "FS11I0", 0, 0 }
+Sprite "FS31I0", 30, 7 { Offset 15, 5 Patch "FS11I0", 20, 0 }
+Sprite "FS32I0", 30, 7 { Offset 15, 5 Patch "FS11I0", 10, 0 }
+Sprite "FS33I0", 30, 7 { Offset 15, 5 Patch "FS11I0", 0, 0 }
+Sprite "FS41I0", 40, 7 { Offset 20, 5 Patch "FS11I0", 30, 0 }
+Sprite "FS42I0", 40, 7 { Offset 20, 5 Patch "FS11I0", 20, 0 }
+Sprite "FS43I0", 40, 7 { Offset 20, 5 Patch "FS11I0", 10, 0 }
+Sprite "FS44I0", 40, 7 { Offset 20, 5 Patch "FS11I0", 0, 0 }
+Sprite "FS51I0", 50, 7 { Offset 25, 5 Patch "FS11I0", 40, 0 }
+Sprite "FS52I0", 50, 7 { Offset 25, 5 Patch "FS11I0", 30, 0 }
+Sprite "FS53I0", 50, 7 { Offset 25, 5 Patch "FS11I0", 20, 0 }
+Sprite "FS54I0", 50, 7 { Offset 25, 5 Patch "FS11I0", 10, 0 }
+Sprite "FS55I0", 50, 7 { Offset 25, 5 Patch "FS11I0", 0, 0 }
+
+Sprite "FS21J0", 20, 7 { Offset 10, 5 Patch "FS11J0", 10, 0 }
+Sprite "FS22J0", 20, 7 { Offset 10, 5 Patch "FS11J0", 0, 0 }
+Sprite "FS31J0", 30, 7 { Offset 15, 5 Patch "FS11J0", 20, 0 }
+Sprite "FS32J0", 30, 7 { Offset 15, 5 Patch "FS11J0", 10, 0 }
+Sprite "FS33J0", 30, 7 { Offset 15, 5 Patch "FS11J0", 0, 0 }
+Sprite "FS41J0", 40, 7 { Offset 20, 5 Patch "FS11J0", 30, 0 }
+Sprite "FS42J0", 40, 7 { Offset 20, 5 Patch "FS11J0", 20, 0 }
+Sprite "FS43J0", 40, 7 { Offset 20, 5 Patch "FS11J0", 10, 0 }
+Sprite "FS44J0", 40, 7 { Offset 20, 5 Patch "FS11J0", 0, 0 }
+Sprite "FS51J0", 50, 7 { Offset 25, 5 Patch "FS11J0", 40, 0 }
+Sprite "FS52J0", 50, 7 { Offset 25, 5 Patch "FS11J0", 30, 0 }
+Sprite "FS53J0", 50, 7 { Offset 25, 5 Patch "FS11J0", 20, 0 }
+Sprite "FS54J0", 50, 7 { Offset 25, 5 Patch "FS11J0", 10, 0 }
+Sprite "FS55J0", 50, 7 { Offset 25, 5 Patch "FS11J0", 0, 0 }
