@@ -32,6 +32,7 @@ OptionString "DamFonts"
 	"DamNumFontRaventory" , "Raven (inventory)"
 	"DamNumFontStrife"    , "Strife"
 	"DamNumFontChex"      , "Chex Quest"
+	"DamNumFontHacx"      , "Hacx"
 }
 
 OptionString "DamTranslations"

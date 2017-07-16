@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Hacx font.
+ */
+
+class DamNumFontHacx : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_H";
+		DamNumFont.DefaultTranslation "DamWhite";
+		Scale 0.75;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_H11 A 0;
+		_H21 A 0;
+		_H22 A 0;
+		_H31 A 0;
+		_H32 A 0;
+		_H33 A 0;
+		_H41 A 0;
+		_H42 A 0;
+		_H43 A 0;
+		_H44 A 0;
+		_H51 A 0;
+		_H52 A 0;
+		_H53 A 0;
+		_H54 A 0;
+		_H55 A 0;
+		Stop;
+	}
+}
