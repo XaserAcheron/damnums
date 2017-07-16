@@ -3,4 +3,5 @@ server string dam_translation = "DamDefault";
 server int dam_spray = 0;
 server int dam_physics = 0;
 server bool dam_shootable = false;
+server bool dam_usetypes = true;
 server bool dam_enabled = true;

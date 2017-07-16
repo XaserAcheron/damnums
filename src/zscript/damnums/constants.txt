@@ -13,4 +13,6 @@ enum DamNum_Physics
 const DamNum_DefaultFontName = "DamNumFontGameDefault";
 const DamNum_DefaultFontPrefix = "FC";
 const DamNum_DefaultTranslation = "DamWhite";
+const DamNum_DefaultDamagetype = "None";
+const DamNum_LanguageTypecolorPrefix = "DAMNUM_TYPECOLOR_";
 const DamNum_PlaceholderTranslation = "DamDefault";

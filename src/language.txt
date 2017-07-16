@@ -1,0 +1,34 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * LANGUAGE file: for damagetype colors! Seems like an odd place, until you
+ * realize that mods can define these and have them Just Work(tm), enabling
+ * support for DamNums without requiring an actual mod dependency. Hellyeah!
+ *
+ * This file basically adds a bunch of defaults for various frequently-used*
+ * damage types (*or ones I've used in past mods, hehe). For all other cases,
+ * define your own! It works wonders.
+ */
+
+[enu default]
+
+DAMNUM_TYPECOLOR_STEEL        = "DamWhite";
+DAMNUM_TYPECOLOR_BLOOD        = "DamRed";
+DAMNUM_TYPECOLOR_ICE          = "DamLightBlue";
+DAMNUM_TYPECOLOR_FIRE         = "DamOrange";
+DAMNUM_TYPECOLOR_EARTH        = "DamBrown";
+DAMNUM_TYPECOLOR_QUAKE        = "DamBrown";
+DAMNUM_TYPECOLOR_ELECTRIC     = "DamYellow";
+DAMNUM_TYPECOLOR_LIGHTNING    = "DamYellow";
+DAMNUM_TYPECOLOR_GRAVITY      = "DamPurple";
+DAMNUM_TYPECOLOR_POISON       = "DamPurple";
+DAMNUM_TYPECOLOR_POISONCLOUD  = "DamPurple";
+DAMNUM_TYPECOLOR_DARK         = "DamBlack";
+DAMNUM_TYPECOLOR_ROCKET       = "DamGold";
+DAMNUM_TYPECOLOR_EXPLODE      = "DamGold";
+DAMNUM_TYPECOLOR_EXPLOSIVE    = "DamGold";
+DAMNUM_TYPECOLOR_EXPLOSION    = "DamGold";
+DAMNUM_TYPECOLOR_PLASMA       = "DamCyan";
+DAMNUM_TYPECOLOR_DISINTEGRATE = "DamGreen";
+DAMNUM_TYPECOLOR_BFG          = "DamGreen";
+DAMNUM_TYPECOLOR_BFGSPLASH    = "DamGreen";

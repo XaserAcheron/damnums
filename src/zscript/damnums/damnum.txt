@@ -83,7 +83,7 @@ class DamNum : Actor
 	/*
 	 * Spawn damage numbers. Does what it says on the tin.
 	 */
-	static int spawnDamageNumbers(Vector3 position = (0,0,0), int damage = 0, Name damagetype = 'Default') 
+	static int spawnDamageNumbers(Vector3 position = (0,0,0), int damage = 0, Name damagetype = DamNum_DefaultDamagetype) 
 	{
 		// angle toward the console player just a bit. This is safe now
 		// that the nums have +NOINTERACTION.
@@ -130,10 +130,24 @@ class DamNum : Actor
 		// color choice. If so, use it. While we're at it,
 		// treat the string "DamDefault" as 'use what the mod suggests'.
 		cv = CVar.FindCvar("dam_translation");
-		string userTranslation = cv ? cv.GetString() : DamNum_PlaceholderTranslation;
+		string userTranslation = cv ? cv.getString() : DamNum_PlaceholderTranslation;
 		string fontTrans = font ? font.fontTrans : DamNum_DefaultTranslation;
 		if(userTranslation != DamNum_PlaceholderTranslation) {
 			fontTrans = userTranslation;
+		}
+
+		// if we've got damagetype support on, override the above with the
+		// damagetype color (if it's not 'Default', of course).
+		cv = CVar.FindCvar("dam_usetypes");
+		bool usedamagetype = cv ? cv.GetInt() : 0;
+		if(usedamagetype && damagetype != DamNum_DefaultDamagetype) {
+			// snag the damagetype definition from LANGUAGE.
+			string typecolorname = (DamNum_LanguageTypecolorPrefix .. damagetype);
+			string typecolor = Stringtable.Localize("$" .. typecolorname);
+			if(typecolor != typecolorname) {
+				// hey! we got a color from language; let's use it.
+				fontTrans = typecolor;
+			}
 		}
 
 		// spawn in the damage number digits.
