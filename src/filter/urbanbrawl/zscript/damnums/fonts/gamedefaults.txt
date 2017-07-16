@@ -5,8 +5,4 @@
  */
 
 class DamNumFontGameDefault: DamNumFontUrbanBrawl {}
-class DamNumFontGameSmall  : DamNumFontUrbanBrawl {
-	Default {
-		Scale 0.44;
-	}
-}
+class DamNumFontGameSmall  : DamNumFontUrbanBrawl {}

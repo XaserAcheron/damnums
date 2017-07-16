@@ -10,7 +10,7 @@ class DamNumFontUrbanBrawl : DamNumFont
 	{
 		DamNumFont.Prefix "_U";
 		DamNumFont.DefaultTranslation "DamWhite";
-		Scale 0.75;
+		Scale 1.00;
 		Alpha 0.85;
 		RenderStyle 'Translucent';
 	}
