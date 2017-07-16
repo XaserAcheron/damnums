@@ -24,9 +24,10 @@ class DamNum : Actor
 		+NOBLOCKMAP;
 		+NOBLOCKMONST;
 		+THRUACTORS;
-		+BRIGHT
-		+NOINTERACTION
-		+NOTONAUTOMAP
+		+BRIGHT;
+		+NOINTERACTION;
+		+NOTONAUTOMAP;
+		+CLIENTSIDEONLY;
 	}
 	States
 	{
@@ -87,14 +88,14 @@ class DamNum : Actor
 	{
 		// angle toward the console player just a bit. This is safe now
 		// that the nums have +NOINTERACTION.
-		Actor curPlayer = players[consoleplayer].mo;
-		Vector3 posDiff = (curPlayer.pos - position);
+		PlayerInfo curPlayer = players[consoleplayer];
+		Vector3 posDiff = (curPlayer.mo.pos - position);
 		double ang = ((atan2(posDiff.y, posDiff.x) + 360.0) % 360.0) + frandom(-20, 20);
 
 		// determine the physics style pre-spawn, so the cvar doesn't
 		// have to be checked every single tic (and the physics style
 		// doesn't abruptly shift if the user changes it later).
-		Cvar cv = CVar.FindCvar("dam_physics");
+		Cvar cv = CVar.GetCvar("dam_physics", curPlayer);
 		int physics = (cv) ? cv.GetInt() : 0;
 		vector3 nvel;
 		bool noGravity;
@@ -113,7 +114,7 @@ class DamNum : Actor
 		// figure out which font to use. This is done here so it doesn't have to
 		// be determined for every single digit.
 
-		cv = CVar.FindCvar("dam_fontclass");
+		cv = CVar.GetCvar("dam_fontclass", curPlayer);
 		string fontname = (cv) ? cv.getString() : DamNum_DefaultFontName;
 
 		// spawn the font class by name. 'fontclass' below yields null if
@@ -129,7 +130,7 @@ class DamNum : Actor
 		// check to see if the user is opting for a particular
 		// color choice. If so, use it. While we're at it,
 		// treat the string "DamDefault" as 'use what the mod suggests'.
-		cv = CVar.FindCvar("dam_translation");
+		cv = CVar.GetCvar("dam_translation", curPlayer);
 		string userTranslation = cv ? cv.getString() : DamNum_PlaceholderTranslation;
 		string fontTrans = font ? font.fontTrans : DamNum_DefaultTranslation;
 		if(userTranslation != DamNum_PlaceholderTranslation) {
@@ -138,7 +139,7 @@ class DamNum : Actor
 
 		// if we've got damagetype support on, override the above with the
 		// damagetype color (if it's not 'Default', of course).
-		cv = CVar.FindCvar("dam_usetypes");
+		cv = CVar.GetCvar("dam_usetypes", curPlayer);
 		bool usedamagetype = cv ? cv.GetInt() : 0;
 		if(usedamagetype && damagetype != DamNum_DefaultDamagetype) {
 			// snag the damagetype definition from LANGUAGE.

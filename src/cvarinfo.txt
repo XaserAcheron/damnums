@@ -1,7 +1,7 @@
-server string dam_fontclass = "DamNumFontGameDefault";
-server string dam_translation = "DamDefault";
-server int dam_spray = 0;
-server int dam_physics = 0;
-server bool dam_shootable = false;
-server bool dam_usetypes = true;
-server bool dam_enabled = true;
+server bool   dam_enabled = true;
+server bool   dam_shootable = false;
+server int    dam_spray = 0;
+user   string dam_fontclass = "DamNumFontGameDefault";
+user   string dam_translation = "DamDefault";
+user   int    dam_physics = 0;
+user   bool   dam_usetypes = true;

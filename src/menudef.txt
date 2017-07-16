@@ -71,17 +71,18 @@ OptionMenu "DamNumsOptions"
 {
 	Position -15
 	Title       "DamNums Options"
+	StaticText 	"Global Settings", 1
 	Option		"Mod Enabled"       , "dam_enabled"  , "DamEnabled"
 	Option      "Spawn Numbers For*", "dam_shootable", "DamShootable"
+	Option      "Shotgun Spray"     , "dam_spray"    , "YesNo"
 	StaticText 	""
-	StaticText 	"Number Display Settings", 1
+	StaticText 	"User Preferences", 1
 	Option      "Font"         , "dam_fontclass"  , "DamFonts"
 	Option      "Color"        , "dam_translation", "DamTranslations"
 	Option      "Physics"      , "dam_physics"    , "DamPhysics"
 	Option		"Damage Types" , "dam_usetypes"   , "DamEnabled"
-	Option      "Shotgun Spray", "dam_spray"      , "YesNo"
 	StaticText 	""
-	StaticText 	"Settings marked with an asterisk (*)", "Tan"
-	StaticText 	"will only take effect after changing", "Tan"
-	StaticText 	"maps or starting a new game.", "Tan"
+	StaticText 	"Settings marked with an asterisk (*)", "Brown"
+	StaticText 	"will only take effect after changing", "Brown"
+	StaticText 	"maps or starting a new game.", "Brown"
 }

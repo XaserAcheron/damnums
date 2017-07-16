@@ -16,8 +16,9 @@ class DamNumFont : Actor
 
 	Default
 	{
-		+NOINTERACTION
-		+INVISIBLE
+		+NOINTERACTION;
+		+INVISIBLE;
+		+CLIENTSIDEONLY;
 
 		DamNumFont.Prefix DamNum_DefaultFontPrefix;
 		DamNumFont.DefaultTranslation DamNum_DefaultTranslation;
