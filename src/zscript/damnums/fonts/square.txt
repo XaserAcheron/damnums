@@ -1,0 +1,37 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * The Adventures of Square font.
+ */
+
+class DamNumFontSquare : DamNumFont
+{
+	Default
+	{
+		DamNumFont.Prefix "_Q";
+		DamNumFont.DefaultTranslation "DamPurple";
+		Scale 0.75;
+		Alpha 0.85;
+		RenderStyle 'Translucent';
+	}
+	States
+	{
+	Spawn:
+		_Q11 A 0;
+		_Q21 A 0;
+		_Q22 A 0;
+		_Q31 A 0;
+		_Q32 A 0;
+		_Q33 A 0;
+		_Q41 A 0;
+		_Q42 A 0;
+		_Q43 A 0;
+		_Q44 A 0;
+		_Q51 A 0;
+		_Q52 A 0;
+		_Q53 A 0;
+		_Q54 A 0;
+		_Q55 A 0;
+		Stop;
+	}
+}
