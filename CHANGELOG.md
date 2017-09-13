@@ -1,11 +1,19 @@
 # damnums Changelog
 
-## [v1.0.0](https://github.com/XaserAcheron/damnums/tree/v1.0.0) (2017-07-17)
+## [v1.0.1](https://github.com/XaserAcheron/damnums/tree/v1.0.1) (2017-09-13)
+[Full Changelog](https://github.com/XaserAcheron/damnums/compare/v1.0.0...v1.0.1)
 
-[Full Changelog](https://github.com/XaserAcheron/damnums/compare/v1.0.0...HEAD)
+Fixed:
+
+- Add support for non-standard IWADs [\#25](https://github.com/XaserAcheron/damnums/issues/25)
+
+## [v1.0.0](https://github.com/XaserAcheron/damnums/tree/v1.0.0) (2017-07-16)
+[Full Changelog](https://github.com/XaserAcheron/damnums/compare/v0.2.0...v1.0.0)
 
 New:
 
+- Health Bars [\#11](https://github.com/XaserAcheron/damnums/issues/11)
+- Crits [\#10](https://github.com/XaserAcheron/damnums/issues/10)
 - Optimize font PNG images [\#23](https://github.com/XaserAcheron/damnums/issues/23)
 - Make Font/Color choice user cvars [\#20](https://github.com/XaserAcheron/damnums/issues/20)
 - WADINFO [\#12](https://github.com/XaserAcheron/damnums/issues/12)
