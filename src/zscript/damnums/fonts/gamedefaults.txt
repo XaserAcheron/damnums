@@ -1,0 +1,13 @@
+/*
+ * DamNums: by Xaser Acheron
+ *
+ * Fallback Game Defaults for non-standard IWADs
+ */
+
+class DamNumFontGameDefault : DamNumFontBorderlands {}
+class DamNumFontGameSmall   : DamNumFontBorderlands {
+	Default
+	{
+		Scale 0.2;
+	}
+}
