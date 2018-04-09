@@ -32,6 +32,19 @@ class DamNumFontRaventory : DamNumFont
 		_I53 A 0;
 		_I54 A 0;
 		_I55 A 0;
+		_I61 A 0;
+		_I62 A 0;
+		_I63 A 0;
+		_I64 A 0;
+		_I65 A 0;
+		_I66 A 0;
+		_I71 A 0;
+		_I72 A 0;
+		_I73 A 0;
+		_I74 A 0;
+		_I75 A 0;
+		_I76 A 0;
+		_I77 A 0;
 		Stop;
 	}
 }

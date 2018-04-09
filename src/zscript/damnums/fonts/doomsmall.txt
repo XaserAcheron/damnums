@@ -32,6 +32,19 @@ class DamNumFontSmall : DamNumFont
 		_D53 A 0;
 		_D54 A 0;
 		_D55 A 0;
+		_D61 A 0;
+		_D62 A 0;
+		_D63 A 0;
+		_D64 A 0;
+		_D65 A 0;
+		_D66 A 0;
+		_D71 A 0;
+		_D72 A 0;
+		_D73 A 0;
+		_D74 A 0;
+		_D75 A 0;
+		_D76 A 0;
+		_D77 A 0;
 		Stop;
 	}
 }

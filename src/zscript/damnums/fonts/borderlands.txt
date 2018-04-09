@@ -32,6 +32,19 @@ class DamNumFontBorderlands : DamNumFont
 		_L53 A 0;
 		_L54 A 0;
 		_L55 A 0;
+		_L61 A 0;
+		_L62 A 0;
+		_L63 A 0;
+		_L64 A 0;
+		_L65 A 0;
+		_L66 A 0;
+		_L71 A 0;
+		_L72 A 0;
+		_L73 A 0;
+		_L74 A 0;
+		_L75 A 0;
+		_L76 A 0;
+		_L77 A 0;
 		Stop;
 	}
 }

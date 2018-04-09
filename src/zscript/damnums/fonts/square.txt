@@ -32,6 +32,19 @@ class DamNumFontSquare : DamNumFont
 		_Q53 A 0;
 		_Q54 A 0;
 		_Q55 A 0;
+		_Q61 A 0;
+		_Q62 A 0;
+		_Q63 A 0;
+		_Q64 A 0;
+		_Q65 A 0;
+		_Q66 A 0;
+		_Q71 A 0;
+		_Q72 A 0;
+		_Q73 A 0;
+		_Q74 A 0;
+		_Q75 A 0;
+		_Q76 A 0;
+		_Q77 A 0;
 		Stop;
 	}
 }

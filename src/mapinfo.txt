@@ -1,3 +1,4 @@
-gameinfo {
+gameinfo 
+{
 	AddEventHandlers = "DamNumEventHandler"
 }

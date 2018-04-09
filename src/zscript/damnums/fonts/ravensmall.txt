@@ -32,6 +32,19 @@ class DamNumFontRavenSmall : DamNumFont
 		_T53 A 0;
 		_T54 A 0;
 		_T55 A 0;
+		_T61 A 0;
+		_T62 A 0;
+		_T63 A 0;
+		_T64 A 0;
+		_T65 A 0;
+		_T66 A 0;
+		_T71 A 0;
+		_T72 A 0;
+		_T73 A 0;
+		_T74 A 0;
+		_T75 A 0;
+		_T76 A 0;
+		_T77 A 0;
 		Stop;
 	}
 }

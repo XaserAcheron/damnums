@@ -11,7 +11,7 @@ class DamNum : Actor
 	name damageType;
 	
 	const FADE_AMT = 0.05;
-	const DAMAGE_CAP = 99999;
+	const DAMAGE_CAP = 9999999;
 	
 	Default
 	{
@@ -44,12 +44,14 @@ class DamNum : Actor
 	action void A_DamNumMovement(double fade = 0)
 	{
 		// gravity is a fundamental force, yo
-		if(!self.bNoGravity) {
+		if(!self.bNoGravity) 
+		{
 			self.vel.z -= self.Gravity;
 		}
 
 		// fade to nothing
-		if(fade) {
+		if(fade) 
+		{
 			A_FadeOut(fade, 1);
 		}
 	}
@@ -69,12 +71,15 @@ class DamNum : Actor
 
 		// set the sprite based on the above info.
 		int spriteindex = GetSpriteIndex(fontPrefix .. digitCount .. digitPlace);
-		if(spriteindex != -1) {
+		if(spriteindex != -1) 
+		{
 			// set the frame to the desired digit; since frames A-J (which is 0-9
 			// in integer-speak) correspond exactly to the digits 0-9, we're good. Whoop!
 			self.sprite = spriteindex;
 			self.frame = DamNum(self).digitValue;
-		} else {
+		} 
+		else 
+		{
 			// if sprite is unknown, display UNKNA0 rather than crash. ;)
 			self.sprite = GetSpriteIndex('UNKN');
 			self.frame = 0;
@@ -121,9 +126,12 @@ class DamNum : Actor
 		// 'fontname' is not the name of a DamNumFont subclass -- handy!
 		class<DamNumFont> fontclass = fontname;
 		DamNumFont font;
-		if(fontclass) {
+		if(fontclass) 
+		{
 			font = DamNumFont(Spawn(fontclass));
-		} else {
+		} 
+		else 
+		{
 			font = DamNumFont(Spawn(DamNum_DefaultFontName)); // good ol' default.
 		}
 
@@ -133,7 +141,8 @@ class DamNum : Actor
 		cv = CVar.GetCvar("dam_translation", curPlayer);
 		string userTranslation = cv ? cv.getString() : DamNum_PlaceholderTranslation;
 		string fontTrans = font ? font.fontTrans : DamNum_DefaultTranslation;
-		if(userTranslation != DamNum_PlaceholderTranslation) {
+		if(userTranslation != DamNum_PlaceholderTranslation) 
+		{
 			fontTrans = userTranslation;
 		}
 
@@ -141,11 +150,13 @@ class DamNum : Actor
 		// damagetype color (if it's not 'Default', of course).
 		cv = CVar.GetCvar("dam_usetypes", curPlayer);
 		bool usedamagetype = cv ? cv.GetInt() : 0;
-		if(usedamagetype && damagetype != DamNum_DefaultDamagetype) {
+		if(usedamagetype && damagetype != DamNum_DefaultDamagetype) 
+		{
 			// snag the damagetype definition from LANGUAGE.
 			string typecolorname = (DamNum_LanguageTypecolorPrefix .. damagetype);
 			string typecolor = Stringtable.Localize("$" .. typecolorname);
-			if(typecolor != typecolorname) {
+			if(typecolor != typecolorname) 
+			{
 				// hey! we got a color from language; let's use it.
 				fontTrans = typecolor;
 			}
@@ -155,11 +166,13 @@ class DamNum : Actor
 		int dam = min(damage, DAMAGE_CAP);
 		int place = 1;
 		int length = log10(dam) + 1;
-		while(dam > 0) {
+		while(dam > 0) 
+		{
 			let damnum = DamNum(Spawn("DamNum", position, ALLOW_REPLACE));
 
 			// init the digits... diginit?
-			if(damnum && font) {
+			if(damnum && font) 
+			{
 				damnum.vel = nvel;
 				damnum.angle = ang;
 				damnum.bNoGravity = noGravity;
@@ -179,7 +192,8 @@ class DamNum : Actor
 		}
 
 		// discard the font actor, since we're done with it.
-		if(font) {
+		if(font) 
+		{
 			font.Destroy();
 		}
 

@@ -32,6 +32,19 @@ class DamNumFontClassic : DamNumFont
 		_C53 A 0;
 		_C54 A 0;
 		_C55 A 0;
+		_C61 A 0;
+		_C62 A 0;
+		_C63 A 0;
+		_C64 A 0;
+		_C65 A 0;
+		_C66 A 0;
+		_C71 A 0;
+		_C72 A 0;
+		_C73 A 0;
+		_C74 A 0;
+		_C75 A 0;
+		_C76 A 0;
+		_C77 A 0;
 		Stop;
 	}
 }

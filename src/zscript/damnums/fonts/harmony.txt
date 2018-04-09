@@ -32,6 +32,19 @@ class DamNumFontHarmony : DamNumFont
 		_N53 A 0;
 		_N54 A 0;
 		_N55 A 0;
+		_N61 A 0;
+		_N62 A 0;
+		_N63 A 0;
+		_N64 A 0;
+		_N65 A 0;
+		_N66 A 0;
+		_N71 A 0;
+		_N72 A 0;
+		_N73 A 0;
+		_N74 A 0;
+		_N75 A 0;
+		_N76 A 0;
+		_N77 A 0;
 		Stop;
 	}
 }
