@@ -32,6 +32,19 @@ class DamNumFontUrbanBrawl : DamNumFont
 		_U53 A 0;
 		_U54 A 0;
 		_U55 A 0;
+		_U61 A 0;
+		_U62 A 0;
+		_U63 A 0;
+		_U64 A 0;
+		_U65 A 0;
+		_U66 A 0;
+		_U71 A 0;
+		_U72 A 0;
+		_U73 A 0;
+		_U74 A 0;
+		_U75 A 0;
+		_U76 A 0;
+		_U77 A 0;
 		Stop;
 	}
 }

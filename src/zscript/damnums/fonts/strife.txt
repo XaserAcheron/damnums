@@ -32,6 +32,19 @@ class DamNumFontStrife : DamNumFont
 		_S53 A 0;
 		_S54 A 0;
 		_S55 A 0;
+		_S61 A 0;
+		_S62 A 0;
+		_S63 A 0;
+		_S64 A 0;
+		_S65 A 0;
+		_S66 A 0;
+		_S71 A 0;
+		_S72 A 0;
+		_S73 A 0;
+		_S74 A 0;
+		_S75 A 0;
+		_S76 A 0;
+		_S77 A 0;
 		Stop;
 	}
 }

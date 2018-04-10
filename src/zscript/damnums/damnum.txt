@@ -11,7 +11,7 @@ class DamNum : Actor
 	name damageType;
 	
 	const FADE_AMT = 0.05;
-	const DAMAGE_CAP = 99999;
+	const DAMAGE_CAP = 9999999;
 	
 	Default
 	{

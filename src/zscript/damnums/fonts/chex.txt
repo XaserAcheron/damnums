@@ -32,6 +32,19 @@ class DamNumFontChex : DamNumFont
 		_X53 A 0;
 		_X54 A 0;
 		_X55 A 0;
+		_X61 A 0;
+		_X62 A 0;
+		_X63 A 0;
+		_X64 A 0;
+		_X65 A 0;
+		_X66 A 0;
+		_X71 A 0;
+		_X72 A 0;
+		_X73 A 0;
+		_X74 A 0;
+		_X75 A 0;
+		_X76 A 0;
+		_X77 A 0;
 		Stop;
 	}
 }
