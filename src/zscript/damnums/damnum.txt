@@ -145,8 +145,7 @@ class DamNum : Actor
 			// snag the damagetype definition from LANGUAGE.
 			string typecolorname = (DamNum_LanguageTypecolorPrefix .. damagetype);
 			string typecolor = Stringtable.Localize("$" .. typecolorname);
-			if(typecolor != typecolorname) 
-			{
+			if(typecolor != typecolorname) {
 				// hey! we got a color from language; let's use it.
 				fontTrans = typecolor;
 			}
