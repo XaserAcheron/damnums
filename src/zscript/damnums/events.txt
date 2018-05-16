@@ -92,12 +92,9 @@ class DamNumTracker : Inventory
 	override void Tick()
 	{
 		if (self.owner) {
-			if (dam_enabled && !dam_spray) {
-				if (self.owner.health < self.currentHealth) {
-					self.SpawnNumbers();
-					self.currentHealth = self.owner.health;
-				}
-				// [XA] if I ever add "healing" support, that goes here.
+			if (dam_enabled && !dam_spray && self.owner.health != self.currentHealth) {
+				self.SpawnNumbers();
+				self.currentHealth = self.owner.health;
 			}
 		} else {
 			// clean up after oneself just in case an actor gets
@@ -127,7 +124,11 @@ class DamNumTracker : Inventory
 		{
 			Vector3 position = self.owner.pos + (0, 0, self.owner.height - 16);
 			int totalDamage = self.currentHealth - self.owner.health;
-			DamNum.spawnDamageNumbers(position, totalDamage, self.owner.DamageTypeReceived);
+
+			// don't show negative damge (healing) for now. May change later as a feature addition.
+			if(totalDamage > 0) {
+				DamNum.spawnDamageNumbers(position, totalDamage, self.owner.DamageTypeReceived);
+			}
 		}
 	}
 }
