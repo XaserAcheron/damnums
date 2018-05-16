@@ -12,6 +12,7 @@ class DamNum : Actor
 	
 	const FADE_AMT = 0.05;
 	const DAMAGE_CAP = 9999999;
+	const STAT_NUMBER = STAT_USER + 18; // statnum #88
 	
 	Default
 	{
@@ -160,6 +161,7 @@ class DamNum : Actor
 
 			// init the digits... diginit?
 			if(damnum && font) {
+				damnum.ChangeStatNum(STAT_NUMBER);
 				damnum.vel = nvel;
 				damnum.angle = ang;
 				damnum.bNoGravity = noGravity;
