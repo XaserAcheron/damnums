@@ -6,7 +6,7 @@
  * tech support & sanity maintenance
  */
 
-version "2.4"
+version "3.5"
 
 #include "zscript/damnums/constants.txt"
 #include "zscript/damnums/damnum.txt"
