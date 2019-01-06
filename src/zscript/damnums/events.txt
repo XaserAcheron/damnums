@@ -14,10 +14,7 @@ class DamNumEventHandler : StaticEventHandler
 	{
 		if (dam_enabled && self.ShouldSpawn(e.Thing) && dam_spray && e.DamageType != 'Massacre')
 		{
-			// Since WorldThingDamaged is (oddly) called after the actor's officially dead,
-			// we need to account for the case where the actor's height has been quartered.
-			double targetHeight = (e.Thing.health > 0) ? e.Thing.height : (e.Thing.height * 4);
-			Vector3 spawnPos = e.Thing.pos + (0, 0, targetHeight-16);
+			Vector3 spawnPos = e.Thing.pos + (0, 0, e.Thing.height-16);
 			DamNum.spawnDamageNumbers(spawnPos, e.Damage, e.DamageType);
 		}
 	}
