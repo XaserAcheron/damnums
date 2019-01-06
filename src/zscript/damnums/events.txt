@@ -78,7 +78,8 @@ class DamNumTracker : Inventory
 		// This stops numbers from spawning for PE-spawned Lost Souls that die
 		// instantly due to being in a wall. Was amusing, but unintentional. :P
 		if (!self.owner || self.owner.health < 1) {
-			return self.Destroy();
+			self.Destroy();
+			return;
 		}
 
 		self.currentHealth = self.owner.health;
