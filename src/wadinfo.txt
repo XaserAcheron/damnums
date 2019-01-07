@@ -4,8 +4,8 @@ Advanced engine required: GZDoom 3.1.0+
 ===========================================================================
 Title                   : DamNums
 Filename                : damnums.pk3
-Release date            : 9/13/17
-Version                 : 1.0.1
+Release date            : 1/6/19
+Version                 : 1.0.2
 Author                  : Xaser Acheron
 Email Address           : xaser.88@gmail.com
 Git Repo                : https://github.com/XaserAcheron/damnums
